@@ -21,46 +21,13 @@ class CurlHelper {
 		return json_decode($response);
 	}
 
-	public function curlPost($api,$post_field){
+	// $type = 'POST'|'PUT'|'DELETE'
+	public function curlCustom($api,$post_field,$type){
 		$api = $this->base_url.$api."?access_token=" . $this->access_token;
 		$post_field = json_encode($post_field);
 		$curl_handler = curl_init();
 		curl_setopt($curl_handler,CURLOPT_URL,$api);
-		curl_setopt($curl_handler,CURLOPT_POST,1);
-    		curl_setopt($curl_handler, CURLOPT_POSTFIELDS,$post_field);
-    		curl_setopt($curl_handler, CURLOPT_HTTPHEADER, array(  
-		            'Content-Type: application/json; charset=utf-8',  
-		            'Content-Length: ' . strlen($post_field))  
-		 );  
-		curl_setopt ( $curl_handler, CURLOPT_RETURNTRANSFER, 1 );
-		$response =curl_exec($curl_handler);
-		curl_close($curl_handler);
-		return json_decode($response);
-	}
-
-	public function curlPut($api,$post_field){
-		$api = $this->base_url.$api."?access_token=" . $this->access_token;
-		$post_field = json_encode($post_field);
-		$curl_handler = curl_init();
-		curl_setopt($curl_handler,CURLOPT_URL,$api);
-		curl_setopt ( $curl_handler, CURLOPT_CUSTOMREQUEST, 'PUT' );
-    		curl_setopt($curl_handler, CURLOPT_POSTFIELDS,$post_field);
-    		curl_setopt($curl_handler, CURLOPT_HTTPHEADER, array(  
-		            'Content-Type: application/json; charset=utf-8',  
-		            'Content-Length: ' . strlen($post_field))  
-		 );  
-		curl_setopt ( $curl_handler, CURLOPT_RETURNTRANSFER, 1 );
-		$response =curl_exec($curl_handler);
-		curl_close($curl_handler);
-		return json_decode($response);
-	}
-
-	public function curlDelete($api,$post_field){
-		$api = $this->base_url.$api."?access_token=" . $this->access_token;
-		$post_field = json_encode($post_field);
-		$curl_handler = curl_init();
-		curl_setopt($curl_handler,CURLOPT_URL,$api);
-		curl_setopt ( $curl_handler, CURLOPT_CUSTOMREQUEST, 'DELETE' );
+		curl_setopt ( $curl_handler, CURLOPT_CUSTOMREQUEST, $type);
     		curl_setopt($curl_handler, CURLOPT_POSTFIELDS,$post_field);
     		curl_setopt($curl_handler, CURLOPT_HTTPHEADER, array(  
 		            'Content-Type: application/json; charset=utf-8',  
