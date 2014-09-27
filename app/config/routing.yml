@@ -1,0 +1,17 @@
+renaissance_admin:
+    resource: "@RenaissanceAdminBundle/Resources/config/routing.yml"
+    prefix:   /
+
+renaissance_common:
+    resource: "@RenaissanceCommonBundle/Resources/config/routing.yml"
+    prefix:   /
+
+renaissance_web:
+    resource: "@RenaissanceWebBundle/Resources/config/routing.yml"
+    prefix:   /
+
+login:
+    pattern: /login
+logout:
+    pattern: /logout
+

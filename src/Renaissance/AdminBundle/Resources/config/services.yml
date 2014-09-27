@@ -1,0 +1,4 @@
+services:
+#    renaissance_admin.example:
+#        class: Renaissance\AdminBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]
