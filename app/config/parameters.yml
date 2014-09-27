@@ -15,4 +15,3 @@ parameters:
     debug_toolbar: true
     debug_redirects: false
     use_assetic_controller: true
-    # be_simple.sso_auth.client.option.curlopt_ssl_verifypeer.value: FALSE
