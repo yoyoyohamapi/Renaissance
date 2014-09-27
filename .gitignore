@@ -1,4 +1,4 @@
-/vendor/*
+vendor/
 /app/cache/*
 /app/logs/*
 !app/cache/.gitkeep
