@@ -7,9 +7,18 @@
 		{% endblock %}
 	</head>
 	<body>
-		{% block navbar %}{% endblock %}
-		{% block content %}{% endblock %}
-		{% include "RenaissanceWebBundle:Layout:scripts.html.twig" %}
-		{% block scripts %}{% endblock %}
+		<div id="bodyWrapper">
+			{% block navbar %}
+			{% if no_navbar is defined%}
+			{% else %}
+				{% include "RenaissanceWebBundle:Layout:nav_normal.html.twig" %}
+			{% endif %}
+			{% endblock %}
+			{% block content %}{% endblock %}
+			{% include "RenaissanceWebBundle:Layout:base_bar.html.twig" %}
+			{% include "RenaissanceWebBundle:Layout:footer.html.twig" %}
+		</div>
+	{% include "RenaissanceWebBundle:Layout:scripts.html.twig" %}
+	{% block scripts %}{% endblock %}
 	</body>
 </html>
