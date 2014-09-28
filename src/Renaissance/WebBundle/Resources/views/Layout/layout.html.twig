@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+	<head>
+		<meta charset="UTF-8">
+		<title>{% block title %}{% endblock %}</title>
+		{% include "RenaissanceWebBundle:Layout:stylesheets.html.twig" %}
+		{% block stylesheets %}
+		{% endblock %}
+	</head>
+	<body>
+		{% block navbar %}{% endblock %}
+		{% block content %}{% endblock %}
+		{% include "RenaissanceWebBundle:Layout:scripts.html.twig" %}
+		{% block scripts %}{% endblock %}
+	</body>
+</html>
