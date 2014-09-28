@@ -1,4 +1,4 @@
-src/Renaissance/CommonBundle/Resources/config/service.yml
+
 vendor/
 /app/cache/*
 /app/logs/*
