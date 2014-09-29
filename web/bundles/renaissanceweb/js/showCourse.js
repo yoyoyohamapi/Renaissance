@@ -64,46 +64,12 @@ function showSexangleCourse(){
 	});
 }
 $(function(){
-	$("#imgOne").mouseenter(function(){
-		$("#imgOne").attr("src","img/frontpage/sexangle4after.png");
+	// 控制六边形切换逻辑
+	$(".sexangleImg").mouseenter(function(){
+		$(this).attr("src",$(this).attr("after"));
+
 	});
-	$("#imgOne").mouseleave(function(){
-		$("#imgOne").attr("src","img/frontpage/sexangle1.png");
-	});
-	$("#imgTwo").mouseenter(function(){
-		$("#imgTwo").attr("src","img/frontpage/sexangle4after.png");
-	});
-	$("#imgTwo").mouseleave(function(){
-		$("#imgTwo").attr("src","img/frontpage/sexangle2.png");
-	});
-	$("#imgThree").mouseenter(function(){
-		$("#imgThree").attr("src","img/frontpage/sexangle4after.png");
-	});
-	$("#imgThree").mouseleave(function(){
-		$("#imgThree").attr("src","img/frontpage/sexangle3.png");
-	});
-	$("#imgFour").mouseenter(function(){
-		$("#imgFour").attr("src","img/frontpage/sexangle4after.png");
-	});
-	$("#imgFour").mouseleave(function(){
-		$("#imgFour").attr("src","img/frontpage/sexangle4.png");
-	});
-	$("#imgFive").mouseenter(function(){
-		$("#imgFive").attr("src","img/frontpage/sexangle4after.png");
-	});
-	$("#imgFive").mouseleave(function(){
-		$("#imgFive").attr("src","img/frontpage/sexangle5.png");
-	});
-	$("#imgSix").mouseenter(function(){
-		$("#imgSix").attr("src","img/frontpage/sexangle4after.png");
-	});
-	$("#imgSix").mouseleave(function(){
-		$("#imgSix").attr("src","img/frontpage/sexangle6.png");
-	});
-	$("#imgSeven").mouseenter(function(){
-		$("#imgSeven").attr("src","img/frontpage/sexangle4after.png");
-	});
-	$("#imgSeven").mouseleave(function(){
-		$("#imgSeven").attr("src","img/frontpage/sexangle7.png");
+	$(".sexangleImg").mouseleave(function(){
+		$(this).attr("src",$(this).attr("before"));
 	});
 });
