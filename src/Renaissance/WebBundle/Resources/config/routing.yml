@@ -2,6 +2,9 @@ renaissance_web_homepage:
     path:     /
     defaults: { _controller: RenaissanceWebBundle:Default:index }
 
+register:
+  path:    /register
+  defaults:  { _controller:RenaissanceWebBundle:Register:toRegister }
 
 user_index:
     path:     /user/{user_id}
@@ -18,3 +21,5 @@ course_show:
 course_lesson_show:
     path:     /course/{course_id}/lesson/{lesson_id}
     defaults: { _controller: RenaissanceWebBundle:Lesson:show }
+
+
