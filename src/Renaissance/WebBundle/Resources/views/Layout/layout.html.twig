@@ -3,6 +3,7 @@
 		<meta charset="UTF-8">
 		<title>{% block title %}{% endblock %}</title>
 		{% include "RenaissanceWebBundle:Layout:stylesheets.html.twig" %}
+		{% include "RenaissanceWebBundle:Layout:scripts.html.twig" %}
 		{% block stylesheets %}
 		{% endblock %}
 	</head>
@@ -18,7 +19,6 @@
 			{% include "RenaissanceWebBundle:Layout:base_bar.html.twig" %}
 			{% include "RenaissanceWebBundle:Layout:footer.html.twig" %}
 		</div>
-	{% include "RenaissanceWebBundle:Layout:scripts.html.twig" %}
 	{% block scripts %}{% endblock %}
 	</body>
 </html>

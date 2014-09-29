@@ -10,7 +10,7 @@ class DefaultController extends BaseController
 
     public function indexAction()
     {	
-            return $this->render('RenaissanceWebBundle:Default:index.html.twig');
+            return $this->render('RenaissanceWebBundle:Default:index.html.twig',array("content"=>"欢迎登录复兴教育"));
     }
 
 }
