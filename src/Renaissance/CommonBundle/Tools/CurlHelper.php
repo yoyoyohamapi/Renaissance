@@ -6,7 +6,6 @@ class CurlHelper {
 	protected $access_token;
 	protected $base_url;
 	protected $authed;
-
 	public function __construct( $access_token,$base_url,$authed){
 		$this->access_token = $access_token;
 		$this->base_url = $base_url;
