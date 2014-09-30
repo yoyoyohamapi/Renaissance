@@ -4,7 +4,7 @@ renaissance_web_homepage:
 
 register:
   path:    /register
-  defaults:  { _controller:RenaissanceWebBundle:Register:toRegister }
+  defaults:  { _controller:RenaissanceWebBundle:Register:index }
 
 user_index:
     path:     /user/{user_id}
