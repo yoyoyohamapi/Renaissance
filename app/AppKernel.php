@@ -17,7 +17,7 @@ class AppKernel extends Kernel
             new Symfony\Bundle\AsseticBundle\AsseticBundle(),
             new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
-             new BeSimple\SsoAuthBundle\BeSimpleSsoAuthBundle(),
+          //new BeSimple\SsoAuthBundle\BeSimpleSsoAuthBundle(),
             new Renaissance\WebBundle\RenaissanceWebBundle(),
             new Renaissance\CommonBundle\RenaissanceCommonBundle(),
             new Renaissance\AdminBundle\RenaissanceAdminBundle(),

@@ -70,22 +70,10 @@ $(function(){
 		initNavi();
 	});
 	//************************************
-	$("#sc1").mouseenter(function(){
-		$("#sc1").attr("src","./img/plaza/sc1_active.png");
+	$(".naviBox img").mouseenter(function(){
+		$(this).attr("src",$(this).attr("after"));
 	});
-	$("#sc2").mouseenter(function(){
-		$("#sc2").attr("src","./img/plaza/sc2_active.png");
-	});
-	$("#sc3").mouseenter(function(){
-		$("#sc3").attr("src","./img/plaza/sc3_active.png");
-	});
-	$("#sc1").mouseleave(function(){
-		$("#sc1").attr("src","./img/plaza/sc1.png");
-	});
-	$("#sc2").mouseleave(function(){
-		$("#sc2").attr("src","./img/plaza/sc2.png");
-	});
-	$("#sc3").mouseleave(function(){
-		$("#sc3").attr("src","./img/plaza/sc3.png");
+	$(".naviBox img").mouseleave(function(){
+		$(this).attr("src",$(this).attr("before"));
 	});
 });
