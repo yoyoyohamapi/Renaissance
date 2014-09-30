@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+{% include "RenaissanceWebBundle:Layout:stylesheets.html.twig" %}
+<!-- JS文件 -->
+<script src="jquery-1.11.1.min.js"></script>
+
+<style type="text/css">
+	body{
+		min-width: 900px;
+	}
+	p.inputRow{
+		margin:20px 0 20px 0;
+	}
+	.btn-action{
+		background-color:#df3138;margin-top: 0px;width: 100%;height:50px;font-size:20px;
+	}
+	.btn-action:hover{
+		background-color:#EB575D;
+	}
+	#loginMenu p{
+		color:#ffffff;
+		font-size: 13px;
+		letter-spacing:1px;
+	}
+	#loginMenu a{
+		color:#df3138;
+	}
+	#loginMenu a:hover{
+		color:#EB575D;
+	}
+	#registerMenu p{
+		color:#ffffff;
+		font-size: 13px;
+		letter-spacing:1px;
+	}
+	#registerMenu a{
+		color:#df3138;
+	}
+	#registerMenu a:hover{
+		color:#EB575D;
+	}
+</style>
+<title>注册</title>
+</head>
+
+<body>
+	<div style="width:100%;height:100%;position:absolute;left:0px;top:0px;z-index:-1;">
+		<img src="{{asset('bundles/renaissanceweb/img/passport/bg.png')}}" style="width:100%;height:100%;">
+		<div style="position: absolute;top: 0;left: 0px;" class="">
+			<img src="{{asset('bundles/renaissanceweb/img/passport/planet.png')}}">
+		</div>
+	</div>
+	<!-- Content -->
+	<div class="container-fluid">
+		<div class="row" style="margin-top:80px;">
+			<div class="col-xs-4 col-xs-offset-4" style="min-width:450px;">
+				<div class="panel" style="box-shadow:0 5px 15px rgba(0, 0, 0, 0.5);border: 0px;background-color:#edeff0;">
+					<div class="panel-heading" style="height: 125px;padding: 0px;background-color: #3a3a3a;">
+						<div style="position: absolute;   top: 117px; left: 0px; width: 100%; text-align: center;z-index:9;"><img src="{{asset('bundles/renaissanceweb/img/passport/arrows.png')}}"></div>
+						<div style="padding: 45px;text-align: center;"><img src="{{asset('bundles/renaissanceweb/img/passport/head_logo.png')}}"></div>
+					</div>
+					<div class="panel-body" style="position:relative;padding: 30px 50px 25px 50px;">
+						<div id="registerPanel" style="">
+							<p class="inputRow" style="text-align:center;color:#3a3a3a;font-size: 24px;/* font-weight:700; */margin:0px 0 30px 0;">注册，离知识更进一步</p>
+							<p class="inputRow"><input class="form-control" style="border-radius:0px;background-color:#edeff0" placeholder="邮箱"></p>
+							<p class="inputRow"><input class="form-control" style="border-radius:0px;background-color:#edeff0" placeholder="密码"></p>
+							<p class="inputRow"><input class="form-control" style="border-radius:0px;background-color:#edeff0" placeholder="确认密码"></p>
+							<p class="inputRow"><button id="doRegister" class="btn-action button button-flat-primary" style="height:50px;">注&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;册</button></p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="registerMenu" class="row" style="">
+			<div class="col-xs-4 col-xs-offset-4" style="min-width:450px;padding:0 25px 0 25px;">
+				<p style="text-align:right;">已有账号<a id="toLogin" href="https://localhost:8443/cas" class="tip">登录</a></p>
+			</div>
+		</div>
+	</div>
+</body>
