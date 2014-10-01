@@ -24,10 +24,6 @@ class User implements UserInterface, \Serializable
      */
     private $username;
 
-    /**
-     * @ORM\Column(type="string", length=64)
-     */
-    private $password;
 
     /**
      * @ORM\Column(type="string", length=60, unique=true)
@@ -38,6 +34,11 @@ class User implements UserInterface, \Serializable
      * @ORM\Column(name="is_active", type="boolean")
      */
     private $isActive;
+
+    /**
+     * @ORM\Column(name="canvas_user_id", type="integer")
+     */
+    private $canvas_user_id;
 
     public function __construct()
     {
@@ -113,5 +114,9 @@ class User implements UserInterface, \Serializable
             // see section on salt below
             // $this->salt
         ) = unserialize($serialized);
+    }
+
+    public function getCUID(){
+        return $this->canvas_user_id;
     }
 }
