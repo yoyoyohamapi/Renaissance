@@ -1,7 +1,7 @@
 security:
     providers:
         administrators:
-            entity: { class: RenaissanceCommonBundle:User, property: username }
+            entity: { class: RenaissanceCommonBundle:User, property: email }
 
     firewalls:
         dev:

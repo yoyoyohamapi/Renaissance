@@ -3,14 +3,18 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 {% include "RenaissanceWebBundle:Layout:stylesheets.html.twig" %}
 <!-- JS文件 -->
-<script src="jquery-1.11.1.min.js"></script>
-
+{% include "RenaissanceWebBundle:Layout:scripts.html.twig" %}
 <style type="text/css">
 	body{
 		min-width: 900px;
 	}
 	p.inputRow{
 		margin:20px 0 20px 0;
+	}
+	#error_msg{
+		font-size:15px; 
+	       overflow: hidden;
+	       color:rgba(135, 128, 116, 1);
 	}
 	.btn-action{
 		background-color:#df3138;margin-top: 0px;width: 100%;height:50px;font-size:20px;
@@ -62,12 +66,14 @@
 					</div>
 					<div class="panel-body" style="position:relative;padding: 30px 50px 25px 50px;">
 						<div id="registerPanel" style="">
-							<form method="post" action="register/reg_user">
+							<form id="register" method="post" action="" >
 							<p class="inputRow" style="text-align:center;color:#3a3a3a;font-size: 24px;/* font-weight:700; */margin:0px 0 30px 0;">注册，离知识更进一步</p>
+							<p class="inputRow"><span id="error_msg">{% if error is defined%}{{error}}{% endif %}</span></p>
+							<p class="inputRow"><input class="form-control" style="border-radius:0px;background-color:#edeff0" placeholder="您的称呼" name="username" id="username"></p>
 							<p class="inputRow"><input class="form-control" style="border-radius:0px;background-color:#edeff0" placeholder="邮箱" name="email" id="email"></p>
 							<p class="inputRow"><input class="form-control" type="password"style="border-radius:0px;background-color:#edeff0" placeholder="密码" name="password"id="password"></p>
-							<p class="inputRow"><input class="form-control" style="border-radius:0px;background-color:#edeff0" placeholder="确认密码" id="confirm_password"></p>
-							<p class="inputRow"><button id="doRegister" type="submit" class="btn-action button button-flat-primary" style="height:50px;">注&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;册</button></p>
+							<p class="inputRow"><input class="form-control" style="border-radius:0px;background-color:#edeff0" placeholder="确认密码" type="password" id="confirm_password"></p>
+							<p class="inputRow"><button id="doRegister" type="button" class="btn-action button button-flat-primary" style="height:50px;">注&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;册</button></p>
 						</form>
 						</div>
 					</div>
@@ -80,4 +86,7 @@
 			</div>
 		</div>
 	</div>
+
+<script src="{{asset("bundles/renaissanceweb/js/register.js")}}"></script>
+
 </body>

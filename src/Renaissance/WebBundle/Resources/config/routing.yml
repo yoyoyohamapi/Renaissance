@@ -9,6 +9,7 @@ register:
 register_validate:
   path:    /register/validate
   defaults:  { _controller:RenaissanceWebBundle:Register:validate }
+  methods: [GET]
 
 register_reg_user:
   path:  /register/reg_user
