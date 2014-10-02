@@ -17,9 +17,9 @@ security:
         #         create_users: true
         #         created_users_roles: [ROLE_USER ]
         #         check_path: /
-        # default:
-        #     anonymous: ~
-    access_control:
-        - { path: ^/admin, roles: ROLE_USER }
-        - { path: ^/login, roles: ROLE_USER }
-        - { path: /.*, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        default:
+            anonymous: ~
+    # access_control:
+    #     - { path: ^/admin, roles: ROLE_USER }
+    #     - { path: ^/login, roles: ROLE_USER }
+    #     - { path: /.*, role: IS_AUTHENTICATED_ANONYMOUSLY }
