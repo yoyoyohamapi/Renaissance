@@ -20,7 +20,7 @@ $(function(){
 		}else{
 			$.ajax({
 				url: "/register/validate",
-				type: "GET",
+				type: "post",
 				data: "email="+email,
 				dataType: "json",
 				success:function(info){

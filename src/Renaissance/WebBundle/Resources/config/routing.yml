@@ -2,6 +2,14 @@ renaissance_web_homepage:
     path:     /
     defaults: { _controller: RenaissanceWebBundle:Default:index }
 
+login:
+  path:    /login
+  defaults:  { _controller:RenaissanceWebBundle:Login:index }
+
+logout:
+    path: /logout
+    defaults:  { _controller:RenaissanceWebBundle:Default:logout }
+
 register:
   path:    /register
   defaults:  { _controller:RenaissanceWebBundle:Register:index }
@@ -9,7 +17,7 @@ register:
 register_validate:
   path:    /register/validate
   defaults:  { _controller:RenaissanceWebBundle:Register:validate }
-  methods: [GET]
+  methods: [POST]
 
 register_reg_user:
   path:  /register/reg_user
@@ -31,5 +39,13 @@ course_show:
 course_lesson_show:
     path:     /course/{course_id}/lesson/{lesson_id}
     defaults: { _controller: RenaissanceWebBundle:Lesson:show }
+
+test_admin:
+    path:   /admin
+    defaults:  { _controller: RenaissanceWebBundle:Default:admin }
+
+
+
+
 
 

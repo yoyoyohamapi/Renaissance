@@ -11,11 +11,17 @@ use Renaissance\CommonBundle\Entity\User;
 class RegisterController extends BaseController
 {
 	public function indexAction(){
-		return $this->render('RenaissanceWebBundle:Register:index.html.twig',array());
+		if(!empty($this->getUser())){
+			var_dump($this->getUser());
+			return $this->redirect('/');
+
+		}
+		else
+			return $this->render('RenaissanceWebBundle:Register:index.html.twig',array());
 	}
 
 	public function validateAction(Request $request){
-		$email = $request->query->get('email');
+		$email = $request->request->get('email');
 		$user = $this->getDoctrine()->getRepository('RenaissanceCommonBundle:User')->findOneByEmail($email);
 		if(empty($user))
 			 return $this->createJsonResponse(array("validate_info"=>"accept"));

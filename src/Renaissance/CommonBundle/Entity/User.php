@@ -40,6 +40,8 @@ class User implements UserInterface, \Serializable
      */
     private $canvas_user_id;
 
+    private $password;
+    
     public function __construct()
     {
         $this->isActive = true;
@@ -96,7 +98,6 @@ class User implements UserInterface, \Serializable
         return serialize(array(
             $this->id,
             $this->username,
-            $this->password,
             // see section on salt below
             // $this->salt,
         ));
@@ -110,15 +111,12 @@ class User implements UserInterface, \Serializable
         list (
             $this->id,
             $this->username,
-            $this->password,
+            //$this->password,
             // see section on salt below
             // $this->salt
         ) = unserialize($serialized);
     }
 
-    public function getCUID(){
-        return $this->canvas_user_id;
-    }
 
     /**
      * Get id
