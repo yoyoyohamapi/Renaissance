@@ -35,15 +35,9 @@
 <ul class="list-unstyled" style="margin:0px;">
 <li class="naviBox"><strong class="naviTitle">课程分类</strong></li>
 <li class="naviBox naviBox-sm"><strong class="naviContent">全部</strong></li>
-<li class="naviBox naviBox-sm"><strong class="naviContent">Java</strong></li>
-<li class="naviBox naviBox-sm"><strong class="naviContent">Linux</strong></li>
-<li class="naviBox naviBox-sm"><strong class="naviContent">PHP</strong></li>
-<li class="naviBox naviBox-sm"><strong class="naviContent">Oracle</strong></li>
-<li class="naviBox naviBox-sm"><strong class="naviContent">Web前端开发</strong></li>
-<li class="naviBox naviBox-sm"><strong class="naviContent">JQuery</strong></li>
-<li class="naviBox naviBox-sm"><strong class="naviContent">Android</strong></li>
-<li class="naviBox naviBox-sm"><strong class="naviContent">IOS</strong></li>
-<li class="naviBox naviBox-sm"><strong class="naviContent">Hadoop</strong></li>
+{% for course in courses %}
+    <li class="naviBox naviBox-sm"><a href="{{ path('course_show',{'course_id': course.id })}}"><strong class="naviContent">{{course.name}}</strong></a></li>
+{% endfor %}
 </ul>
 </div>
 <div id="p2" style="display:none;">
