@@ -77,8 +77,8 @@ swiftmailer:
 #         version: 2
 #       server:
 #         id: cas
-#         login_url: https://localhost:8443/cas/login
-#         logout_url: https://localhost:8443/cas/logout
-#         validation_url: https://localhost:8443/cas/serviceValidate
+#         login_url: %cas_login_url%
+#         logout_url: %cas_logout_url%
+#         validation_url: %cas_validation_url%
 
 

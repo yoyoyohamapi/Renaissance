@@ -38,13 +38,14 @@ class CurlHelper {
 	public function curlCustom($api,$post_field,$type){
 		$api = $this->base_url.$api."?access_token=" . $this->access_token;
 		$post_field = json_encode($post_field);
-		curl_setopt($curl_handler,CURLOPT_URL,$api);
-		curl_setopt ( $curl_handler, CURLOPT_CUSTOMREQUEST, $type);
-    		curl_setopt($curl_handler, CURLOPT_HTTPHEADER, array(  
+		curl_setopt($this->curl_handler,CURLOPT_URL,$api);
+		curl_setopt ( $this->curl_handler, CURLOPT_CUSTOMREQUEST, $type);
+    		curl_setopt($this->curl_handler, CURLOPT_HTTPHEADER, array(  
 		            'Content-Type: application/json; charset=utf-8',  
 		            'Content-Length: ' . strlen($post_field))  
 		 );  
-		$response =curl_exec($curl_handler);
+    		curl_setopt($this->curl_handler,CURLOPT_POSTFIELDS,$post_field);
+		$response =curl_exec($this->curl_handler);
 		if($response === false)
 			return "Curl Error";
 		return json_decode($response);

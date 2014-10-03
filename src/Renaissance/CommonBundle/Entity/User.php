@@ -7,7 +7,7 @@ use Symfony\Component\Security\Core\User\UserInterface;
 /**
  * User
  *
- * @ORM\Table()
+ * @ORM\Table(name="User")
  * @ORM\Entity
  */
 class User implements UserInterface, \Serializable
@@ -20,14 +20,10 @@ class User implements UserInterface, \Serializable
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=25, unique=true)
+     * @ORM\Column(type="string", length=25, unique=false)
      */
     private $username;
 
-    /**
-     * @ORM\Column(type="string", length=64)
-     */
-    private $password;
 
     /**
      * @ORM\Column(type="string", length=60, unique=true)
@@ -39,6 +35,13 @@ class User implements UserInterface, \Serializable
      */
     private $isActive;
 
+    /**
+     * @ORM\Column(name="canvas_user_id", type="integer")
+     */
+    private $canvas_user_id;
+
+    private $password;
+    
     public function __construct()
     {
         $this->isActive = true;
@@ -95,7 +98,6 @@ class User implements UserInterface, \Serializable
         return serialize(array(
             $this->id,
             $this->username,
-            $this->password,
             // see section on salt below
             // $this->salt,
         ));
@@ -109,9 +111,102 @@ class User implements UserInterface, \Serializable
         list (
             $this->id,
             $this->username,
-            $this->password,
+            //$this->password,
             // see section on salt below
             // $this->salt
         ) = unserialize($serialized);
+    }
+
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set username
+     *
+     * @param string $username
+     * @return User
+     */
+    public function setUsername($username)
+    {
+        $this->username = $username;
+
+        return $this;
+    }
+
+    /**
+     * Set email
+     *
+     * @param string $email
+     * @return User
+     */
+    public function setEmail($email)
+    {
+        $this->email = $email;
+
+        return $this;
+    }
+
+    /**
+     * Get email
+     *
+     * @return string 
+     */
+    public function getEmail()
+    {
+        return $this->email;
+    }
+
+    /**
+     * Set isActive
+     *
+     * @param boolean $isActive
+     * @return User
+     */
+    public function setIsActive($isActive)
+    {
+        $this->isActive = $isActive;
+
+        return $this;
+    }
+
+    /**
+     * Get isActive
+     *
+     * @return boolean 
+     */
+    public function getIsActive()
+    {
+        return $this->isActive;
+    }
+
+    /**
+     * Set canvas_user_id
+     *
+     * @param integer $canvasUserId
+     * @return User
+     */
+    public function setCanvasUserId($canvasUserId)
+    {
+        $this->canvas_user_id = $canvasUserId;
+
+        return $this;
+    }
+
+    /**
+     * Get canvas_user_id
+     *
+     * @return integer 
+     */
+    public function getCanvasUserId()
+    {
+        return $this->canvas_user_id;
     }
 }

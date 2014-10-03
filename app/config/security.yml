@@ -1,30 +1,25 @@
 security:
     providers:
         administrators:
-            entity: { class: RenaissanceCommonBundle:User, property: username }
+            entity: { class: RenaissanceCommonBundle:User, property: email }
 
     firewalls:
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
         # my_firewall:
-        #      pattern: ^/
-        #      anonymous: ~
-        #      trusted_sso:
-        #           manager: admin_sso
-        #           login_action: false         # BeSimpleSsoAuthBundle:TrustedSso:login
-        #           default_target_path: /
-        #           logout_action: false        # BeSimpleSsoAuthBundle:TrustedSso:logout
-        #           create_users: true
-        #           created_users_roles: [ROLE_USER,ROLE_ADMIN]
-        #           check_path: /
-        #           use_referer: true
-        #      logout:
-        #           path:   /logout
-        #           target: /login123213
-          
+        #     pattern: ^/
+        #     anonymous: ~
+        #     trusted_sso:
+        #         manager: admin_sso
+        #         login_action: false         # BeSimpleSsoAuthBundle:TrustedSso:login
+        #         logout_action: false        # BeSimpleSsoAuthBundle:TrustedSso:logout
+        #         create_users: true
+        #         created_users_roles: [ROLE_USER ]
+        #         check_path: /
         default:
             anonymous: ~
-    access_control:
-        - { path: ^/admin, roles: ROLE_USER }
-        - { path: ^/users, roles: ROLE_USER }            
+    # access_control:
+    #     - { path: ^/admin, roles: ROLE_USER }
+    #     - { path: ^/login, roles: ROLE_USER }
+    #     - { path: /.*, role: IS_AUTHENTICATED_ANONYMOUSLY }

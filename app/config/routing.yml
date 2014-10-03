@@ -10,8 +10,4 @@ renaissance_web:
     resource: "@RenaissanceWebBundle/Resources/config/routing.yml"
     prefix:   /
 
-login:
-    pattern: /login
-logout:
-    pattern: /logout
 
