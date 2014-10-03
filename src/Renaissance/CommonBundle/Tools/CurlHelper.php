@@ -6,12 +6,13 @@ class CurlHelper {
 	protected $access_token;
 	protected $base_url;
 	protected $authed;
-
+	protected $get_header_opt;
 	public function __construct( $access_token,$base_url,$authed){
 		$this->access_token = $access_token;
 		$this->base_url = $base_url;
 		$this->authed = $authed;
 		$this->curl_handler = curl_init();
+		$this->get_header_opt  = 'Authorization:Bearer '.$this->access_token;
 		curl_setopt ( $this->curl_handler, CURLOPT_RETURNTRANSFER, 1 );
     		curl_setopt($this->curl_handler,CURLOPT_SSL_VERIFYPEER,$this->authed);
 		curl_setopt($this->curl_handler,CURLOPT_SSL_VERIFYHOST,$this->authed);
@@ -26,7 +27,10 @@ class CurlHelper {
 	}
 
 	public function curlGet($api){
-		$api = $this->base_url.$api."?access_token=" . $this->access_token;
+		$api = $this->base_url.$api;
+		//echo $api;
+		//exit();
+		curl_setopt($this->curl_handler,CURLOPT_HTTPHEADER,array($this->get_header_opt));
 		curl_setopt($this->curl_handler,CURLOPT_URL,$api);
 		$response =curl_exec($this->curl_handler);
 		if($response === false)
@@ -36,13 +40,14 @@ class CurlHelper {
 
 	// $type = 'POST'|'PUT'|'DELETE'
 	public function curlCustom($api,$post_field,$type){
-		$api = $this->base_url.$api."?access_token=" . $this->access_token;
+		$api = $this->base_url.$api;
 		$post_field = json_encode($post_field);
 		curl_setopt($this->curl_handler,CURLOPT_URL,$api);
 		curl_setopt ( $this->curl_handler, CURLOPT_CUSTOMREQUEST, $type);
     		curl_setopt($this->curl_handler, CURLOPT_HTTPHEADER, array(  
 		            'Content-Type: application/json; charset=utf-8',  
-		            'Content-Length: ' . strlen($post_field))  
+		            'Content-Length: ' . strlen($post_field)) ,
+    			$this->get_header_opt
 		 );  
     		curl_setopt($this->curl_handler,CURLOPT_POSTFIELDS,$post_field);
 		$response =curl_exec($this->curl_handler);

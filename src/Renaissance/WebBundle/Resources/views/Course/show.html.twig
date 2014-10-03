@@ -52,8 +52,8 @@ cPrice dashedRec">
 </div>
 <div class="col-md-4 profileInfo">
 <div class="col-md-12">
-<p class="courseName">HTML5开发技术</p>
-<p class="courseCon">HTML5 是下一代的 HTML。 本教程向您讲解 HTML5 中的新特性。每一章中的实例 通过我们的 HTML 编辑器,您能够编辑 HTML,然后点击按钮来查看结果。 </p>
+<p class="courseName">{{course.name}}</p>
+<p class="courseCon">{{page.body}} </p>
 </div>
 </div>
 </div>
@@ -163,7 +163,9 @@ cPrice dashedRec">
 <div class="col-md-5"><img class="headPic img-circle"src="{{asset('bundles/renaissanceweb/img/teacher.jpg')}}"></div>
 <div class="col-md-7">
 <p class="name">
-Tim
+{% for teacher in teachers %}
+    {{teacher.name}}
+{% endfor %}
 </p>
 <p class="property">
 Web前端工程师
