@@ -28,16 +28,13 @@ class CurlHelper {
 
 	public function curlGet($api){
 		$api = $this->base_url.$api;
-		//echo $api;
-		//exit();
 		curl_setopt($this->curl_handler,CURLOPT_HTTPHEADER,array($this->get_header_opt));
 		curl_setopt($this->curl_handler,CURLOPT_URL,$api);
 		$response =curl_exec($this->curl_handler);
-		if($response === false)
+		if($response == false)
 			return "Curl Error";
 		return json_decode($response);
 	}
-
 	// $type = 'POST'|'PUT'|'DELETE'
 	public function curlCustom($api,$post_field,$type){
 		$api = $this->base_url.$api;
@@ -46,12 +43,13 @@ class CurlHelper {
 		curl_setopt ( $this->curl_handler, CURLOPT_CUSTOMREQUEST, $type);
     		curl_setopt($this->curl_handler, CURLOPT_HTTPHEADER, array(  
 		            'Content-Type: application/json; charset=utf-8',  
-		            'Content-Length: ' . strlen($post_field)) ,
-    			$this->get_header_opt
+		            'Content-Length: ' . strlen($post_field),
+		            $this->get_header_opt
+		            ) 			
 		 );  
     		curl_setopt($this->curl_handler,CURLOPT_POSTFIELDS,$post_field);
 		$response =curl_exec($this->curl_handler);
-		if($response === false)
+		if($response == false)
 			return "Curl Error";
 		return json_decode($response);
 	}

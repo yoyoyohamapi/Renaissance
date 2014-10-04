@@ -160,7 +160,9 @@ cPrice dashedRec">
 <div class="col-md-12 profileTeacher">
 <p class="title">授课老师</p>
 <div class="col-md-12 info">
-<div class="col-md-5"><img class="headPic img-circle"src="{{asset('bundles/renaissanceweb/img/teacher.jpg')}}"></div>
+{% for head in heads %}
+    <div class="col-md-5"><img class="headPic img-circle"src="{{head}}"></div>
+{% endfor %}
 <div class="col-md-7">
 <p class="name">
 {% for teacher in teachers %}

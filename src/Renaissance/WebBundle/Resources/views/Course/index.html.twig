@@ -38,6 +38,8 @@
 {% for course in courses %}
     <li class="naviBox naviBox-sm"><a href="{{ path('course_show',{'course_id': course.id })}}"><strong class="naviContent">{{course.name}}</strong></a></li>
 {% endfor %}
+{% if page.hasprevPage %}<li class="naviBox naviBox-sm"><li class="naviBox naviBox-sm"><strong class="naviContent"><a href="{{path('course_index',{'pageno':page.prevPage})}}">上一页</a></strong></li>{% endif %}
+{% if page.hasnextPage %}<li class="naviBox naviBox-sm"><li class="naviBox naviBox-sm"><strong class="naviContent"><a href="{{path('course_index',{'pageno':page.nextPage})}}">下一页</a></strong></li>{% endif %}
 </ul>
 </div>
 <div id="p2" style="display:none;">

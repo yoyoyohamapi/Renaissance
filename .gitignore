@@ -4,4 +4,4 @@ vendor/
 /app/logs/*
 !app/cache/.gitkeep
 !app/logs/.gitkeep
-
+composer/
