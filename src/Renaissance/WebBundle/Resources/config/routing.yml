@@ -35,6 +35,8 @@ course_index:
 course_show:
     path:     /course/{course_id}
     defaults: { _controller: RenaissanceWebBundle:Course:show }
+    requirements:
+        course_id:  \d+
 
 course_lesson_show:
     path:     /course/{course_id}/lesson/{lesson_id}
@@ -43,6 +45,11 @@ course_lesson_show:
 test_admin:
     path:   /admin
     defaults:  { _controller: RenaissanceWebBundle:Default:admin }
+
+get_more_courses:
+    path: /course/get_more_courses
+    defaults: { _controller:RenaissanceWebBundle:Course:showMore}
+    methods: [GET]
 
 
 
