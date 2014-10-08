@@ -278,13 +278,11 @@ a:hover{
 	color:#656464;
 	font-size:2.2rem;
 }
-
 .rlBar .barItem a:hover{
 	cursor: pointer;
 	text-decoration: none;
 	font-size: 2.5rem;
 }
-
 .rlBar .barItem.active{
 	background-color:#de2e39;
 }
@@ -968,6 +966,7 @@ a:hover{
 
 .timeLine > li{
 	position: relative;
+	border-bottom:3px solid transparent;
 }
 
 .timeLine > li .tmtime{
