@@ -1,6 +1,0 @@
-src/Renaissance/CommonBundle/Resources/config/services.yml
-vendor/
-app/
-composer/
-.gitignore~
-.gitignore
