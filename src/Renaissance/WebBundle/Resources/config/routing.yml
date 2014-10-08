@@ -41,7 +41,9 @@ course_show:
 course_lesson_show:
     path:     /course/{course_id}/lesson/{lesson_id}
     defaults: { _controller: RenaissanceWebBundle:Lesson:show }
-
+    requirements:
+        course_id:  \d+
+        lesson_id:   \d+
 test_admin:
     path:   /admin
     defaults:  { _controller: RenaissanceWebBundle:Default:admin }

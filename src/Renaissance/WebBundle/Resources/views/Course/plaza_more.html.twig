@@ -2,8 +2,8 @@
 {% for course in courses %}
 	<div class="col-xs-4">
 	    	<div class="courseBox">
-			<p><img src="{{imgurls[loop.index0]}}"></p>
-			<a href="{{ path('course_show',{'course_id': course.id })}}"><p class="title">{{course.name}}</p></a>
+			<p><a href="{{ path('course_show',{'course_id': course.id })}}"><img src="{{imgurls[loop.index0]}}"></a></p>
+			<p class="title">{{course.name}}</p>
 			<div class="row" style="margin:0;">
 				<div class="col-xs-6" style="text-align:left;"><p class="content">2014-8-02</p></div>
 				<div class="col-xs-6" style="text-align:right;"><p class="content"><span class="glyphicon glyphicon-user"></span> 27168</p></div>

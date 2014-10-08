@@ -8,16 +8,11 @@
 <!-- Content -->
 <div class="container-fluid" style="margin-bottom:30px;">
 <div class="row" style="margin-top:40px;">
-<div id="left" class="col-xs-2">
-<div id="mp"  style="min-width:180px;">
+<div id="left" class="col-xs-2" style="padding-left:0px;">
+<div id="mp"  class="col-xs-12"style="min-width:180px;">
 {% include "RenaissanceWebBundle:Course:plaza_navbar.html.twig" %}
 </div>
-<div id="mpb"style="min-width:180px;">
-<div class="row plazaPanel" >
-<ul class="list-unstyled" style="margin:0px;">
-<li id="bottom" class="naviBox naviBox-bg" style="background-color:#b01e00;"></li>
-</ul>
-</div>
+<div id="mpb" class="col-xs-12"style="ｗidth:100%;margin-top:40px;background-color:#b01e00;color:white;font-size:4em;padding:20px;text-align:center"><a style="color:inherit">学习计划</a>
 </div>
 </div>
 <div class="col-xs-9">
@@ -26,7 +21,6 @@
 <p style="color: #b01e00;font-size: 30px;margin: 15px;">课程分类&gt;全部</p>
 <div id="courses" style="overflow:hidden">
 {% include "RenaissanceWebBundle:Course:plaza_more.html.twig" %}
-</div>
 </div>
 </div>
 </div>

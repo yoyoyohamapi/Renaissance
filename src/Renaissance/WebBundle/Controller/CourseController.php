@@ -55,6 +55,7 @@ class CourseController extends BaseController
         $students=$curlHelper->curlGet($api."/users?enrollment_type=student");
         $teachers=$curlHelper->curlGet($api."/users?enrollment_type=teacher");
         $fileimgs=$curlHelper->curlGet($api."/files?search_term=cover");
+        $lessons=$curlHelper->curlGet($api."/modules?include[]=items");
         $head_urls=array();
         foreach ($teachers as $key => $value) {
             $profile=$curlHelper->curlGet("users/".$value->id."/profile");
@@ -62,9 +63,10 @@ class CourseController extends BaseController
         }
         $cover=$fileimgs[0]->url;
         $page->body=substr($page->body, 3,-4);
+        //var_dump($lessons[0]->items[0]->title);
         //exit();
         $data=array('course'=>$course,'students'=>$students,'teachers'=>$teachers,
-            'page'=>$page,'heads'=>$head_urls,'cover'=>$cover);
+            'page'=>$page,'heads'=>$head_urls,'cover'=>$cover,"lessons"=>$lessons);
         return $this->render('RenaissanceWebBundle:Course:show.html.twig', $data);    
     }
     public function ajaxAction(){

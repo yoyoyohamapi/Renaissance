@@ -5,6 +5,11 @@
 <link href="{{asset('bundles/renaissanceweb/css/1.0/common.css')}}" rel="stylesheet" type="text/css"></link>
 {% endblock %}
 {% block content %}
+<style type="text/css">
+.timeLine > .item:hover{
+	border-bottom:3px dashed #B01E00;
+}
+</style>
 <div class="container-fluid">
 <!-- 课程介绍 -->
 <div class="col-md-10 col-md-offset-1 courseProfile whiteRec">
@@ -70,90 +75,27 @@ cPrice dashedRec">
 </div>
 <div class="navCon col-md-12">
 <!-- 左侧框内容 -->
+{% for lesson in lessons %}
 <div class="unitInfo">
 <h1 class="unitTitle">
-第一章 PHP基础
-</h1>
+第{{loop.index}}章 {{lesson.name}}
+</h1> 
 <ul class="timeLine">
+{% for timeLine in lesson.items %}
 <li class="item">
-<time class="tmtime">课时1</time>
+<a href="{{path('course_lesson_show',{'course_id':course.id,'lesson_id':lesson.id})}}" style="color:inherit">
+<time class="tmtime">课时{{loop.index}}</time>
 <div class="tmicon"></div>
 <div class="tmlabel">
-<p>PHP绘图</p>
+<p>{{timeLine.title}}</p>
 </div>
+</a>
 </li>
-<li class="item">
-<time class="tmtime">课时2</time>
-<div class="tmicon"></div>
-<div class="tmlabel">
-<p>PHP框架介绍</p>
+{% endfor %}
+</ul>  
 </div>
-</li>
-<li class="item">
-<time class="tmtime">课时3</time>
-<div class="tmicon"></div>
-<div class="tmlabel">
-<p>PHP底层探究</p>
-</div>
-</li>
-</ul>
-</div>
-<div class="unitInfo">
-<h1 class="unitTitle">
-第一章 PHP基础
-</h1>
-<ul class="timeLine">
-<li class="item">
-<time class="tmtime">课时1</time>
-<div class="tmicon"></div>
-<div class="tmlabel">
-<p>PHP绘图</p>
-</div>
-</li>
-<li class="item">
-<time class="tmtime">课时2</time>
-<div class="tmicon"></div>
-<div class="tmlabel">
-<p>PHP框架介绍</p>
-</div>
-</li>
-<li class="item">
-<time class="tmtime">课时3</time>
-<div class="tmicon"></div>
-<div class="tmlabel">
-<p>PHP底层探究</p>
-</div>
-</li>
-</ul>
-</div>
-<div class="unitInfo">
-<h1 class="unitTitle">
-第一章 PHP基础
-</h1>
-<ul class="timeLine">
-<li class="item">
-<time class="tmtime">课时1</time>
-<div class="tmicon"></div>
-<div class="tmlabel">
-<p>PHP绘图</p>
-</div>
-</li>
-<li class="item">
-<time class="tmtime">课时2</time>
-<div class="tmicon"></div>
-<div class="tmlabel">
-<p>PHP框架介绍</p>
-</div>
-</li>
-<li class="item">
-<time class="tmtime">课时5</time>
-<div class="tmicon"></div>
-<div class="tmlabel">
-<p>PHP底层探究</p>
-</div>
-</li>
-</ul>
-</div>
+{% endfor %}
+
 </div>
 </div>
 <div class="col-md-4 profileRPanel">
