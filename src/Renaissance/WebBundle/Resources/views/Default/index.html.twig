@@ -31,7 +31,8 @@
 		<img src="/bundles/renaissanceweb/img/2nd/navi_logo.png" height="50px">
 	  </div>
 	  <div class="modal-body" style="text-align:center;padding:0px;height:400px;">
-		<iframe height="100%" width="100%" src="http://player.youku.com/embed/XNzM5MTkwOTE2" frameborder="0" allowfullscreen=""></iframe>
+		{# <iframe height="100%" width="100%" src="http://player.youku.com/embed/XNzM5MTkwOTE2" frameborder="0" allowfullscreen=""></iframe> #}
+	  <embed src="http://player.youku.com/player.php/sid/XNzQ2Mzg1NjU2/v.swf" allowfullscreen="true" quality="high" allowscriptaccess="always" type="application/x-shockwave-flash" wmmode="" wmode="transparent" align="middle" height="100%" width="100%">
 	  </div>
 	  <div class="modal-footer hide">
 		<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -120,7 +121,7 @@
 	</div>
 </div>
 <!-- 学什么 课程引导 -->
-<div id="courseRect" class="row bigRect " style="background-color: #f1aa3e;">
+<div id="courseRect" class="row bigRect " style="background-color: rgba(236, 185, 41, 1);">
 	<p style="text-align: center;color: #ffffff;font-size: 550%;font-weight: bold;margin: 3%;">学什么？</p>
 	<div class="col-xs-10 col-xs-offset-1" style=" margin-bottom: 5%;">
 		<div class="row">
@@ -206,6 +207,7 @@
 		<p class="content" style="text-align:center;">你在哪里？</p>
 		<p style="text-align:center;margin:20% 0 20% 0;"><button href="javascript:void(0);" id="regBtn" class="button button-pill button-flat-caution button-large" style="width: 55%;font-size: 3rem;font-weight: bold;background-color: #de2e39;">加入我们</button></p>
 	</div>
+</div>
 </div>
 {% endblock %}
 {% block scripts %}
