@@ -1,4 +1,134 @@
 {% extends "RenaissanceWebBundle:Layout:layout.html.twig" %}
+{% block title %}RenaissanceWebBundle:Course:index{% endblock %}
+{% block stylesheets %}
+<link href="{{asset('bundles/renaissanceweb/css/workstation.css')}}" rel="stylesheet" type="text/css"></link>
+{% endblock %}
+{% block content %}
+<!-- Content -->
+<div class="container-fluid">
+	
+	<div class="row clearfix" style="position:relative;">
+		<!-- 左侧操作区 -->
+		<div class="leftControls clearfix">
+			<ul>
+				<li class="bandid"><a class="fa fa-paper-plane-o"></a><a>消息</a></li>
+				<li class="bandid"><a class="fa fa-graduation-cap"></a><a>证书</a></li>
+				<li class="bandid"><a class="fa fa-calendar"></a><a>日历</a></li>
+			</ul>
+		</div>
+		<div class="col-md-9 col-md-offset-1" style="border-left:5px solid #ccc;margin-left:9%;">
+			<div class="workstationPanel col-md-12">
+				<div class="col-md-12 continueLearning">
+					<div class="panelTitle">继续学习</div>
+					<div class="continueCTitle">HTML5之元素与标签结构</div>
+					<div class="progressBar"></div>
+					<div class="cLImg">
+						<img src="{{asset('bundles/renaissanceweb/img/continueBKG.png')}}">
+					</div>
+					<div class="cLInfo">
+						<p class="">上次学习到</p>
+						<p class="title">第三章 新增及废除属性废除属性</p>
+						<p class="remain">距离完成学习任务还有<span>30%</span>的课程</p>
+					</div>
+					<div class="continueButton"><a class="button  button-large button-flat-flame" href="/course/3/lesson/2">继 续</a></div>
 
-{% block title %}工作台{% endblock %}
+				</div>
+				<div class="col-md-12 whatULike">
+					<div class="panelTitle">猜你喜欢</div>
 
+					<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+
+						<!-- Wrapper for slides -->
+						<div class="carousel-inner" role="listbox">
+							<div class="item active">
+								<img src="{{asset('bundles/renaissanceweb/img/wulBKG.png')}}" alt="...">
+								<div class="carousel-caption">
+									<div class="wULCTitle">云计算</div>
+									<div class="wULCIntro">云计算是一种按使用量付费的模式，这种模式提供可用的、便捷的、按需的网络访问， 进入可配置的计算资源共享池（资源包括网络，服务器，存储，应用软件，服务），这些资源能够被快速提供，只需投入很少的管理工作，或与服务供应商进行很少的交互。</div>
+								</div>
+							</div>
+							<div class="item">
+								<img src="{{asset('bundles/renaissanceweb/img/wulBKG.png')}}" alt="...">
+								<div class="carousel-caption">
+									<div class="wULCTitle">云计算</div>
+									<div class="wULCIntro">云计算是一种按使用量付费的模式，这种模式提供可用的、便捷的、按需的网络访问， 进入可配置的计算资源共享池（资源包括网络，服务器，存储，应用软件，服务），这些资源能够被快速提供，只需投入很少的管理工作，或与服务供应商进行很少的交互。</div>
+								</div>
+							</div>
+						</div>
+
+						<!-- Controls -->
+						<a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+							<span class="glyphicon glyphicon-chevron-left"></span>
+							<span class="sr-only">Previous</span>
+						</a>
+						<a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+							<span class="glyphicon glyphicon-chevron-right"></span>
+							<span class="sr-only">Next</span>
+						</a>
+					</div>
+				</div>
+				<div class="col-md-12 liveOther" style="">
+					<div class="col-md-4 liveLine">
+						<div class="panelTitle">直播轴</div>
+						<div class="liveItem">
+							<p class="liveTime">08-16 12:00</p>
+							<p class="liveTitle">PHP 绘图</p>
+						</div>
+						<div class="liveItem active">
+							<p class="liveTime">08-16 15:00 <span>正在直播...</span></p>
+							<p class="liveTitle">Android系统ROOT原理解析</p>
+						</div>
+						<div class="liveItem">
+							<p class="liveTime">08-16 18:00</p>
+							<p class="liveTitle">响应式布局</p>
+						</div>
+					</div>
+					<div class="col-md-8 otherPanel">
+						<div class="panelTitle">更多</div>
+						<div class="row">
+							<div class="col-md-6">
+								<div class="col-md-5 col-md-offset-3">
+									<a class="controlBtn">计划</a>
+								</div>
+							</div>
+							<div class="col-md-6">
+								<a class="controlBtn">知识</a>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-6">
+								<div class="col-md-5 col-md-offset-3">
+									<a class="controlBtn">课程</a>
+								</div>
+							</div>
+							<div class="col-md-6">
+								<a class="controlBtn">任务</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-2 rightControls">
+			<ul>
+				<li class="">
+					<a><i class="fa fa-user" title="进入个人中心"></i></a>
+				</li>
+				<li class="">
+					<a><i class="fa fa-qrcode" title="扫描二维码"></i></a>
+				</li>
+				<!-- 返回顶部 -->
+				<li class="toTop">
+					<a><i class="fa fa-angle-up" title="返回顶部"></i></a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+{% endblock %}
+{% block scripts %}
+<script src="{{asset('bundles/renaissanceweb/js/jquery.mCustomScrollbar.concat.min.js')}}"></script>
+<script src="{{asset('bundles/renaissanceweb/js/coursePlay.js')}}"></script>
+<script src="{{asset('bundles/renaissanceweb/js/workstation.js')}}"></script>
+{% endblock %}
