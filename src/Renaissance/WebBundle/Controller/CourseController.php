@@ -11,38 +11,37 @@ class CourseController extends BaseController
         $curlHelper=$this->get('curlHelper');
         $api="courses";
         $request=$this->getRequest();
-        $pageno=$request->query->get('pageno');
-        if($pageno == null)
-            $data=array(
+        $pageNo=$request->query->get('pageno');
+        if($pageNo==null)
+            $pageNo="1";
+        if($pageNo=="1")$hasprevPage=false;
+        else $hasprevPage=true;
+        $prev_pageNo=$pageNo-1;
+        $next_pageNo=$pageNo+2;
+        $cur_page=$curlHelper->curlGet($api."?per_page=6&page=".$pageNo);
+        if($cur_page==null){   
+        $data=array(
             'page'=>array(),'courses'=>array(),'imgurls'=>array()
             );
-        else{
-        if($pageno=="")
-            $pageno="1";
-        if($pageno=="1")$hasprevPage=false;
-        else $hasprevPage=true;
-        $prevpgno=$pageno-1;
-        $nextpgno=$pageno+2;
-        $curCsPage=$curlHelper->curlGet($api."?per_page=6&page=".$pageno);
-        $nextCsPage=$curlHelper->curlGet($api."?per_page=3&page=".$nextpgno);
-        $hasnextPage=!empty($nextCsPage);
-        $imgurls=array();
-        foreach ($curCsPage as $key => $value) {
-            $courseimg=$curlHelper->curlGet($api."/".$value->id."/files?search_term=cover");
-             if(!$courseimg)
-                $imgurls[]="";
-            $imgurls[]=$courseimg[0]->url; 
+        return $this->render('RenaissanceWebBundle:Course:index.html.twig',$data);
         }
-        $page=array(
+        $next_page=$curlHelper->curlGet($api."?per_page=3&page=".$next_pageNo);
+        $hasnextPage=!empty($next_page);
+        $img_urls=array();
+        foreach ($cur_page as $key => $value) {
+            $course_img=$curlHelper->curlGet($api."/".$value->id."/files?search_term=cover");
+             if(!$course_img)
+                $img_urls[]="";
+            $img_urls[]=$course_img[0]->url; 
+            $page=array(
             'hasnextPage'=>$hasnextPage,
             'hasprevPage'=>$hasprevPage,
-            'currentPage'=>$pageno,
-            'nextPage'=>$nextpgno,
-            'prevPage'=>$prevpgno
+            'currentPage'=>$pageNo,
+            'nextPage'=>$next_pageNo,
+            'prevPage'=>$prev_pageNo
             );
-
-        $data=array(
-            'page'=>$page,'courses'=>$curCsPage,'imgurls'=>$imgurls
+            $data=array(
+            'page'=>$page,'courses'=>$cur_page,'imgurls'=>$img_urls
             );
         }
         return $this->render('RenaissanceWebBundle:Course:index.html.twig',$data);    
@@ -80,36 +79,35 @@ class CourseController extends BaseController
     public function showMoreAction(){
         $request=$this->getRequest();
         $courses=$request->get('object');
-        $pageno=$request->query->get('pageno');
+        $pageNo=$request->query->get('pageno');
         $curlHelper=$this->get('curlHelper');
         $api=$courses;
-        if($pageno=="")
-            $pageno="1";
-        if($pageno=="1")$hasprevPage=false;
+        if($pageNo=="")
+            $pageNo="1";
+        if($pageNo=="1")$hasprevPage=false;
         else $hasprevPage=true;
-        $prevpgno=$pageno-1;
-        $nextpgno=$pageno+1;
-        $curCsPage=$curlHelper->curlGet($api."?per_page=3&page=".$pageno);
-        $nextCsPage=$curlHelper->curlGet($api."?per_page=3&page=".$nextpgno);
-        $hasnextPage=!empty($nextCsPage);
-        $imgurls=array();
-        foreach ($curCsPage as $key => $value) {
-            $courseimg=$curlHelper->curlGet($api."/".$value->id."/files?search_term=cover");
-            if(!$courseimg)
-                $imgurls[]="";
-            $imgurls[]=$courseimg[0]->url; 
+        $prev_pageNo=$pageNo-1;
+        $next_pageNo=$pageNo+1;
+        $cur_page=$curlHelper->curlGet($api."?per_page=3&page=".$pageNo);
+        $next_page=$curlHelper->curlGet($api."?per_page=3&page=".$next_pageNo);
+        $hasnextPage=!empty($next_page);
+        $img_urls=array();
+        foreach ($cur_page as $key => $value) {
+            $course_img=$curlHelper->curlGet($api."/".$value->id."/files?search_term=cover");
+            if(!$course_img)
+                $img_urls[]="";
+            $img_urls[]=$course_img[0]->url; 
         }
          $page=array(
             'hasnextPage'=>$hasnextPage,
             'hasprevPage'=>$hasprevPage,
-            'currentPage'=>$pageno,
-            'nextPage'=>$nextpgno,
-            'prevPage'=>$prevpgno
+            'currentPage'=>$pageNo,
+            'nextPage'=>$next_pageNo,
+            'prevPage'=>$prev_pageNo
             );
         $data=array(
-            'page'=>$page,'courses'=>$curCsPage,'imgurls'=>$imgurls
+            'page'=>$page,'courses'=>$cur_page,'imgurls'=>$img_urls
             );
         return $this->render("RenaissanceWebBundle:Course:plaza_more.html.twig",$data);
     }
-
 }

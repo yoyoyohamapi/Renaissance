@@ -1,7 +1,6 @@
 src/Renaissance/CommonBundle/Resources/config/service.yml
 vendor/
-/app/cache/*
-/app/logs/*
-!app/cache/.gitkeep
-!app/logs/.gitkeep
+app/
+.gitignore~
+.gitignore
 
