@@ -16,8 +16,12 @@
 			{% endif %}
 			{% endblock %}
 			{% block content %}{% endblock %}
+			{% if base_bar is defined %}
 			{% include "RenaissanceWebBundle:Layout:base_bar.html.twig" %}
+			{% endif %}
+			{% if footer is defined %}
 			{% include "RenaissanceWebBundle:Layout:footer.html.twig" %}
+			{% endif %}
 		</div>
 	{% block scripts %}{% endblock %}
 	</body>

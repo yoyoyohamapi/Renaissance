@@ -1,78 +1,84 @@
-﻿function initNavi(){
-$("li[id^='m']").removeClass("active");
-$("div[id^='p']").hide();
+﻿var current_id=0;
+var to_recover=false;
+var ischange=false;
+$("#left_panel div").mouseenter(readyShow);
+function initShow(){
+	              to_recover=false;
+	             $("#left_panel li").stop();
+		$("#left_panel li").transit({
+		   x: -200
+		},300,function(){
+		//console.log("count=="+count);
+		     if(to_recover)return;
+		     $("#hide_icon li").bind('mouseenter',readyShowContent);
+		     $("#hide_icon").show();     
+		     $("#hide_content").show();
+		});			
 }
-$(function(){
-$("#n1").mouseenter(function(e){
-$("#m1").addClass("active");
-$("#p1").show();
+function initHide(){
+	to_recover=true;
+	$("#left_panel li").stop();
+	ischange=false;
+	var dom=$(this);
+	$("#m"+current_id).removeClass('active');
+	$("#left_panel div").bind('mouseenter',readyShow);
+	 $("#hide_icon li").bind('mouseenter',readyShowContent);
+	$("#p"+current_id).hide();
+              $("#hide_icon").hide();
+	$("#hide_content").hide();
+	$("#left_panel li").transit({
+		   x:0
+		},300,function(){	
+		
+		});
+}
+$("#mp").mouseenter(initShow);
+$("#mp").mouseleave(function (){
+	initHide();
 });
-$("#n2").mouseenter(function(e){
-$("#m2").addClass("active");
-$("#p2").show();
-});
-$("#n3").mouseenter(function(e){
-$("#m3").addClass("active");
-$("#p3").show();
-});
-$("#n4").mouseenter(function(e){
-$("#m4").addClass("active");
-$("#p4").show();
-});
-$("#n5").mouseenter(function(e){
-$("#m5").addClass("active");
-$("#p5").show();
-});
-$("#n6").mouseenter(function(e){
-$("#m6").addClass("active");
-$("#p6").show();
-});
-//************************************
-$("#m1").mouseenter(function(e){
-initNavi();
-$("#m1").addClass("active");
-$("#p1").show();
-});
-$("#m2").mouseenter(function(e){
-initNavi();
-$("#m2").addClass("active");
-$("#p2").show();
-});
-$("#m3").mouseenter(function(e){
-initNavi();
-$("#m3").addClass("active");
-$("#p3").show();
-});
-$("#m4").mouseenter(function(e){
-initNavi();
-$("#m4").addClass("active");
-$("#p4").show();
-});
-$("#m5").mouseenter(function(e){
-initNavi();
-$("#m5").addClass("active");
-$("#p5").show();
-});
-$("#m6").mouseenter(function(e){
-initNavi();
-$("#m6").addClass("active");
-$("#p6").show();
-});
-//************************************
-$("#mp").mouseenter(function(e){
-$(".naviMenuIconPanel").show();
-$(".naviMenuContentPanel").show();
-});
-$("#mp").mouseleave(function(e){
-$(".naviMenuIconPanel").hide();
-$(".naviMenuContentPanel").hide();
-initNavi();
-});
-//************************************
-$(".naviBox img").mouseenter(function(){
-$(this).attr("src",$(this).attr("after"));
-});
-$(".naviBox img").mouseleave(function(){
-$(this).attr("src",$(this).attr("before"));
-});
-});
+$("#hide_icon li").mouseenter(readyShowContent);
+function readyShowContent()
+{ 	
+	var dom=$(this);
+	var id =dom.attr("id");
+	if(id[1]!=current_id)
+	{
+	    dom.unbind('mouseenter');
+	    $("#left_panel div").unbind('mouseenter');
+	    $("#m"+current_id).removeClass('active');
+	    $("#p"+current_id).hide();
+	    current_id=id[1];
+	   showContent(id[1],dom);
+	}
+}
+function showContent(i,dom)
+{     
+	　　　$("#m"+i).addClass('active');
+	            $("#p"+i).show();     
+	           dom.bind('mouseenter',readyShowContent);
+}
+function readyShow(){
+	
+	             if(ischange)return;
+		var dom=$(this);
+		var id =dom.attr("id");
+		$("#hide_icon li").unbind('mouseenter');
+	              dom.unbind('mouseenter');	
+		current_id=id[1];
+		changeShow(id[1],dom);
+		ischange=true;
+	}
+function changeShow(i,dom)
+{                 
+	　　　$("#m"+i).addClass('active');
+	            $("#p"+i).show();
+
+}
+function changeHide(i,dom)
+{                                      
+	
+	              $("#m"+i).removeClass('active');
+	              $("#p"+i).hide();
+	              dom.bind('mouseenter',readyShow);            
+
+}
