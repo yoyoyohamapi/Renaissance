@@ -19,7 +19,7 @@ class CourseController extends BaseController
         $prev_pageNo=$pageNo-1;
         $next_pageNo=$pageNo+2;
         $cur_page=$curlHelper->curlGet($api."?per_page=6&page=".$pageNo);
-        if($cur_page==null){   
+        if($cur_page){   
         $data=array(
             'page'=>array(),'courses'=>array(),'imgurls'=>array()
             );

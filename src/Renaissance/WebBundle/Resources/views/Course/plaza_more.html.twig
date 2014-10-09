@@ -1,5 +1,4 @@
 <div class="row" style="opacity:0.1;">
-{% if courses is defined%}
 {% for course in courses %}
 	<div class="col-xs-4">
 	    	<div class="courseBox">
@@ -12,9 +11,8 @@
 		</div>
 	</div>
 {% endfor %}
-{% endif %}
 </div>
-{% if page.hasnextPage is defined %}
+{% if page.hasnextPage is defined and page.hasnextPage %}
 <div  id="get_more" class="row" append-to-id="courses" next-page="{{page.nextPage}}" go-to="{{path('get_more_courses')}}">
 <div class="col-xs-12" style="text-align:center;">
 <p   id="get_more_text" style="font-size:17px;color:#cbcbcb;margin:60px 0px 60px 60px;cursor:pointer" >点击加载更多</p>
