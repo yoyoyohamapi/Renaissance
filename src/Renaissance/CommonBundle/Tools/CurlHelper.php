@@ -30,10 +30,7 @@ class CurlHelper {
 		$api = $this->base_url.$api;
 		curl_setopt($this->curl_handler,CURLOPT_HTTPHEADER,array($this->get_header_opt));
 		curl_setopt($this->curl_handler,CURLOPT_URL,$api);
-		$response =curl_exec($this->curl_handler);
-		if($response == false)
-			return "Curl Error";
-		return json_decode($response);
+		return $this->curlExec($this->curl_handler);
 	}
 	// $type = 'POST'|'PUT'|'DELETE'
 	public function curlCustom($api,$post_field,$type){
@@ -48,9 +45,15 @@ class CurlHelper {
 		            ) 			
 		 );  
     		curl_setopt($this->curl_handler,CURLOPT_POSTFIELDS,$post_field);
-		$response =curl_exec($this->curl_handler);
-		if($response == false)
-			return "Curl Error";
-		return json_decode($response);
+		return $this->curlExec($this->curl_handler);
+	}
+
+	public function curlExec($curl_handler){
+		$response =curl_exec($curl_handler);
+		$response = json_decode($response);
+		if( !empty($response->error_report_id) || $response == false)
+			return NULL;
+		else
+			return $response;
 	}
 }
