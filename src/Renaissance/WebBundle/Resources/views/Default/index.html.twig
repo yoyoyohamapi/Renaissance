@@ -14,9 +14,9 @@
 		<img src="/bundles/renaissanceweb/img/2nd/navi_logo.png">
 	</div>
 	<div class="collapse navbar-collapse" style="margin-right:5%">
-		<ul class="nav navbar-nav navbar-right" style="padding-top:40px;">
-			<li id="toReg"><a href="Javascript:void(0);" style="color:#ffffff;font-size: 22px;font-weight: 700;">注册</a></li>
-			<li id="toLogin1"><a href="Javascript:void(0);" style="color:#ffffff;font-size: 22px;font-weight: 700;">登录</a></li>
+		<ul id="formul" class="nav navbar-nav navbar-right" style="padding-top:40px;">
+			<li id="toReg"><a href="/register" style="color:#ffffff;font-size: 22px;font-weight: 700;">注册</a></li>
+			<li id="toLogin1"><a href="/login" style="color:#ffffff;font-size: 22px;font-weight: 700;">登录</a></li>
 		</ul>
 	</div>
 </div>
@@ -152,18 +152,18 @@
 	</div>
 </div>
 <!-- 六边形课程展示 -->
-<div id="courseTitleRect" class="row bigRect" style="background-image: url(http://localhost/HTML/img/2nd/hexagon_shadow.png); background-size: 91.7%;">
+<div id="courseTitleRect" class="row bigRect" style="background-image: url(/bundles/renaissanceweb/img/2nd/hexagon_shadow.png); background-size: 91.7%;">
 	    
 	    <div class="row" style="margin-bottom:-4%;">
-                         <img id="imgOne"  class="sexangleImg" src="{{asset('assets/renaissance/img/frontpage/sexangle1.png')}}" before="{{asset('assets/renaissance/img/frontpage/sexangle1.png')}}" after="{{asset('assets/renaissance/img/frontpage/sexangle4after.png')}}">
-                         <img id="imgTwo" class="sexangleImg"  src="{{asset('assets/renaissance/img/frontpage/sexangle2.png')}} "  before="{{asset('assets/renaissance/img/frontpage/sexangle2.png')}} "  after="{{asset('assets/renaissance/img/frontpage/sexangle4after.png')}}">
-                         <img id="imgThree" class="sexangleImg"  src="{{asset('assets/renaissance/img/frontpage/sexangle3.png') }} " before="{{asset('assets/renaissance/img/frontpage/sexangle3.png') }} " after="{{asset('assets/renaissance/img/frontpage/sexangle4after.png')}}">
+                         <img id="imgOne"  class="sexangleImg" src="/bundles/renaissanceweb/img/frontpage/sexangle1.png" before="{{asset('bundles/renaissanceweb/img/frontpage/sexangle1.png')}}" after="{{asset('bundles/renaissanceweb/img/frontpage/sexangle4after.png')}}">
+                         <img id="imgTwo" class="sexangleImg"  src="{{asset('bundles/renaissanceweb/img/frontpage/sexangle2.png')}} "  before="{{asset('bundles/renaissanceweb/img/frontpage/sexangle2.png')}} "  after="{{asset('bundles/renaissanceweb/img/frontpage/sexangle4after.png')}}">
+                         <img id="imgThree" class="sexangleImg"  src="{{asset('bundles/renaissanceweb/img/frontpage/sexangle3.png') }} " before="{{asset('bundles/renaissanceweb/img/frontpage/sexangle3.png') }} " after="{{asset('bundles/renaissanceweb/img/frontpage/sexangle4after.png')}}">
                     </div>
                     <div class="row">
-                         <img id="imgFour" class="sexangleImg"  src="{{asset('assets/renaissance/img/frontpage/sexangle4.png') }}'"  before="{{asset('assets/renaissance/img/frontpage/sexangle4.png') }}'" after="{{asset('assets/renaissance/img/frontpage/sexangle4after.png')}}">
-                         <img id="imgFive" class="sexangleImg"  src="{{asset('assets/renaissance/img/frontpage/sexangle5.png') }}" before="{{asset('assets/renaissance/img/frontpage/sexangle5.png') }}" after="{{asset('assets/renaissance/img/frontpage/sexangle4after.png')}}">
-                         <img id="imgSix" class="sexangleImg"  src="{{asset('assets/renaissance/img/frontpage/sexangle6.png') }}"  before="{{asset('assets/renaissance/img/frontpage/sexangle6.png') }}" after="{{asset('assets/renaissance/img/frontpage/sexangle4after.png')}}">
-                         <img id="imgSeven" class="sexangleImg"  src="{{asset('assets/renaissance/img/frontpage/sexangle7.png') }}" before="{{asset('assets/renaissance/img/frontpage/sexangle7.png') }}" after="{{asset('assets/renaissance/img/frontpage/sexangle4after.png')}}">
+                         <img id="imgFour" class="sexangleImg"  src="{{asset('bundles/renaissanceweb/img/frontpage/sexangle4.png') }}"  before="{{asset('bundles/renaissanceweb/img/frontpage/sexangle4.png') }}" after="{{asset('bundles/renaissanceweb/img/frontpage/sexangle4after.png')}}">
+                         <img id="imgFive" class="sexangleImg"  src="{{asset('bundles/renaissanceweb/img/frontpage/sexangle5.png') }}" before="{{asset('bundles/renaissanceweb/img/frontpage/sexangle5.png') }}" after="{{asset('bundles/renaissanceweb/img/frontpage/sexangle4after.png')}}">
+                         <img id="imgSix" class="sexangleImg"  src="{{asset('bundles/renaissanceweb/img/frontpage/sexangle6.png') }}"  before="{{asset('bundles/renaissanceweb/img/frontpage/sexangle6.png') }}" after="{{asset('bundles/renaissanceweb/img/frontpage/sexangle4after.png')}}">
+                         <img id="imgSeven" class="sexangleImg"  src="{{asset('bundles/renaissanceweb/img/frontpage/sexangle7.png') }}" before="{{asset('bundles/renaissanceweb/img/frontpage/sexangle7.png') }}" after="{{asset('bundles/renaissanceweb/img/frontpage/sexangle4after.png')}}">
                     </div>
 		
 	</div>
@@ -210,7 +210,9 @@
 <!-- self-defined js  -->
 <script type="text/javascript">
 var iden=null;//lcx-debug
+
 $(function(){
+	/*
 	//************************init
 	//$("#regRect").css("padding-top",$("#regRect").height()*2/5+"px");
 	//************
@@ -223,16 +225,38 @@ $(function(){
 		$(this).animate({
 			marginRight:'5px',
 		},'normal');
+	});*/
+	//************************
+	$("#regBtn").click(function(){
+		$("html,body").animate({
+			scrollTop:$("#bodyWrapper").offset().top
+		},500,function(){
+			$("#formul").animate({
+				paddingTop:"35"
+			},100,function(){
+			$("#formul").animate({
+				paddingTop:"40"
+			},100,function(){
+			$("#formul").animate({
+				paddingTop:"35"
+			},100,function(){
+			$("#formul").animate({
+				paddingTop:"40"
+			},100);
+			});
+			});
+			});
+		});
 	});
-});	
+});
 function showVideo(){
 	//alert("a");
 	$('#myModal').modal('toggle');
 }
 </script>
 <script src="/bundles/renaissanceweb/js/showCourse.js"></script>
-<!--暂时注释 <script src="/bundles/renaissanceweb/js/showCourseContent.js"></script>-->
+<!-- <script src="/bundles/renaissanceweb/js/showCourseContent.js"></script>-->
 <script src="/bundles/renaissanceweb/js/detectScroll.js"></script>
-<script src="/bundles/renaissanceweb/js/formPanel.js"></script>
+<!-- <script src="/bundles/renaissanceweb/js/formPanel.js"></script>-->
 
 {% endblock %}

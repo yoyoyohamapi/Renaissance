@@ -1,6 +1,6 @@
 parameters:
     curlHelper.class:    Renaissance\CommonBundle\Tools\CurlHelper
-    curlHelper.class.canvas_access_token:   3PixuY4VljxPkcTqob7505kIKGwJskqYtqkVlv4QE1RYIgqwshILZDB55ZytBQ1l
+    curlHelper.class.canvas_access_token:   7Zb88Chladti1GcW9JsxSjhk6OYY9GiptUY2dTqIBD74AYoxoGkP0oonMDrse53G
     curlHelper.class.base_url:   "http://localhost:3000/api/v1/"
     curlHelper.class.authed:   FALSE
 services:

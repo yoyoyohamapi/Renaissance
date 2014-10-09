@@ -434,7 +434,6 @@
 }
 
 .rightControls > ul >li{
-	display: block;
 	width: 5em;
 	height: 5em;
 	border-radius: 50%;
