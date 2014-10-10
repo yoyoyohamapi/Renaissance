@@ -19,7 +19,7 @@ class CourseController extends BaseController
         $prev_pageNo=$pageNo-1;
         $next_pageNo=$pageNo+2;
         $cur_page=$curlHelper->curlGet($api."?per_page=6&page=".$pageNo);
-        if($cur_page){   
+        if($cur_page == null){   
         $data=array(
             'page'=>array(),'courses'=>array(),'imgurls'=>array()
             );
@@ -29,10 +29,12 @@ class CourseController extends BaseController
         $hasnextPage=!empty($next_page);
         $img_urls=array();
         foreach ($cur_page as $key => $value) {
-            $course_img=$curlHelper->curlGet($api."/".$value->id."/files?search_term=cover");
+            $folders=$curlHelper->curlGet($api."/".$value->id."/folders/by_path/cover");
+             $cover_folder_id = $folders[count($folders)-1]->id;
+             $course_img = $curlHelper->curlGet('folders/'.$cover_folder_id.'/files?search_term=S.png');
              if(!$course_img)
                 $img_urls[]="";
-            $img_urls[]=$course_img[0]->url; 
+            else $img_urls[]=$course_img[0]->url; 
             $page=array(
             'hasnextPage'=>$hasnextPage,
             'hasprevPage'=>$hasprevPage,
@@ -57,9 +59,11 @@ class CourseController extends BaseController
         $page=$curlHelper->curlGet($api."/front_page");
         $students=$curlHelper->curlGet($api."/users?enrollment_type=student");
         $teachers=$curlHelper->curlGet($api."/users?enrollment_type=teacher");
-        $fileimgs=$curlHelper->curlGet($api."/files?search_term=cover");
+        $folders=$curlHelper->curlGet($api."/folders/by_path/cover");
+         $cover_folder_id = $folders[count($folders)-1]->id;
+         $fileimgs = $curlHelper->curlGet('folders/'.$cover_folder_id.'/files?search_term=L.png');
         $lessons=$curlHelper->curlGet($api."/modules?include[]=items");
-        if(!$page || !$students || !$teachers || !$fileimgs || !$lessons)
+        if(!$page  || !$teachers || !$fileimgs || !$lessons)
             return $this->render('RenaissanceWebBundle:Error:404.html.twig', array("error_msg"=>"课程正在编辑中"));
         $head_urls=array();
         foreach ($teachers as $key => $value) {
@@ -93,7 +97,9 @@ class CourseController extends BaseController
         $hasnextPage=!empty($next_page);
         $img_urls=array();
         foreach ($cur_page as $key => $value) {
-            $course_img=$curlHelper->curlGet($api."/".$value->id."/files?search_term=cover");
+            $folders=$curlHelper->curlGet($api."/".$value->id."/folders/by_path/cover");
+             $cover_folder_id = $folders[count($folders)-1]->id;
+             $course_img = $curlHelper->curlGet('folders/'.$cover_folder_id.'/files?search_term=S.png');
             if(!$course_img)
                 $img_urls[]="";
             $img_urls[]=$course_img[0]->url; 

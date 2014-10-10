@@ -1,5 +1,5 @@
 {% extends "RenaissanceWebBundle:Layout:layout.html.twig" %}
-{% block title %}RenaissanceWebBundle:Course:show{% endblock %}
+{% block title %}{{course.name}}{% endblock %}
 {% block stylesheets %}
 <link href="{{asset('bundles/renaissanceweb/css/star-rating.min.css')}}" rel="stylesheet" type="text/css"></link>
 <link href="{{asset('bundles/renaissanceweb/css/1.0/common.css')}}" rel="stylesheet" type="text/css"></link>
@@ -81,13 +81,13 @@ cPrice dashedRec">
 第{{loop.index}}章 {{lesson.name}}
 </h1> 
 <ul class="timeLine">
-{% for timeLine in lesson.items %}
+{% for lesson_item in lesson.items %}
 <li class="item">
-<a href="{{path('course_lesson_show',{'course_id':course.id,'lesson_id':lesson.id})}}" style="color:inherit">
+<a href="{{path('course_lesson_show',{'course_id':course.id,'lesson_id':lesson_item.id})}}" style="color:inherit">
 <time class="tmtime">课时{{loop.index}}</time>
 <div class="tmicon"></div>
 <div class="tmlabel">
-<p>{{timeLine.title}}</p>
+<p>{{lesson_item.title}}</p>
 </div>
 </a>
 </li>
@@ -108,7 +108,7 @@ cPrice dashedRec">
 <div class="col-md-7">
 <p class="name">
 {% for teacher in teachers %}
-    {{teacher.name}}
+    {{teacher.short_name}}
 {% endfor %}
 </p>
 <p class="property">
