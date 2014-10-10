@@ -21,8 +21,13 @@ class LessonController extends Controller
 
     	$root_folder = $curlHelper->curlGet($api_prefix['getRootFolder'].$course_id.$api_postfix['getRootFolder']);
     	//print_r($root_folder);
-    	// exception : course not found
-    	$all_folders = $curlHelper->curlGet($api_prefix['listFolder'].$root_folder->id.$api_postfix['getAllFolder']);
+                // exception : course not found
+    	if (is_null($root_folder)) {
+                                return $this->render('RenaissanceWebBundle:Error:404.html.twig', array(
+                                        "error_msg"=>"no such course"
+                                ));
+                }
+                $all_folders = $curlHelper->curlGet($api_prefix['listFolder'].$root_folder->id.$api_postfix['getAllFolder']);
     	//print_r($all_folder);
     	$video_folder_id=0;
     	foreach ($all_folders as $folder) {
@@ -33,6 +38,11 @@ class LessonController extends Controller
     		}
     	}
     	// exception : video folder not found -> $video_folder_id=0
+                if ($video_folder_id==0) {
+                                return $this->render('RenaissanceWebBundle:Error:404.html.twig', array(
+                                        "error_msg"=>"no video folder"
+                                ));
+                }
     	$all_videos = $curlHelper->curlGet($api_prefix['listFolder'].$video_folder_id.$api_postfix['getAllFiles']);
     	//print_r($all_videos);
     	// caution : filename & display name
@@ -43,7 +53,12 @@ class LessonController extends Controller
     			$video_src=$video->url;
     		}
     	}
-
+                // exception : assume no default.mp4
+                if ($video_src=="default.mp4") {
+                                return $this->render('RenaissanceWebBundle:Error:404.html.twig', array(
+                                        "error_msg"=>"no such video in this lesson"
+                                ));
+                }
 	return $this->render('RenaissanceWebBundle:Lesson:show.html.twig', array(
         		"video_src"=>$video_src
  	   ));   
