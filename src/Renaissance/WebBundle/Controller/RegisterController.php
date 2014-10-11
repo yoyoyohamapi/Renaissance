@@ -44,8 +44,6 @@ class RegisterController extends BaseController
 		);
 		
 		$user_new = $curlHelper->curlCustom($api,$post_field,'POST');
-		print_r($user_new);
-		echo $user_new->name;
 		if(!empty($user_new->id)){
 			$user = new User();
 			$user->setUsername($user_new->name);
