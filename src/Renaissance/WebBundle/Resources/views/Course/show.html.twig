@@ -75,19 +75,19 @@ cPrice dashedRec">
 </div>
 <div class="navCon col-md-12">
 <!-- 左侧框内容 -->
-{% for lesson in lessons %}
+{% for chapter in chapters %}
 <div class="unitInfo">
 <h1 class="unitTitle">
-第{{loop.index}}章 {{lesson.name}}
+第{{loop.index}}章 {{chapter.name}}
 </h1> 
 <ul class="timeLine">
-{% for lesson_item in lesson.items %}
+{% for chapter_item in chapter.items %}
 <li class="item">
-<a href="{{path('course_lesson_show',{'course_id':course.id,'lesson_id':lesson_item.id})}}" style="color:inherit">
+<a href="{{path('course_lesson_show',{'course_id':course.id,'chapter_id':chapter.id,'lesson_id':chapter_item.id})}}" style="color:inherit">
 <time class="tmtime">课时{{loop.index}}</time>
 <div class="tmicon"></div>
 <div class="tmlabel">
-<p>{{lesson_item.title}}</p>
+<p>{{chapter_item.title}}</p>
 </div>
 </a>
 </li>
