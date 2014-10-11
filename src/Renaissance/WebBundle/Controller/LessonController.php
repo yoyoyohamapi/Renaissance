@@ -13,10 +13,17 @@ class LessonController extends Controller
                 //echo $course_id.$chapter_id.$lesson_id;
 	$curlHelper = $this->get('curlHelper');
 
+                // api : http://localhost:3000/api/v1/courses/4
+                $course=  $curlHelper->curlGet("courses/".$course_id);
+                if(is_null($course) ){
+                                throw new \Exception("no such course");
+                }
+                $course_name=$course->name;
+                //
                 // api : http://localhost:3000/api/v1/courses/4/modules
                 $all_modules=  $curlHelper->curlGet("courses/".$course_id."/modules");
-                if(is_null($all_modules)){
-                                throw new \Exception("no such course");
+                if(is_null($all_modules) || empty($all_modules)){
+                                throw new \Exception("no module available");
                 }
                 $module_name=null;
                 foreach ($all_modules as $module) {
@@ -30,6 +37,9 @@ class LessonController extends Controller
                 //
                 // api : http://localhost:3000/api/v1/courses/4/modules/3/items
                 $all_items=$curlHelper->curlGet("courses/".$course_id."/modules/".$chapter_id."/items");
+                if(is_null($all_items) || empty($all_items)){
+                                throw new \Exception("no lesson available");
+                }
                 $SubHeader_name=null;
                 foreach ($all_items as $item ) {
                                 if( $item->id==$lesson_id && $item->type=="SubHeader" ){
@@ -53,7 +63,13 @@ class LessonController extends Controller
                                 throw new \Exception("no video available");
                 }
                 return $this->render('RenaissanceWebBundle:Lesson:show.html.twig', array(
-                            "video_src"=>$video[0]->url
+                            "video_src"=>$video[0]->url,
+                            "course_id"=>$course_id,
+                            "course_name"=>$course_name,
+                            "chapter_id"=>$chapter_id,
+                            "chapter_name"=>$module_name,
+                            "lesson_id"=>$lesson_id,
+                            "lesson_name"=>$SubHeader_name
                    ));
             }catch (\Exception $e){
                 //echo "error:".$e->getMessage();
