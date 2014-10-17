@@ -1,6 +1,6 @@
-/src/Renaissance/CommonBundle/Resources/config/services.yml
-/app/cache/*
-/app/logs/*
-!app/cache/.gitkeep
-!app/logs/.gitkeep
+src/Renaissance/CommonBundle/Resources/config/services.yml
+vendor/
+app/
+.gitignore~
+.gitignore
 

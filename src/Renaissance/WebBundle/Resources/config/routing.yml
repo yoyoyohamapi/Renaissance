@@ -53,6 +53,10 @@ get_more_courses:
     path: /course/get_more_courses
     defaults: { _controller:RenaissanceWebBundle:Course:showMore}
     methods: [GET]
+<<<<<<< HEAD
+=======
+
+>>>>>>> 189107666f10fa473b9d4e0aa0bc9a27baaf52c0
 
 test:
     path: /test
