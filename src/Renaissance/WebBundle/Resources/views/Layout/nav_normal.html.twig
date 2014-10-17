@@ -15,11 +15,14 @@
 				<ul class="nav navbar-nav navbar-right">
 					<li class="searchConLi"><input id="searchCon" type="text" placeholder="搜索你感兴趣的内容"></li>
 					<li class="searchLi"><a class="search"href="Javascript:void(0);"><i class="fa fa-search"></i></a></li>
+					
+						<li class="headPicLi"><a href="Javascript:void(0);" class="headPic">
 					{% if stu_avatar_url is defined and  stu_avatar_url != NULL%}
-						<li class="headPicLi"><a href="Javascript:void(0);" class="headPic"><img  src="{{stu_avatar_url}}"></a></li>
+						<img  class="img-circle" src="{{stu_avatar_url}}"></a></li>
 					{% else %}
-						<li class="headPicLi"><a href="Javascript:void(0);" class="headPic"><img  src="{{asset('bundles/renaissanceweb/img/头像.png')}}"></a></li>
+						<img  class="img-circle" src="{{asset('bundles/renaissanceweb/img/头像.png')}}">
 					{% endif %}
+					</a></li>
 					<li>
 						<ul id="settingsMenu" class="nav navbar-nav navbar-right settings">
 							<li><a href="Javascript:void(0);" class="">学习</a></li>

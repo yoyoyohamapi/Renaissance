@@ -55,26 +55,21 @@ cPrice dashedRec">
 </p>
 </div>
 </div>
-
-<div>
-开课时间
-<select name="start_end">
-	<option id="start_time" value="{{start_end.start_at}}-{{start_end.end_at}}" >{{start_end.start_at}}-{{start_end.end_at}}</option>
-	<option value="Coming">后续课程</option>
-</select>
+<div class="col-md-12">
+<p class="courseDate">上课时间:{{start_end.start_at}}-{{start_end.end_at}}</p>
 </div>
 {% if isEnrolled==false%}
 	<div class="col-md-12">
-	<input id="doJoin" name="{{course_id}}-{{canvas_user_id}}" type="button" class="button button-large button-flat-flame" style="height:50px;" value="加入课程" onclick="javascript:void(0);" post_style="background-color:rgba(55, 171, 55, 1);border-bottom-color: #008000;height:50px"post_value="进入课程" post_id="doEnter" post_href = "javascrtpt:window.location.href='{{site_url}}courses/{{course_id}}'">
+	<input id="doJoin" name="{{course_id}}-{{canvas_user_id}}" type="button" class="button button-large button-flat-flame" style="height:auto;" value="加入课程" onclick="javascript:void(0);" post_style="background-color:rgba(55, 171, 55, 1);border-bottom-color: #008000;height:auto"post_value="进入课程" post_id="doEnter" post_href = "javascrtpt:window.location.href='{{site_url}}courses/{{course_id}}'">
 	</div>
 {%else%}
 	{%if isStart==true%}
 		<div class="col-md-12">
-		<button id="doEnter" name="enter_course" type="button" class="button button-large button-flat-flame" style="height:50px;background-color:rgba(55, 171, 55, 1);border-bottom-color: #008000; " value="进入课程" onclick="javascrtpt:window.location.href='{{site_url}}courses/{{course_id}}'" >进入课程</button>
+		<button id="doEnter" name="enter_course" type="button" class="button button-large button-flat-flame" style="height:auto;background-color:rgba(55, 171, 55, 1);border-bottom-color: #008000; " value="进入课程" onclick="javascrtpt:window.location.href='{{site_url}}courses/{{course_id}}'" >进入课程</button>
 		</div>
 	{%else%}
 		<div class="col-md-12">
-		<button id="doEnter" name="enter_course" type="button" class="button button-large button-flat-flame" style="height:50px;background-color:rgba(55, 171, 55, 1);border-bottom-color: #008000; " value="进入课程" onclick="javascrtpt:window.location.href='{{site_url}}courses/{{course_id}}'" disabled="disabled">进入课程</button>
+		<button id="doEnter" name="enter_course" type="button" class="button button-large button-flat-flame" style="height:auto;background-color:rgba(55, 171, 55, 1);border-bottom-color: #008000; " value="进入课程" onclick="javascrtpt:window.location.href='{{site_url}}courses/{{course_id}}'" disabled="disabled">进入课程</button>
 		</div>
 	{%endif%}
 {% endif %}
@@ -85,7 +80,7 @@ cPrice dashedRec">
 
 
 <video id="example_video_1" class="video-js vjs-default-skin vjs-big-play-centered"
-  controls preload="auto" width="640" height="350"
+  controls preload="auto" width="100%" height="350"
   poster="{{cover}}" data-setup='{"example_option":true}'>
  <source src="{{asset('bundles/renaissanceweb/media/java.mp4')}}" type='video/mp4' />
  <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>

@@ -11,6 +11,8 @@ class DefaultController extends BaseController
     public function indexAction()
     {	
         $user = $this->getUser();
+        if(!empty($user))
+            return $this->redirect('/course');
             return $this->render('RenaissanceWebBundle:Default:index.html.twig',array("content"=>"欢迎登录复兴教育"));
     }
 
