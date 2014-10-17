@@ -1,10 +1,22 @@
 {% extends "RenaissanceWebBundle:Layout:layout.html.twig" %}
-{% block title %}RenaissanceWebBundle:Course:show{% endblock %}
+{% block title %}{{course.name}}{% endblock %}
 {% block stylesheets %}
 <link href="{{asset('bundles/renaissanceweb/css/star-rating.min.css')}}" rel="stylesheet" type="text/css"></link>
 <link href="{{asset('bundles/renaissanceweb/css/1.0/common.css')}}" rel="stylesheet" type="text/css"></link>
+<link href="{{asset('bundles/renaissanceweb/css/video-js.css')}}" rel="stylesheet" type="text/css"></link>
+<script src="{{asset('bundles/renaissanceweb/js/video.js')}}"</script>
+<script>
+  videojs.options.flash.swf = "{{asset('bundles/renaissanceweb/media/video-js.swf')}}"
+</script>
 {% endblock %}
+
 {% block content %}
+<style type="text/css">
+.timeLine > .item:hover{
+	border-bottom:3px dashed #B01E00;
+}
+</style>
+
 <div class="container-fluid">
 <!-- 课程介绍 -->
 <div class="col-md-10 col-md-offset-1 courseProfile whiteRec">
@@ -43,17 +55,47 @@ cPrice dashedRec">
 </p>
 </div>
 </div>
-<div class="col-md-12">
-<a class="button button-large button-flat-flame">参 与 学 习</a>
+
+<div>
+开课时间
+<select name="start_end">
+	<option id="start_time" value="{{start_end.start_at}}-{{start_end.end_at}}" >{{start_end.start_at}}-{{start_end.end_at}}</option>
+	<option value="Coming">后续课程</option>
+</select>
 </div>
+{% if isEnrolled==false%}
+	<div class="col-md-12">
+	<input id="doJoin" name="{{course_id}}-{{canvas_user_id}}" type="button" class="button button-large button-flat-flame" style="height:50px;" value="加入课程" onclick="javascript:void(0);" post_style="background-color:rgba(55, 171, 55, 1);border-bottom-color: #008000;height:50px"post_value="进入课程" post_id="doEnter" post_href = "javascrtpt:window.location.href='{{site_url}}courses/{{course_id}}'">
+	</div>
+{%else%}
+	{%if isStart==true%}
+		<div class="col-md-12">
+		<button id="doEnter" name="enter_course" type="button" class="button button-large button-flat-flame" style="height:50px;background-color:rgba(55, 171, 55, 1);border-bottom-color: #008000; " value="进入课程" onclick="javascrtpt:window.location.href='{{site_url}}courses/{{course_id}}'" >进入课程</button>
+		</div>
+	{%else%}
+		<div class="col-md-12">
+		<button id="doEnter" name="enter_course" type="button" class="button button-large button-flat-flame" style="height:50px;background-color:rgba(55, 171, 55, 1);border-bottom-color: #008000; " value="进入课程" onclick="javascrtpt:window.location.href='{{site_url}}courses/{{course_id}}'" disabled="disabled">进入课程</button>
+		</div>
+	{%endif%}
+{% endif %}
+
 </div>
+
 <div class="col-md-8 profileImg">
-<img src="{{asset('bundles/renaissanceweb/img/profileBKG.png')}}">
+
+
+<video id="example_video_1" class="video-js vjs-default-skin vjs-big-play-centered"
+  controls preload="auto" width="640" height="350"
+  poster="{{cover}}" data-setup='{"example_option":true}'>
+ <source src="{{asset('bundles/renaissanceweb/media/java.mp4')}}" type='video/mp4' />
+ <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
+</video>
+
 </div>
 <div class="col-md-4 profileInfo">
 <div class="col-md-12">
-<p class="courseName">HTML5开发技术</p>
-<p class="courseCon">HTML5 是下一代的 HTML。 本教程向您讲解 HTML5 中的新特性。每一章中的实例 通过我们的 HTML 编辑器,您能够编辑 HTML,然后点击按钮来查看结果。 </p>
+<p class="courseName">{{course.name}}</p>
+<p class="courseCon">{{page.body}} </p>
 </div>
 </div>
 </div>
@@ -70,103 +112,43 @@ cPrice dashedRec">
 </div>
 <div class="navCon col-md-12">
 <!-- 左侧框内容 -->
+{% for chapter in chapters %}
 <div class="unitInfo">
 <h1 class="unitTitle">
-第一章 PHP基础
-</h1>
+第{{loop.index}}章 {{chapter.name}}
+</h1> 
 <ul class="timeLine">
+{% for chapter_item in chapter.items %}
 <li class="item">
-<time class="tmtime">课时1</time>
+<a href="{{path('course_lesson_show',{'course_id':course.id,'chapter_id':chapter.id,'lesson_id':chapter_item.id})}}" style="color:inherit">
+<time class="tmtime">课时{{loop.index}}</time>
 <div class="tmicon"></div>
 <div class="tmlabel">
-<p>PHP绘图</p>
+<p>{{chapter_item.title}}</p>
 </div>
+</a>
 </li>
-<li class="item">
-<time class="tmtime">课时2</time>
-<div class="tmicon"></div>
-<div class="tmlabel">
-<p>PHP框架介绍</p>
+{% endfor %}
+</ul>  
 </div>
-</li>
-<li class="item">
-<time class="tmtime">课时3</time>
-<div class="tmicon"></div>
-<div class="tmlabel">
-<p>PHP底层探究</p>
-</div>
-</li>
-</ul>
-</div>
-<div class="unitInfo">
-<h1 class="unitTitle">
-第一章 PHP基础
-</h1>
-<ul class="timeLine">
-<li class="item">
-<time class="tmtime">课时1</time>
-<div class="tmicon"></div>
-<div class="tmlabel">
-<p>PHP绘图</p>
-</div>
-</li>
-<li class="item">
-<time class="tmtime">课时2</time>
-<div class="tmicon"></div>
-<div class="tmlabel">
-<p>PHP框架介绍</p>
-</div>
-</li>
-<li class="item">
-<time class="tmtime">课时3</time>
-<div class="tmicon"></div>
-<div class="tmlabel">
-<p>PHP底层探究</p>
-</div>
-</li>
-</ul>
-</div>
-<div class="unitInfo">
-<h1 class="unitTitle">
-第一章 PHP基础
-</h1>
-<ul class="timeLine">
-<li class="item">
-<time class="tmtime">课时1</time>
-<div class="tmicon"></div>
-<div class="tmlabel">
-<p>PHP绘图</p>
-</div>
-</li>
-<li class="item">
-<time class="tmtime">课时2</time>
-<div class="tmicon"></div>
-<div class="tmlabel">
-<p>PHP框架介绍</p>
-</div>
-</li>
-<li class="item">
-<time class="tmtime">课时5</time>
-<div class="tmicon"></div>
-<div class="tmlabel">
-<p>PHP底层探究</p>
-</div>
-</li>
-</ul>
-</div>
+{% endfor %}
+
 </div>
 </div>
 <div class="col-md-4 profileRPanel">
 <div class="col-md-12 profileTeacher">
 <p class="title">授课老师</p>
 <div class="col-md-12 info">
-<div class="col-md-5"><img class="headPic img-circle"src="{{asset('bundles/renaissanceweb/img/teacher.jpg')}}"></div>
+{% for head in heads %}
+    <div class="col-md-5"><img class="headPic img-circle"src={{head}}></div>
+{% endfor %}
 <div class="col-md-7">
 <p class="name">
-Tim
+{% for teacher in teachers %}
+    {{teacher.short_name}}
+{% endfor %}
 </p>
 <p class="property">
-Web前端工程师
 </p>
 </div>
 </div>
@@ -284,4 +266,5 @@ Web前端工程师
 {% block scripts %}
 <script src="{{asset('bundles/renaissanceweb/js/star-rating.min.js')}}"></script>
 <script src="{{asset('bundles/renaissanceweb/js/courseIntro.js')}}"></script>
+<script src="{{asset('bundles/renaissanceweb/js/join_course.js')}}"></script>
 {% endblock %}

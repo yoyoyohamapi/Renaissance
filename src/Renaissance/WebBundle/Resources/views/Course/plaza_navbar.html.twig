@@ -1,0 +1,91 @@
+
+<div class="row plazaPanel" >
+<ul class="list-unstyled" style="margin:0px;">
+<div id="left_panel">
+<div id="d1"><li id="n1" class="naviBox"><i class="fa fa-book"></i><strong class="naviHead">课程分类</strong></li></div>
+<div id="d2"><li id="n2" class="naviBox"><i class="fa fa-male"></i><strong class="naviHead">就业实训</strong></li></div>
+<div id="d3"><li id="n3" class="naviBox"><i class="fa fa-file-text-o"></i><strong class="naviHead">认证培训</strong></li></div>
+<div id="d4"><li id="n4" class="naviBox"><i class="fa fa-university"></i><strong class="naviHead">高校专业</strong></li></div>
+<div id="d5"><li id="n5" class="naviBox"><i class="fa fa-mortar-board"></i><strong class="naviHead">软工硕士</strong></li></div>
+<div id="d6"><li id="n6" class="naviBox"><i class="fa fa-arrow-right" style="color:#b01e00;"></i><strong class="naviHead" style="color:#b01e00;">常用捷径</strong></li></div>
+</div>
+</ul>
+</div>
+<div>
+<div id="hide_icon" class="naviMenuIconPanel" style="display:none;">
+<ul class="list-unstyled" style="margin:0px;">
+<li id="m1" class="naviBox"><i class="fa fa-book"></i></li>
+<li id="m2" class="naviBox"><i class="fa fa-male"></i></li>
+<li id="m3" class="naviBox"><i class="fa fa-file-text-o"></i></li>
+<li id="m4" class="naviBox"><i class="fa fa-university"></i></li>
+<li id="m5" class="naviBox"><i class="fa fa-mortar-board"></i></li>
+<li id="m6" class="naviBox"><i class="fa fa-arrow-right" style="color:#b01e00;"></i></li>
+</ul>
+</div>
+</div>
+<div id="hide_content" class="naviMenuContentPanel" style="display:none;">
+<div id="p1" style="display:none;" >
+<ul class="list-unstyled" style="margin:0px;">
+<li class="naviBox"><strong class="naviTitle">课程分类</strong></li>
+<li class="naviBox naviBox-sm"><strong class="naviContent">全部</strong></li>
+{% for course in courses %}
+    <li class="naviBox naviBox-sm"><strong class="naviContent">{{course.name}}</strong></li>
+{% endfor %}
+</ul>
+</div>
+<div id="p2" style="display:none;">
+<ul class="list-unstyled" style="margin:0px;">
+<li class="naviBox"><strong class="naviTitle">就业实训</strong></li>
+<li class="naviBox naviBox-sm"><strong class="naviContent">全部</strong></li>
+<li class="naviBox naviBox-sm"><strong class="naviContent naviContent-sm">JavaEE 企业级应用开发师</strong></li>
+<li class="naviBox naviBox-sm"><strong class="naviContent naviContent-sm">移动互联Android开发工程师</strong></li>
+<li class="naviBox naviBox-sm"><strong class="naviContent naviContent-sm">移动互联ios开发工程师</strong></li>
+<li class="naviBox naviBox-sm"><strong class="naviContent naviContent-sm">电商LAMP框架应用开发工程师</strong></li>
+<li class="naviBox naviBox-sm"><strong class="naviContent naviContent-sm">大数据Hadoop应用开发工程师</strong></li>
+<li class="naviBox naviBox-sm"><strong class="naviContent naviContent-sm">Linux/Unix C/C++开发工程师</strong></li>
+<li class="naviBox naviBox-sm"><strong class="naviContent naviContent-sm">Oracle 数据库管理工程师</strong></li>
+<li class="naviBox naviBox-sm"><strong class="naviContent naviContent-sm">云计算环境管理工程师</strong></li>
+<li class="naviBox naviBox-sm"><strong class="naviContent naviContent-sm">IT运维管理系统工程师</strong></li>
+</ul>
+</div>
+<div id="p3" style="display:none;">
+<ul class="list-unstyled" style="margin:0px;">
+<li class="naviBox"><strong class="naviTitle">Oracle认证培训</strong></li>
+<li class="naviBox naviBox-sm"><strong class="naviContent">全部</strong></li>
+<li class="naviBox naviBox-sm"><strong class="naviContent">Oracle OCP认证培训</strong></li>
+<li class="naviBox naviBox-sm"><strong class="naviContent">Oracle OCE认证培训</strong></li>
+<li class="naviBox naviBox-sm"><strong class="naviContent">Oracle OCIS认证培训</strong></li>
+</ul>
+</div>
+<div id="p4" style="display:none;">
+<ul class="list-unstyled" style="margin:0px;">
+<li class="naviBox"><strong class="naviTitle">高校专业</strong></li>
+<li class="naviBox naviBox-sm"><strong class="naviContent">全部</strong></li>
+<li class="naviBox naviBox-sm"><strong class="naviContent">JavaEE应用开发</strong></li>
+<li class="naviBox naviBox-sm"><strong class="naviContent">LAMP框架应用开发</strong></li>
+<li class="naviBox naviBox-sm"><strong class="naviContent">Android开发</strong></li>
+<li class="naviBox naviBox-sm"><strong class="naviContent">iOS开发</strong></li>
+<li class="naviBox naviBox-sm"><strong class="naviContent">Hadoop应用开发</strong></li>
+<li class="naviBox naviBox-sm"><strong class="naviContent">云计算管理</strong></li>
+<li class="naviBox naviBox-sm"><strong class="naviContent">Oracle EBS财务管理</strong></li>
+<li class="naviBox naviBox-sm"><strong class="naviContent">Oracle EBS供应链管理</strong></li>
+</ul>
+</div>
+<div id="p5" style="display:none;">
+<ul class="list-unstyled" style="margin:0px;">
+<li class="naviBox"><strong class="naviTitle">软工硕士</strong></li>
+<li class="naviBox naviBox-sm"><strong class="naviContent">全部</strong></li>
+<li class="naviBox naviBox-sm"><strong class="naviContent naviContent-sm">Oracle OCM数据库管理大师</strong></li>
+<li class="naviBox naviBox-sm"><strong class="naviContent naviContent-sm">Oracle ERP企业资源规划大师</strong></li>
+<li class="naviBox naviBox-sm"><strong class="naviContent naviContent-sm">Oracle Primavera P6企业项目管理</strong></li>
+</ul>
+</div>
+<div id="p6" style="display:none;">
+<ul class="list-unstyled" style="margin:0px;">
+<li class="naviBox"><strong class="naviTitle" style="color:#b01e00;">常用捷径</strong></li>
+<li class="naviBox naviBox-bg"><img id="sc1" before="{{asset('bundles/renaissanceweb/img/plaza/sc1.png')}}"src="{{asset('bundles/renaissanceweb/img/plaza/sc1.png')}}"after="{{asset('bundles/renaissanceweb/img/plaza/sc1_active.png')}}"></li>
+<li class="naviBox naviBox-bg"><img id="sc2" before="{{asset('bundles/renaissanceweb/img/plaza/sc2.png')}}" src="{{asset('bundles/renaissanceweb/img/plaza/sc2.png')}}" after="{{asset('bundles/renaissanceweb/img/plaza/sc2_active.png')}}"></li>
+<li class="naviBox naviBox-bg"><img id="sc3" before="{{asset('bundles/renaissanceweb/img/plaza/sc3.png')}}"src="{{asset('bundles/renaissanceweb/img/plaza/sc3.png')}}"after="{{asset('bundles/renaissanceweb/img/plaza/sc3_active.png')}}"></li>
+</ul>
+</div>
+</div>

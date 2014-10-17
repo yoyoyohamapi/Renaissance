@@ -12,7 +12,7 @@ class LoginController extends BaseController
 {
 	public function indexAction(){
 		if(!empty($this->getUser()))
-			return $this->redirect('/');
+			return $this->redirect('/course');
 		else
 			return $this->redirect($this->container->getParameter('cas_login_url'));
 	}

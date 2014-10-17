@@ -1176,7 +1176,7 @@ a:hover{
 .courseBox{
 	text-align:center;
 	margin:20px;
-	box-shadow:2px 2px 2px #ccc;
+	box-shadow:2px 2px 2px 2px #ccc;
 }
 .courseBox img{
 	width:100%;

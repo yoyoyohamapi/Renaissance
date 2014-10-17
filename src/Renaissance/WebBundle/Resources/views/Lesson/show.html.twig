@@ -1,7 +1,60 @@
-{% extends "::base.html.twig" %}
-
-{% block title %}RenaissanceWebBundle:Lesson:show{% endblock %}
-
-{% block body %}
-<h1>Welcome to the Lesson:show page</h1>
+{% extends "RenaissanceWebBundle:Layout:layout.html.twig" %}
+{% block title %}RenaissanceWebBundle:Course:index{% endblock %}
+{% block stylesheets %}
+<link href="{{asset('bundles/renaissanceweb/css/lesson.css')}}" rel="stylesheet" type="text/css"></link>
+<link href="{{asset('bundles/renaissanceweb/css/jquery.mCustomScrollbar.css')}}" rel="stylesheet" type="text/css"></link>
+<link href="{{asset('bundles/renaissanceweb/css/video-js.css')}}" rel="stylesheet" type="text/css"></link>
 {% endblock %}
+{% block content %}
+<!-- Content -->
+<div class="shadeForHighlight" style="display: none;position:fixed"></div>
+<div class="container-fluid mainCon courseCon">
+	<!-- 右边栏部分 -->
+		<div class="rlBar rightBar">
+			<img class="imgWrap rbWrap" src="{{asset('bundles/renaissanceweb/img/rBWrap.png')}}">
+			<ul>
+				<li class="barItem"><a>目录</a></li>
+				<li class="barItem"><a>笔记</a></li>
+				<li class="barItem active"><a>问答</a></li>
+				<li class="barItem"><a>百科</a></li>
+				<li id="hideRightBar"class="barItem"><i class="fa fa-angle-right"></i></li>
+			</ul>
+		</div>
+		<div id="showRightBar">
+			<i class="fa fa-angle-left"></i>
+		</div>
+		<div class="row clearfix">
+			<div class="col-md-11" >
+				<ol class="breadcrumb courseBC">
+					<li><a href="{{path("course_show",{'course_id':course_id})}}">{{course_name}}</a></li>
+					<li><a href="#">{{chapter_name}}</a></li>
+					<li class="active">{{lesson_name}}</li>
+				</ol>
+			</div>
+		</div>
+
+		<div class="row clearfix">
+			<!-- 课程播放部分 -->
+			<div class="col-md-11" >
+				<div class="conPanel coursePanel">
+					<video id="example_video_1" class="video-js vjs-default-skin vjs-big-play-centered"
+					  controls preload="auto" width="100%" height="100%"
+					  poster="{{asset('bundles/renaissanceweb/img/playbkg.png')}}"
+					  data-setup='{"example_option":true}'>
+					 <!-- <source src="{{asset('bundles/renaissanceweb/test/2.mp4')}}" type='video/mp4' /> -->
+					 <source src="{{video_src}}" type='video/mp4' />
+					</video>
+				</div>
+			</div>
+		</div>
+	</div>
+
+{% endblock %}
+{% block scripts %}
+<script src="{{asset('bundles/renaissanceweb/js/jquery.mCustomScrollbar.concat.min.js')}}"></script>
+<script src="{{asset('bundles/renaissanceweb/js/coursePlay.js')}}"></script>
+<script src="{{asset('bundles/renaissanceweb/js/video.js')}}"></script>
+{% endblock %}
+
+{% set base_bar="true" %}
+{% set footer="true" %}

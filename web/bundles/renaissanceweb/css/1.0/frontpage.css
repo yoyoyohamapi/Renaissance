@@ -73,7 +73,6 @@ body{
 
 #introRect{
 	padding-top: 3%;
-	height:520px;
 }
 
 #introVideo a{
@@ -155,7 +154,6 @@ body{
 
 #regRect{
 	background-color:#979a29;
-	max-height:580px;
 }
 #regRect p{
 	color:#ffffff;

@@ -35,17 +35,30 @@ course_index:
 course_show:
     path:     /course/{course_id}
     defaults: { _controller: RenaissanceWebBundle:Course:show }
+    requirements:
+        course_id:  \d+
 
 course_lesson_show:
-    path:     /course/{course_id}/lesson/{lesson_id}
+    path:     /course/{course_id}/chapter/{chapter_id}/lesson/{lesson_id}
     defaults: { _controller: RenaissanceWebBundle:Lesson:show }
-
+    requirements:
+        course_id:  \d+
+        chaper_id:  \d+
+        lesson_id:   \d+
 test_admin:
     path:   /admin
     defaults:  { _controller: RenaissanceWebBundle:Default:admin }
 
+get_more_courses:
+    path: /course/get_more_courses
+    defaults: { _controller:RenaissanceWebBundle:Course:showMore}
+    methods: [GET]
 
+test:
+    path: /test
+    defaults: {_controller:RenaissanceWebBundle:Default:test}
 
-
-
-
+enroll_course:
+    path: /enroll_course
+    defaults: {_controller:RenaissanceWebBundle:Enroll:enroll}
+    methods: [POST]
