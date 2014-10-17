@@ -3,6 +3,7 @@
 namespace Renaissance\WebBundle\Controller;
 use Renaissance\WebBundle\Controller\BaseController;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Response;
 
 class CourseController extends BaseController
 {
@@ -61,17 +62,67 @@ class CourseController extends BaseController
         $course=$curlHelper->curlGet($api); 
         if($course == null)
                return $this->render('RenaissanceWebBundle:Error:404.html.twig', array("error_msg"=>"无此课程"));
+        $start_at = $course->start_at;
+        $start_time = substr($start_at, 2,8);
+        $time = time();
+        $time = date("y-m-d",$time);
+        
+        $start_time = strtotime($start_time);
+        $time = strtotime($time);
+        //echo $start_time;
+        //echo $time;
+
+        if($start_time <= $time)
+        {
+            $isStart = true;
+        }else{
+            $isStart = false;
+        }
+        //echo $isDisable;
+
+        $start_at_month = substr($start_at,5,2);
+        $start_at_day = substr($start_at, 8,2);
+        $start_at = $start_at_month.'月'.$start_at_day.'日';
+
+        $end_at = $course->end_at;
+        $end_at_month = substr($end_at,5,2);
+        $end_at_day = substr($end_at, 8,2);
+        $end_at = $end_at_month.'月'.$end_at_day.'日';
+      
+        $start_end =  array('start_at' =>$start_at ,'end_at'=>$end_at );
+
         $page=$curlHelper->curlGet($api."/front_page");
         $students=$curlHelper->curlGet($api."/users?enrollment_type=student");
         $teachers=$curlHelper->curlGet($api."/users?enrollment_type=teacher");
         $folders=$curlHelper->curlGet($api."/folders/by_path/cover");
-        if($folders)
+    
+        //var_dump($teachers);
+        $canvas_user_id = $this->getUser()->getCanvasUserId();
+        
+
+        $stu_avatar = $curlHelper->curlGet("users/".$canvas_user_id."/profile");
+        if($stu_avatar==NULL)
+            $stu_avatar_url = NULL;
+        else
+            $stu_avatar_url = $stu_avatar->avatar_url;
+
+        $enrollment = $curlHelper->curlGet($api."/enrollments?user_id=".$canvas_user_id);
+        
+        if(count($enrollment) == 0)
         {
+            $isEnrolled = false;
+        }else{
+            $isEnrolled = true;
+        }
+
+        if($folders)
+       {
             $cover_folder_id = $folders[count($folders)-1]->id;
             $fileimgs = $curlHelper->curlGet('folders/'.$cover_folder_id.'/files?search_term=L.png');
         }
         else $fileimgs=null;
         $chapters=$curlHelper->curlGet($api."/modules?include[]=items");
+        //var_dump($chapters);
         if(!$page  || !$teachers || !$fileimgs || !$chapters)
             return $this->render('RenaissanceWebBundle:Error:404.html.twig', array("error_msg"=>"课程正在编辑中"));
         $head_urls=array();
@@ -81,9 +132,14 @@ class CourseController extends BaseController
         }
         $cover=$fileimgs[0]->url;
         $page->body=substr($page->body, 3,-4);
+
+        $site_url =  $this->container->getParameter('site_url');
+
         $data=array('course'=>$course,'students'=>$students,'teachers'=>$teachers,
-            'page'=>$page,'heads'=>$head_urls,'cover'=>$cover,'chapters'=>$chapters);
-        return $this->render('RenaissanceWebBundle:Course:show.html.twig', $data);    
+            'page'=>$page,'heads'=>$head_urls,'cover'=>$cover,'chapters'=>$chapters,'start_end'=>$start_end,
+            'isEnrolled'=>$isEnrolled,'site_url'=>$site_url,'course_id'=>$course_id,'canvas_user_id'=>$canvas_user_id,'isStart'=>$isStart,
+            'stu_avatar_url'=>$stu_avatar_url);
+         return $this->render('RenaissanceWebBundle:Course:show.html.twig', $data); 
     }
     public function ajaxAction(){
 
@@ -130,4 +186,5 @@ class CourseController extends BaseController
             );
         return $this->render("RenaissanceWebBundle:Course:plaza_more.html.twig",$data);
     }
+
 }

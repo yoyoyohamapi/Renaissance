@@ -72,13 +72,13 @@ swiftmailer:
 
 be_simple_sso_auth: 
     admin_sso:
-      protocol:
-        id: cas
-        version: 2
-      server:
-        id: cas
-        login_url: %cas_login_url%
-        logout_url: %cas_logout_url%
-        validation_url: %cas_validation_url%
+        protocol:
+            id: cas
+            version: 2
+        server:
+            id: cas
+            login_url: %cas_login_url%
+            logout_url: %cas_logout_url%
+            validation_url: %cas_validation_url%
 
 

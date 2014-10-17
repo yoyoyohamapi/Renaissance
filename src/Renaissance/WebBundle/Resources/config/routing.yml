@@ -54,8 +54,11 @@ get_more_courses:
     defaults: { _controller:RenaissanceWebBundle:Course:showMore}
     methods: [GET]
 
+test:
+    path: /test
+    defaults: {_controller:RenaissanceWebBundle:Default:test}
 
-
-
-
-
+enroll_course:
+    path: /enroll_course
+    defaults: {_controller:RenaissanceWebBundle:Enroll:enroll}
+    methods: [POST]

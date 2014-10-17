@@ -3,7 +3,7 @@
 namespace Renaissance\WebBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-
+use Renaissance\WebBundle\Controller\BaseController;
 
 class DefaultController extends BaseController
 {
@@ -23,9 +23,19 @@ class DefaultController extends BaseController
         if(!empty($this->getUser())){
     	$this->container->get('security.context')->setToken(NULL);
                 return $this->redirect($this->container->getParameter('cas_logout_url'));
-
         }
         else
             return $this->redirect('/');
+    }
+
+    public function testAction(){
+       $curlHelper = $this->get('curlHelper');
+        $api = "courses/3/enrollments";
+        $enrollment['user_id'] = 12;
+        $enrollment['type'] = "StudentEnrollment";
+        $post_field = array(
+            "enrollment" => $enrollment,
+        );
+        $user_new = $curlHelper->curlCustom($api,$post_field,'POST');
     }
 }
