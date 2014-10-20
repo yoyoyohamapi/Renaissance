@@ -27,6 +27,8 @@ register_reg_user:
 user_index:
     path:     /user/{user_id}
     defaults: { _controller: RenaissanceWebBundle:User:index }
+    requirements:
+      user_id:  \d+
 
 course_index:
     path:     /course
