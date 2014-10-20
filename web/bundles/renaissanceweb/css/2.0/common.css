@@ -7,6 +7,8 @@ html{
 body{
 	min-height: 100%;
 	background-color:#edeff0;
+	min-width: 960px;
+	overflow-x:scroll;
 }
 
 ::-webkit-input-placeholder { /* WebKit browsers */

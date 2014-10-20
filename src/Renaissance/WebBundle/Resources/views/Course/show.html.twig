@@ -3,13 +3,20 @@
 {% block stylesheets %}
 <link href="{{asset('bundles/renaissanceweb/css/star-rating.min.css')}}" rel="stylesheet" type="text/css"></link>
 <link href="{{asset('bundles/renaissanceweb/css/1.0/common.css')}}" rel="stylesheet" type="text/css"></link>
+<link href="{{asset('bundles/renaissanceweb/css/video-js.css')}}" rel="stylesheet" type="text/css"></link>
+<script src="{{asset('bundles/renaissanceweb/js/video.js')}}"</script>
+<script>
+  videojs.options.flash.swf = "{{asset('bundles/renaissanceweb/media/video-js.swf')}}"
+</script>
 {% endblock %}
+
 {% block content %}
 <style type="text/css">
 .timeLine > .item:hover{
 	border-bottom:3px dashed #B01E00;
 }
 </style>
+
 <div class="container-fluid">
 <!-- 课程介绍 -->
 <div class="col-md-10 col-md-offset-1 courseProfile whiteRec">
@@ -49,11 +56,36 @@ cPrice dashedRec">
 </div>
 </div>
 <div class="col-md-12">
-<a class="button button-large button-flat-flame">参 与 学 习</a>
+<p class="courseDate">上课时间:{{start_end.start_at}}-{{start_end.end_at}}</p>
 </div>
+{% if isEnrolled==false%}
+	<div class="col-md-12">
+	<input id="doJoin" name="{{course_id}}-{{canvas_user_id}}" type="button" class="button button-large button-flat-flame" style="height:auto;" value="加入课程" onclick="javascript:void(0);" post_style="background-color:rgba(55, 171, 55, 1);border-bottom-color: #008000;height:auto"post_value="进入课程" post_id="doEnter" post_href = "javascrtpt:window.location.href='{{site_url}}courses/{{course_id}}'">
+	</div>
+{%else%}
+	{%if isStart==true%}
+		<div class="col-md-12">
+		<button id="doEnter" name="enter_course" type="button" class="button button-large button-flat-flame" style="height:auto;background-color:rgba(55, 171, 55, 1);border-bottom-color: #008000; " value="进入课程" onclick="javascrtpt:window.location.href='{{site_url}}courses/{{course_id}}'" >进入课程</button>
+		</div>
+	{%else%}
+		<div class="col-md-12">
+		<button id="doEnter" name="enter_course" type="button" class="button button-large button-flat-flame" style="height:auto;background-color:rgba(55, 171, 55, 1);border-bottom-color: #008000; " value="进入课程" onclick="javascrtpt:window.location.href='{{site_url}}courses/{{course_id}}'" disabled="disabled">进入课程</button>
+		</div>
+	{%endif%}
+{% endif %}
+
 </div>
+
 <div class="col-md-8 profileImg">
-<img src="{{cover}}">
+
+
+<video id="example_video_1" class="video-js vjs-default-skin vjs-big-play-centered"
+  controls preload="auto" width="100%" height="350"
+  poster="{{cover}}" data-setup='{"example_option":true}'>
+ <source src="{{asset('bundles/renaissanceweb/media/java.mp4')}}" type='video/mp4' />
+ <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
+</video>
+
 </div>
 <div class="col-md-4 profileInfo">
 <div class="col-md-12">
@@ -75,19 +107,19 @@ cPrice dashedRec">
 </div>
 <div class="navCon col-md-12">
 <!-- 左侧框内容 -->
-{% for lesson in lessons %}
+{% for chapter in chapters %}
 <div class="unitInfo">
 <h1 class="unitTitle">
-第{{loop.index}}章 {{lesson.name}}
+第{{loop.index}}章 {{chapter.name}}
 </h1> 
 <ul class="timeLine">
-{% for lesson_item in lesson.items %}
+{% for chapter_item in chapter.items %}
 <li class="item">
-<a href="{{path('course_lesson_show',{'course_id':course.id,'lesson_id':lesson_item.id})}}" style="color:inherit">
+<a href="{{path('course_lesson_show',{'course_id':course.id,'chapter_id':chapter.id,'lesson_id':chapter_item.id})}}" style="color:inherit">
 <time class="tmtime">课时{{loop.index}}</time>
 <div class="tmicon"></div>
 <div class="tmlabel">
-<p>{{lesson_item.title}}</p>
+<p>{{chapter_item.title}}</p>
 </div>
 </a>
 </li>
@@ -103,7 +135,7 @@ cPrice dashedRec">
 <p class="title">授课老师</p>
 <div class="col-md-12 info">
 {% for head in heads %}
-    <div class="col-md-5"><img class="headPic img-circle"src="{{head}}"></div>
+    <div class="col-md-5"><img class="headPic img-circle"src={{head}}></div>
 {% endfor %}
 <div class="col-md-7">
 <p class="name">
@@ -112,7 +144,6 @@ cPrice dashedRec">
 {% endfor %}
 </p>
 <p class="property">
-Web前端工程师
 </p>
 </div>
 </div>
@@ -230,4 +261,5 @@ Web前端工程师
 {% block scripts %}
 <script src="{{asset('bundles/renaissanceweb/js/star-rating.min.js')}}"></script>
 <script src="{{asset('bundles/renaissanceweb/js/courseIntro.js')}}"></script>
+<script src="{{asset('bundles/renaissanceweb/js/join_course.js')}}"></script>
 {% endblock %}

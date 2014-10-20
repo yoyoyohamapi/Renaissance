@@ -27,6 +27,8 @@ register_reg_user:
 user_index:
     path:     /user/{user_id}
     defaults: { _controller: RenaissanceWebBundle:User:index }
+    requirements:
+      user_id:  \d+
 
 course_index:
     path:     /course
@@ -54,8 +56,11 @@ get_more_courses:
     defaults: { _controller:RenaissanceWebBundle:Course:showMore}
     methods: [GET]
 
+test:
+    path: /test
+    defaults: {_controller:RenaissanceWebBundle:Default:test}
 
-
-
-
-
+enroll_course:
+    path: /enroll_course
+    defaults: {_controller:RenaissanceWebBundle:Enroll:enroll}
+    methods: [POST]

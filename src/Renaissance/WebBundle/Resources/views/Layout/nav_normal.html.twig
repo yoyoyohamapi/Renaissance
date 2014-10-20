@@ -1,30 +1,36 @@
+{% set user = getUser() %}
 <div class="row bigRect">
 <nav class="navbar navbar-default nav-custom" role="navigation">
 	<div class="container-fluid">
 		<div class="navbar-header">
-			 <a id="siteLogo" class="navbar-brand" href="#"><img src="{{asset('bundles/renaissanceweb/img/2nd/navi_logo.png')}}"></a>
+			 <a id="siteLogo" class="navbar-brand" href="{{path('renaissance_web_homepage')}}"><img src="{{asset('bundles/renaissanceweb/img/2nd/navi_logo.png')}}"></a>
 		</div>
 		<div class="collapse navbar-collapse" >
 			<ul class="nav navbar-nav left">
 				<li><a href="Javascript:void(0);">近期课表</a></li>
 				<li class="active"><a href="Javascript:void(0);">题库</a></li>
-				<li><a href="Javascript:void(0);">师资力量</a></li>
+				<li><a href="Javascript:void(0);">主力师资</a></li>
 			</ul>
-			{# {% if user is defined %} #}
 			<div class="collapse navbar-collapse" >
 				<ul class="nav navbar-nav navbar-right">
+					{% if user is empty %}
+					<li style="margin-top:5px"><a href="{{ path('login') }}"><i class="fa fa-user">&nbsp登陆</i></a></li>
+					<li style="margin-top:5px"><a href="{{ path('register') }}"><i class="fa fa-edit">&nbsp注册</i></a></li>
+					{% else %}
 					<li class="searchConLi"><input id="searchCon" type="text" placeholder="搜索你感兴趣的内容"></li>
 					<li class="searchLi"><a class="search"href="Javascript:void(0);"><i class="fa fa-search"></i></a></li>
-					<li class="headPicLi"><a href="Javascript:void(0);" class="headPic"><img  src="{{asset('bundles/renaissanceweb/img/头像.png')}}"></a></li>
+					<li class="headPicLi"><a href="Javascript:void(0);" class="headPic">
+					<img  class="img-circle" src="{{ asset(user.getAvatarUrl) }}"></a></li>
 					<li>
 						<ul id="settingsMenu" class="nav navbar-nav navbar-right settings">
 							<li><a href="Javascript:void(0);" class="">学习</a></li>
-							<li><a href="Javascript:void(0);" class="">我的主页</a></li>
+							<li><a href="{{ path('user_index',{'user_id':user.getId}) }}" class="">我的主页</a></li>
 							<li><a href="Javascript:void(0);" class="">消息</a></li>
 							<li><a href="Javascript:void(0);" class="">设置</a></li>
-							<li><a href="Javascript:void(0);" class="">退出</a></li>
+							<li><a href="/logout" class="">退出</a></li>
 						</ul>
 					</li>
+					{% endif %}
 				</ul>
 			</div>
 			{# {% endif %} #}
