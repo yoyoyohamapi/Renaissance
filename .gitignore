@@ -1,4 +1,4 @@
-src/Renaissance/CommonBundle/Resources/config/services.yml
+#src/Renaissance/CommonBundle/Resources/config/services.yml
 vendor/
 app/
 .gitignore~

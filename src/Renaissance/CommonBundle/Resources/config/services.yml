@@ -1,0 +1,26 @@
+parameters:
+    curlHelper.class:    Renaissance\CommonBundle\Tools\CurlHelper
+    curlHelper.class.canvas_access_token:   H4Wvn4DVqYzeDqtQnBc6FY1tIjbAgJV1L5yRJFU4KkvexaSN10U0dL6v5tQBZNI5
+    curlHelper.class.base_url:   "http://localhost:3000/api/v1/"
+    curlHelper.class.authed:   FALSE
+services:
+    curlHelper:
+        class:    "%curlHelper.class%"
+        arguments:    ["%curlHelper.class.canvas_access_token%","%curlHelper.class.base_url%","%curlHelper.class.authed%"]
+    renaissance.twig.renaissance_extension:
+        class: Renaissance\CommonBundle\Twig\RenaissanceExtension
+        arguments:    [@service_container]
+        tags:
+            - { name: twig.extension }
+    baseREST:
+        class: Renaissance\CommonBundle\REST\BaseREST
+        arguments: [@curlHelper]
+    courseREST:
+        class: Renaissance\CommonBundle\REST\CourseREST
+        parent: baseREST
+    enrollmentREST:
+        class: Renaissance\CommonBundle\REST\EnrollmentREST
+        parent: baseREST
+    userREST:
+        class: Renaissance\CommonBundle\REST\UserREST
+        parent: baseREST
