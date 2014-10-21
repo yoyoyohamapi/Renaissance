@@ -28,7 +28,7 @@
 						{% if current_course_cover%}
 						<img src="{{ current_course_cover.url }}">
 						{% else %}
-						<img src="{{asset('bundles/renaissanceweb/img/continueBKG.png')}}">
+						<img src="{{asset('bundles/renaissanceweb/img/default/NoPic_L.png')}}">
 						{% endif %}
 					</div>
 					<div class="cLInfo">
@@ -41,11 +41,7 @@
 				{% else %}
 				<div class="col-xs-12 continueLearning">
 					<div class="cLImg">
-						{% if current_course_cover is not null %}
-						<img src="{{ current_course_cover.url }}">
-						{% else %}
-						<img src="{{asset('bundles/renaissanceweb/img/continueBKG.png')}}">
-						{% endif %}
+						<img src="{{asset('bundles/renaissanceweb/img/default/NoChoice.png')}}">
 					</div>
 					<div class="cLInfo">
 						<p class="">没有课程哦</p>
