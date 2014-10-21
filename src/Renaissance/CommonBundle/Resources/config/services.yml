@@ -14,7 +14,7 @@ services:
             - { name: twig.extension }
     baseREST:
         class: Renaissance\CommonBundle\REST\BaseREST
-        arguments: [@curlHelper]
+        arguments: [@curlHelper,@service_container]
     courseREST:
         class: Renaissance\CommonBundle\REST\CourseREST
         parent: baseREST

@@ -6,6 +6,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Renaissance\WebBundle\Controller\BaseController;
 use Renaissance\CommonBundle\REST\CourseREST;
 
+
 class DefaultController extends BaseController
 {
 
@@ -31,6 +32,8 @@ class DefaultController extends BaseController
 
     public function testAction(){
         $course_rest = $this->get('courseREST');
-        var_dump($course_rest->getAllCourses());
+        $user = $this->getUser();
+        var_dump($course_rest->getCurrentCourse($user->getCanvasUserId()));
+        exit();
     }
 }

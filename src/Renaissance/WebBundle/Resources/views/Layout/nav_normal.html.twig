@@ -1,4 +1,5 @@
 {% set user = getUser() %}
+{% set lmsUrl = LMSUrl() %}
 <div class="row bigRect">
 <nav class="navbar navbar-default nav-custom" role="navigation">
 	<div class="container-fluid">
@@ -23,7 +24,7 @@
 					<img  class="img-circle" src="{{ asset(user.getAvatarUrl) }}"></a></li>
 					<li>
 						<ul id="settingsMenu" class="nav navbar-nav navbar-right settings">
-							<li><a href="Javascript:void(0);" class="">学习</a></li>
+							<li><a href="{{ lmsUrl }}" class="">学习</a></li>
 							<li><a href="{{ path('user_index',{'user_id':user.getId}) }}" class="">我的主页</a></li>
 							<li><a href="Javascript:void(0);" class="">消息</a></li>
 							<li><a href="Javascript:void(0);" class="">设置</a></li>

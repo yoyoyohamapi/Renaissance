@@ -22,6 +22,7 @@ class RenaissanceExtension extends \Twig_Extension
 	public function getFunctions(){
 		return array(
 			'getUser' => new \Twig_Function_Method($this,'getCurrentUser'),
+			'LMSUrl' => new \Twig_Function_Method($this,'getLMSUrl'),
 		);
 	} 
 
@@ -46,5 +47,9 @@ class RenaissanceExtension extends \Twig_Extension
 		}
 
 		return $user;
+	}
+
+	public function getLMSUrl(){
+		return $this->container->getParameter('site_url');
 	}
 }

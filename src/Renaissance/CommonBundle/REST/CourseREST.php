@@ -6,6 +6,36 @@ class CourseREST extends BaseREST{
 
 	public function getAllCourses(){
 		$this->api="courses";
-		return $this->curlHelper->curlGet($this->api);
+		$courses = $this->execute();
+		return $courses;
+	}
+
+	public function getCoursesForCurrentUser($id){
+		$enrollmentREST = $this->container->get('enrollmentREST');
+		$enrollments = $enrollmentREST->getAllEnrollmentsByUserId($id);
+		if( !empty($enrollments) ){
+			$courses = array();
+			foreach ($enrollments as $enrollment ) {
+				$courses[] = $this->getCourseById($enrollment->course_id);
+			};
+			return $courses;
+		}
+		return null;
+	}
+
+	public function getCurrentCourse($user_id){
+		$enrollmentREST = $this->container->get('enrollmentREST');
+		$current_errollment = $enrollmentREST->getCurrentEnrollment($user_id);
+		return $this->getCourseById($current_errollment->course_id);
+	}
+
+	public function getCourseById($id){
+		$this->api = "courses/".$id;
+		$course = $this->execute();
+		return $course;
+	}
+
+	public function getCourseCoverById($id){
+
 	}
 }

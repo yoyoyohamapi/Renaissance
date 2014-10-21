@@ -1,0 +1,13 @@
+services:
+    baseREST:
+        class: Renaissance\CommonBundle\REST\BaseREST
+        arguments: [@curlHelper]
+    courseREST:
+        class: Renaissance\CommonBundle\REST\CourseREST
+        parent: baseREST
+    enrollmentREST:
+        class: Renaissance\CommonBundle\REST\EnrollmentREST
+        parent: baseREST
+    userREST:
+        class: Renaissance\CommonBundle\REST\UserREST
+        parent: baseREST
