@@ -35,7 +35,11 @@ class CourseREST extends BaseREST{
 		return $course;
 	}
 
-	public function getCourseCoverById($id){
-
+	public function getCourseCoverById($id,$size){
+		$fileREST = $this->container->get('fileREST');
+		$size = strtoupper($size);
+		$covers = $fileREST->getFileByPath('course',$id,'cover/'.$size.'.png');
+		$cover = $covers[0];
+		return $cover;
 	}
 }

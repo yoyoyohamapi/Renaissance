@@ -16,23 +16,30 @@
 				<li class="bandid"><a class="fa fa-calendar"></a><a>日历</a></li>
 			</ul>
 		</div>
+
 		<div class="col-xs-9 col-xs-offset-1" style="border-left:5px solid #ccc;margin-left:9%;">
 			<div class="row workstationPanel ">
+				{% if current_course is not null %}
 				<div class="col-xs-12 continueLearning">
 					<div class="panelTitle">继续学习</div>
-					<div class="continueCTitle">HTML5之元素与标签结构</div>
+					<div class="continueCTitle">{{ current_course.name }}</div>
 					<div class="progressBar"></div>
 					<div class="cLImg">
+						{% if current_course_cover is not null %}
+						<img src="{{ current_course_cover.url }}">
+						{% else %}
 						<img src="{{asset('bundles/renaissanceweb/img/continueBKG.png')}}">
+						{% endif %}
 					</div>
 					<div class="cLInfo">
 						<p class="">上次学习到</p>
 						<p class="title">第三章 新增及废除属性废除属性</p>
 						<p class="remain visible-lg-block">距离完成学习任务还有<span>30%</span>的课程</p>
 					</div>
-					<div class="continueButton"><a class="button  button-large button-flat-flame" href="/course/3/lesson/2">继 续</a></div>
+					<div class="continueButton"><a class="button  button-large button-flat-flame" href="{{ [lmsUrl, 'courses/',current_course.id]|join }}">继 续</a></div>
 
 				</div>
+				{% endif %}
 				<div class="col-xs-12 whatULike">
 					<div class="panelTitle">猜你喜欢</div>
 

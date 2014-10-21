@@ -24,3 +24,6 @@ services:
     userREST:
         class: Renaissance\CommonBundle\REST\UserREST
         parent: baseREST
+    fileREST:
+        class: Renaissance\CommonBundle\REST\FileREST
+        parent: baseREST

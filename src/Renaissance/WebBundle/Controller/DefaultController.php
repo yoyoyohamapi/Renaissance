@@ -31,9 +31,9 @@ class DefaultController extends BaseController
     }
 
     public function testAction(){
-        $course_rest = $this->get('courseREST');
+        $test_rest = $this->get('fileREST');
         $user = $this->getUser();
-        var_dump($course_rest->getCurrentCourse($user->getCanvasUserId()));
+        var_dump($test_rest->getFileByPath('course',4,'cover/S.PNG'));
         exit();
     }
 }
