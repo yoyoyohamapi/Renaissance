@@ -7,7 +7,7 @@ html{
 body{
 	min-height: 100%;
 	background-color:#edeff0;
-	min-width: 960px;
+	min-width: 992px;
 	overflow-x:scroll;
 }
 
@@ -278,9 +278,3 @@ a:hover{
 }
 
 
-/*Screen Adapt*/
-@media  screen and (max-width: 1366px) {
-	html{
-		font-size: 7px;
-	}
-}
