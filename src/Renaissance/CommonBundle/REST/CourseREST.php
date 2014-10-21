@@ -26,7 +26,9 @@ class CourseREST extends BaseREST{
 	public function getCurrentCourse($user_id){
 		$enrollmentREST = $this->container->get('enrollmentREST');
 		$current_errollment = $enrollmentREST->getCurrentEnrollment($user_id);
-		return $this->getCourseById($current_errollment->course_id);
+		if( !empty($current_errollment) )
+			return $this->getCourseById($current_errollment->course_id);
+		return null;
 	}
 
 	public function getCourseById($id){
@@ -39,7 +41,10 @@ class CourseREST extends BaseREST{
 		$fileREST = $this->container->get('fileREST');
 		$size = strtoupper($size);
 		$covers = $fileREST->getFileByPath('course',$id,'cover/'.$size.'.png');
-		$cover = $covers[0];
+		if( !empty($covers) )
+			$cover = $covers[0];
+		else 
+			$cover = null;
 		return $cover;
 	}
 }

@@ -18,11 +18,14 @@ class EnrollmentREST extends BaseREST{
 
 	public function getCurrentEnrollment($user_id){
 		$enrollments = $this->getAllEnrollmentsByUserId($user_id);
-		$active_at_array = array_map(function($e){
-			return $e->last_activity_at;
-		},$enrollments);
-		$key = array_search(max($active_at_array),$active_at_array);
-		return $enrollments[$key];
+		if( !empty($enrollments) ){
+			$active_at_array = array_map(function($e){
+				return $e->last_activity_at;
+			},$enrollments);
+			$key = array_search(max($active_at_array),$active_at_array);
+			return $enrollments[$key];
+		}
+		return null;
 	}
 
 	public function enrollAStudentToCourse($course_id,$student_id){

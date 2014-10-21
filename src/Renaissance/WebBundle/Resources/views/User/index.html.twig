@@ -1,5 +1,5 @@
 {% extends "RenaissanceWebBundle:Layout:layout.html.twig" %}
-{% block title %}RenaissanceWebBundle:Course:index{% endblock %}
+{% block title %}个人主页{% endblock %}
 {% block stylesheets %}
 <link href="{{asset('bundles/renaissanceweb/css/workstation.css')}}" rel="stylesheet" type="text/css"></link>
 {% endblock %}
@@ -19,13 +19,13 @@
 
 		<div class="col-xs-9 col-xs-offset-1" style="border-left:5px solid #ccc;margin-left:9%;">
 			<div class="row workstationPanel ">
-				{% if current_course is not null %}
+				{% if current_course%}
 				<div class="col-xs-12 continueLearning">
 					<div class="panelTitle">继续学习</div>
 					<div class="continueCTitle">{{ current_course.name }}</div>
 					<div class="progressBar"></div>
 					<div class="cLImg">
-						{% if current_course_cover is not null %}
+						{% if current_course_cover%}
 						<img src="{{ current_course_cover.url }}">
 						{% else %}
 						<img src="{{asset('bundles/renaissanceweb/img/continueBKG.png')}}">
@@ -37,7 +37,22 @@
 						<p class="remain visible-lg-block">距离完成学习任务还有<span>30%</span>的课程</p>
 					</div>
 					<div class="continueButton"><a class="button  button-large button-flat-flame" href="{{ [lmsUrl, 'courses/',current_course.id]|join }}">继 续</a></div>
-
+				</div>
+				{% else %}
+				<div class="col-xs-12 continueLearning">
+					<div class="cLImg">
+						{% if current_course_cover is not null %}
+						<img src="{{ current_course_cover.url }}">
+						{% else %}
+						<img src="{{asset('bundles/renaissanceweb/img/continueBKG.png')}}">
+						{% endif %}
+					</div>
+					<div class="cLInfo">
+						<p class="">没有课程哦</p>
+						<p class="title">点击下方按钮选择您想学的课程</p>
+						<p class="remain visible-lg-block"></p>
+					</div>
+					<div class="continueButton"><a class="button  button-large button-flat-flame" href="{{ path('course_index') }}">选 课</a></div>
 				</div>
 				{% endif %}
 				<div class="col-xs-12 whatULike">
