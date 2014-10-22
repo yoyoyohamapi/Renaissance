@@ -1,0 +1,76 @@
+@charset "UTF-8";
+/* CSS Document */
+
+body{
+
+}
+
+div.wrap{
+	width:992px;
+	margin-left: auto;
+	margin-right: auto;
+}
+div.logo{
+	position: absolute;
+	padding: 20px;
+	left: 0;
+	top: 0;
+}
+/*404Error*/
+.mainPic_404
+{
+	margin: -6% 2% 0% 25%;
+}
+
+.guide_404
+{
+	text-align:center;
+	color:#000000;
+	text-decoration:none;
+	margin: -20%;
+}
+
+/*500Error*/
+.mainPic_500
+{
+    position: absolute;
+    right: 0px;
+    top: 0px;
+
+}
+
+.guide_500
+{
+	text-align: right;
+	margin-top: 440px;
+	margin-right: 300px;
+}
+
+/*Error*/
+.mainPic
+{
+	margin: -6% 2% 0% 25%;
+}
+
+.errorDisplay
+{
+	font-size: 6em;
+	text-align: center;
+	margin: -56% 0% 0% 10%;	
+}
+
+.notFound
+{
+	font-size: 1.5em;
+	text-align: center;
+	margin: -6% 0% 0% 0%;
+}
+
+.content
+{
+	text-align:center;
+	color:#000000;
+	text-decoration:none;
+	margin: 7% 0% 0% -1%;
+}
+
