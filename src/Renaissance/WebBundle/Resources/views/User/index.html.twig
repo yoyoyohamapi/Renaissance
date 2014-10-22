@@ -1,5 +1,5 @@
 {% extends "RenaissanceWebBundle:Layout:layout.html.twig" %}
-{% block title %}RenaissanceWebBundle:Course:index{% endblock %}
+{% block title %}个人主页{% endblock %}
 {% block stylesheets %}
 <link href="{{asset('bundles/renaissanceweb/css/workstation.css')}}" rel="stylesheet" type="text/css"></link>
 {% endblock %}
@@ -16,24 +16,42 @@
 				<li class="bandid"><a class="fa fa-calendar"></a><a>日历</a></li>
 			</ul>
 		</div>
-		<div class="col-md-9 col-md-offset-1" style="border-left:5px solid #ccc;margin-left:9%;">
-			<div class="workstationPanel col-md-12">
-				<div class="col-md-12 continueLearning">
+
+		<div class="col-xs-9 col-xs-offset-1" style="border-left:5px solid #ccc;margin-left:9%;">
+			<div class="row workstationPanel ">
+				{% if current_course%}
+				<div class="col-xs-12 continueLearning">
 					<div class="panelTitle">继续学习</div>
-					<div class="continueCTitle">HTML5之元素与标签结构</div>
+					<div class="continueCTitle">{{ current_course.name }}</div>
 					<div class="progressBar"></div>
 					<div class="cLImg">
-						<img src="{{asset('bundles/renaissanceweb/img/continueBKG.png')}}">
+						{% if current_course_cover%}
+						<img src="{{ current_course_cover.url }}">
+						{% else %}
+						<img src="{{asset('bundles/renaissanceweb/img/default/NoPic_L.png')}}">
+						{% endif %}
 					</div>
 					<div class="cLInfo">
 						<p class="">上次学习到</p>
 						<p class="title">第三章 新增及废除属性废除属性</p>
-						<p class="remain">距离完成学习任务还有<span>30%</span>的课程</p>
+						<p class="remain visible-lg-block">距离完成学习任务还有<span>30%</span>的课程</p>
 					</div>
-					<div class="continueButton"><a class="button  button-large button-flat-flame" href="/course/3/lesson/2">继 续</a></div>
-
+					<div class="continueButton"><a class="button  button-large button-flat-flame" href="{{ [lmsUrl, 'courses/',current_course.id]|join }}">继 续</a></div>
 				</div>
-				<div class="col-md-12 whatULike">
+				{% else %}
+				<div class="col-xs-12 continueLearning">
+					<div class="cLImg">
+						<img src="{{asset('bundles/renaissanceweb/img/default/NoChoice.png')}}">
+					</div>
+					<div class="cLInfo">
+						<p class="">没有课程哦</p>
+						<p class="title">点击下方按钮选择您想学的课程</p>
+						<p class="remain visible-lg-block"></p>
+					</div>
+					<div class="continueButton"><a class="button  button-large button-flat-flame" href="{{ path('course_index') }}">选 课</a></div>
+				</div>
+				{% endif %}
+				<div class="col-xs-12 whatULike">
 					<div class="panelTitle">猜你喜欢</div>
 
 					<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
@@ -67,42 +85,40 @@
 						</a>
 					</div>
 				</div>
-				<div class="col-md-12 liveOther" style="">
-					<div class="col-md-4 liveLine">
-						<div class="panelTitle">直播轴</div>
-						<div class="liveItem">
-							<p class="liveTime">08-16 12:00</p>
-							<p class="liveTitle">PHP 绘图</p>
+				<div class="col-xs-12 liveOther">
+					<div class="row" style="margin-left: 2%;">
+						<div class="col-xs-4 liveLine">
+							<div class="panelTitle">直播轴</div>
+							<div class="liveItem">
+								<p class="liveTime">08-16 12:00</p>
+								<p class="liveTitle">PHP 绘图</p>
+							</div>
+							<div class="liveItem active">
+								<p class="liveTime">08-16 15:00 <span class="label label-danger">直播中</span></p>
+								<p class="liveTitle">Android系统ROOT原理解析</p>
+							</div>
+							<div class="liveItem">
+								<p class="liveTime">08-16 18:00</p>
+								<p class="liveTitle">响应式布局</p>
+							</div>
 						</div>
-						<div class="liveItem active">
-							<p class="liveTime">08-16 15:00 <span>正在直播...</span></p>
-							<p class="liveTitle">Android系统ROOT原理解析</p>
-						</div>
-						<div class="liveItem">
-							<p class="liveTime">08-16 18:00</p>
-							<p class="liveTitle">响应式布局</p>
-						</div>
-					</div>
-					<div class="col-md-8 otherPanel">
-						<div class="panelTitle">更多</div>
-						<div class="row">
-							<div class="col-md-6">
-								<div class="col-md-5 col-md-offset-3">
-									<a class="controlBtn">计划</a>
+						<div class="col-xs-8 otherPanel">
+							<div class="panelTitle">更多</div>
+							<div class="row">
+								<div class="col-xs-6">
+									<a class="controlBtn" style="float: right;">计划</a>
+								</div>
+								<div class="col-xs-6">
+									<a class="controlBtn">知识</a>
 								</div>
 							</div>
-							<div class="col-md-6">
-								<a class="controlBtn">知识</a>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-md-6">
-								<div class="col-md-5 col-md-offset-3">
-									<a class="controlBtn">课程</a>
+							<div class="row">
+								<div class="col-xs-6">
+									<a class="controlBtn" style="float: right;">课程</a>
 								</div>
-							</div>
-							<div class="col-md-6">
-								<a class="controlBtn">任务</a>
+								<div class="col-xs-6">
+									<a class="controlBtn">任务</a>
+								</div>
 							</div>
 						</div>
 					</div>

@@ -4,13 +4,15 @@ namespace Renaissance\WebBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Renaissance\WebBundle\Controller\BaseController;
+use Renaissance\CommonBundle\REST\CourseREST;
+
 
 class DefaultController extends BaseController
 {
 
+
     public function indexAction()
     {	
-        $user = $this->getUser();
             return $this->render('RenaissanceWebBundle:Default:index.html.twig',array("content"=>"欢迎登录复兴教育"));
     }
 
@@ -29,13 +31,9 @@ class DefaultController extends BaseController
     }
 
     public function testAction(){
-       $curlHelper = $this->get('curlHelper');
-        $api = "courses/3/enrollments";
-        $enrollment['user_id'] = 12;
-        $enrollment['type'] = "StudentEnrollment";
-        $post_field = array(
-            "enrollment" => $enrollment,
-        );
-        $user_new = $curlHelper->curlCustom($api,$post_field,'POST');
+        $test_rest = $this->get('fileREST');
+        $user = $this->getUser();
+        var_dump($test_rest->getFileByPath('course',4,'cover/S.PNG'));
+        exit();
     }
 }

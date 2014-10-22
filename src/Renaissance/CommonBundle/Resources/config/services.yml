@@ -7,3 +7,23 @@ services:
     curlHelper:
         class:    "%curlHelper.class%"
         arguments:    ["%curlHelper.class.canvas_access_token%","%curlHelper.class.base_url%","%curlHelper.class.authed%"]
+    renaissance.twig.renaissance_extension:
+        class: Renaissance\CommonBundle\Twig\RenaissanceExtension
+        arguments:    [@service_container]
+        tags:
+            - { name: twig.extension }
+    baseREST:
+        class: Renaissance\CommonBundle\REST\BaseREST
+        arguments: [@curlHelper,@service_container]
+    courseREST:
+        class: Renaissance\CommonBundle\REST\CourseREST
+        parent: baseREST
+    enrollmentREST:
+        class: Renaissance\CommonBundle\REST\EnrollmentREST
+        parent: baseREST
+    userREST:
+        class: Renaissance\CommonBundle\REST\UserREST
+        parent: baseREST
+    fileREST:
+        class: Renaissance\CommonBundle\REST\FileREST
+        parent: baseREST
