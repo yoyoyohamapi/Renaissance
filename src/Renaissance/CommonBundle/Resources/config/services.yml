@@ -1,7 +1,7 @@
 parameters:
     curlHelper.class:    Renaissance\CommonBundle\Tools\CurlHelper
-    curlHelper.class.canvas_access_token:   iQM65qhmtMLqgCyoi4rOoiz0rpSuVo1P2smdxRgaegxMcelPxIo6hlgDWmjINUIk
-    curlHelper.class.base_url:   "http://localhost:3000/api/v1/"
+    curlHelper.class.canvas_access_token:   0Ewjrcrw6JYmvmTbUpA3e3sBm8poqBvxm3zQyA9L2Ee2yEszOsVrZxGEziOfWyh5
+    curlHelper.class.base_url:   "https://canvas.example.com/api/v1/"
     curlHelper.class.authed:   FALSE
 services:
     curlHelper:
@@ -26,4 +26,10 @@ services:
         parent: baseREST
     fileREST:
         class: Renaissance\CommonBundle\REST\FileREST
+        parent: baseREST
+    modulesREST:
+        class: Renaissance\CommonBundle\REST\ModulesREST
+        parent: baseREST
+    pageREST:
+        class: Renaissance\CommonBundle\REST\PageREST
         parent: baseREST

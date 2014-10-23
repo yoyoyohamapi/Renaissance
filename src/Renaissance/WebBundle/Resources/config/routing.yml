@@ -29,13 +29,19 @@ user_index:
     defaults: { _controller: RenaissanceWebBundle:User:index }
     requirements:
       user_id:  \d+
-
+      
 course_index:
     path:     /course
     defaults: { _controller: RenaissanceWebBundle:Course:index }
 
 course_show:
     path:     /course/{course_id}
+    defaults: { _controller: RenaissanceWebBundle:Course:show }
+    requirements:
+        course_id:  \d+
+
+course_show_with_user:
+    path: /course/{course_id}/with_user
     defaults: { _controller: RenaissanceWebBundle:Course:show }
     requirements:
         course_id:  \d+
@@ -64,3 +70,4 @@ enroll_course:
     path: /enroll_course
     defaults: {_controller:RenaissanceWebBundle:Enroll:enroll}
     methods: [POST]
+

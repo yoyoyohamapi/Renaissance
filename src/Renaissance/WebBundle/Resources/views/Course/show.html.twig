@@ -27,7 +27,7 @@
 					<div class="col-xs-8 profileImg">
 						<video id="example_video_1" class="video-js vjs-default-skin vjs-big-play-centered"
 						  controls preload="auto" width="100%" height="350"
-						  poster="{{cover}}" data-setup='{"example_option":true}'>
+						  poster="{{cover.url}}" data-setup='{"example_option":true}'>
 						 <source src="{{asset('bundles/renaissanceweb/media/java.mp4')}}" type='video/mp4' />
 						 <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
 						</video>
@@ -54,22 +54,29 @@
 									</div>
 								</div>
 								<div class="col-xs-12">
-									<p class="courseDate">上课时间:{{start_end.start_at}}-{{start_end.end_at}}</p>
+									<p class="courseDate">上课时间:{{start_end.start_at}}{{start_end.end_at}}</p>
 								</div>
+								{% if user is empty %}
+									<div class="col-xs-12">
+										<input id="doJoin" name="noRegister" type="button" class="button button-large button-flat-flame" style="height:auto;" value="加入课程" onclick="javascrtpt:window.location.href='{{path('course_show_with_user',{'course_id': course.id }) }}'" post_style="background-color:rgba(55, 171, 55, 1);border-bottom-color: #008000;height:auto">
+									</div>
+								{% else %}
+
 								{% if isEnrolled==false%}
-								<div class="col-xs-12">
-									<input id="doJoin" name="{{course_id}}-{{canvas_user_id}}" type="button" class="button button-large button-flat-flame" style="height:auto;" value="加入课程" onclick="javascript:void(0);" post_style="background-color:rgba(55, 171, 55, 1);border-bottom-color: #008000;height:auto"post_value="进入课程" post_id="doEnter" post_href = "javascrtpt:window.location.href='{{site_url}}courses/{{course_id}}'">
-								</div>
+									<div class="col-xs-12">
+										<input id="doJoin" name="{{course_id}}-{{canvas_user_id}}" type="button" class="button button-large button-flat-flame" style="height:auto;" value="加入课程" onclick="javascript:void(0);" post_style="background-color:rgba(55, 171, 55, 1);border-bottom-color: #008000;height:auto"post_value="进入课程" post_id="doEnter" post_href = "javascrtpt:window.location.href='{{site_url}}courses/{{course_id}}'">
+									</div>
 								{%else%}
-								{%if isStart==true%}
-								<div class="col-xs-12">
-									<button id="doEnter" name="enter_course" type="button" class="button button-large button-flat-flame"style="height:auto;background-color:rgba(55, 171, 55, 1);border-bottom-color: #008000; " value="进入课程" onclick="javascrtpt:window.location.href='{{site_url}}courses/{{course_id}}'" >进入课程</button>
-								</div>
-								{%else%}
-								<div class="col-xs-12">
-									<button id="doEnter" name="enter_course" type="button" class="button button-large button-flat-flame" style="height:auto;background-color:rgba(55, 171, 55, 1);border-bottom-color: #008000; " value="进入课程" onclick="javascrtpt:window.location.href='{{site_url}}courses/{{course_id}}'" disabled="disabled">进入课程</button>
-								</div>
-								{%endif%}
+									{%if isStart==true%}
+										<div class="col-xs-12">
+										<button id="doEnter" name="enter_course" type="button" class="button button-large button-flat-flame"style="height:auto;background-color:rgba(55, 171, 55, 1);border-bottom-color: #008000; " value="进入课程" onclick="javascrtpt:window.location.href='{{site_url}}courses/{{course_id}}'" >进入课程</button>
+										</div>
+									{%else%}
+										<div class="col-xs-12">
+										<button id="doEnter" name="enter_course" type="button" class="button button-large button-flat-flame" style="height:auto;background-color:rgba(55, 171, 55, 1);border-bottom-color: #008000; " value="进入课程" onclick="javascrtpt:window.location.href='{{site_url}}courses/{{course_id}}'" disabled="disabled">进入课程</button>
+										</div>
+									{%endif%}
+								{% endif %}
 								{% endif %}
 							</div>
 						</div>
@@ -97,7 +104,7 @@
 									<ul class="timeLine">
 										{% for chapter_item in chapter.items %}
 										<li class="item">
-											<a href="{{path('course_lesson_show',{'course_id':course.id,'chapter_id':chapter.id,'lesson_id':chapter_item.id})}}" style="color:inherit"><time class="tmtime">课时{{loop.index}}</time>
+											<time class="tmtime">课时{{loop.index}}</time>
 											<div class="tmicon"></div>
 											<div class="tmlabel">
 												<p>{{chapter_item.title}}</p>
@@ -115,18 +122,19 @@
 						<div class="row">
 							<div class="col-xs-6 col-md-12 profileTeacher">
 								<p class="title">授课老师</p>
-								<div class="row info">
+								<div class="row info"> 
 									{% for head in heads %}
 									 <div class="col-xs-4"><img class="headPic img-circle"src={{head}}></div>
-									{% endfor %}
-									<div class="col-xs-8">
-										<p class="name">
-											{% for teacher in teachers %}
-											    {{teacher.short_name}}
-											{% endfor %}
-										</p>
-										<p class="property"></p>
+									{% endfor %}	
+								</div>
+								 <div class="col-xs-8" style="text-align:center">
+									{% for teacher in teachers %}
+									<div>
+									<p class="name">
+										{{teacher.short_name}}
+									</p>
 									</div>
+									{% endfor %}
 								</div>
 							</div>
 							<div class="col-xs-6 col-md-12 profileComments">
@@ -198,9 +206,15 @@
 <!-- rightcontrols -->
 <div class="col-xs-2 visible-lg-block visible-md-block rightControls">
 <ul>
+{% if user is empty %}
 <li class="">
-<a><i class="fa fa-user" title="进入个人中心"></i></a>
-</li>
+<a href="{{path('login')}}"><i class="fa fa-user" title="进入个人中心"></i></a>
+</li>								
+{% else %}
+<li class="">
+<a href="{{path('user_index',{'user_id': canvas_user_id }) }}"><i class="fa fa-user" title="进入个人中心"></i></a>
+</li>	
+{% endif %}
 <li class="">
 <a><i class="fa fa-qrcode" title="扫描二维码"></i></a>
 </li>

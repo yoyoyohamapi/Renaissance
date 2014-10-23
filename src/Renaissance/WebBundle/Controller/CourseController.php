@@ -57,56 +57,21 @@ class CourseController extends BaseController
 
     public function showAction($course_id)
     {
-        $curlHelper=$this->get('curlHelper');
-        $api="courses/".$course_id;
-        $course=$curlHelper->curlGet($api); 
+        $courseREST = $this->get('courseREST');
+        $course = $courseREST->getCourseById($course_id);
         if($course == null)
                return $this->render('RenaissanceWebBundle:Error:404.html.twig', array("error_msg"=>"无此课程"));
-        $start_at = $course->start_at;
-        $start_time = substr($start_at, 2,8);
-        $time = time();
-        $time = date("y-m-d",$time);
-        
-        $start_time = strtotime($start_time);
-        $time = strtotime($time);
-        //echo $start_time;
-        //echo $time;
 
-        if($start_time <= $time)
-        {
-            $isStart = true;
-        }else{
-            $isStart = false;
-        }
-        //echo $isDisable;
+        $isStart = $courseREST->getCourseStartState($course);
+        $start_end = $courseREST->getCourseStartEnd($course);
 
-        $start_at_month = substr($start_at,5,2);
-        $start_at_day = substr($start_at, 8,2);
-        $start_at = $start_at_month.'月'.$start_at_day.'日';
-
-        $end_at = $course->end_at;
-        $end_at_month = substr($end_at,5,2);
-        $end_at_day = substr($end_at, 8,2);
-        $end_at = $end_at_month.'月'.$end_at_day.'日';
-      
-        $start_end =  array('start_at' =>$start_at ,'end_at'=>$end_at );
-
-        $page=$curlHelper->curlGet($api."/front_page");
-        $students=$curlHelper->curlGet($api."/users?enrollment_type=student");
-        $teachers=$curlHelper->curlGet($api."/users?enrollment_type=teacher");
-        $folders=$curlHelper->curlGet($api."/folders/by_path/cover");
-    
-        //var_dump($teachers);
-        $canvas_user_id = $this->getUser()->getCanvasUserId();
-        
-
-        $stu_avatar = $curlHelper->curlGet("users/".$canvas_user_id."/profile");
-        if($stu_avatar==NULL)
-            $stu_avatar_url = NULL;
+        if(!empty($this->getUser()))
+            $canvas_user_id = $this->getUser()->getCanvasUserId();
         else
-            $stu_avatar_url = $stu_avatar->avatar_url;
+            $canvas_user_id = null;
 
-        $enrollment = $curlHelper->curlGet($api."/enrollments?user_id=".$canvas_user_id);
+        $enrollmentREST = $this->get("enrollmentREST");
+        $enrollment = $enrollmentREST->getCourseEnrollmentByUserId($course_id, $canvas_user_id);
         
         if(count($enrollment) == 0)
         {
@@ -115,30 +80,33 @@ class CourseController extends BaseController
             $isEnrolled = true;
         }
 
-        if($folders)
-       {
-            $cover_folder_id = $folders[count($folders)-1]->id;
-            $fileimgs = $curlHelper->curlGet('folders/'.$cover_folder_id.'/files?search_term=L.png');
-        }
-        else $fileimgs=null;
-        $chapters=$curlHelper->curlGet($api."/modules?include[]=items");
-        //var_dump($chapters);
-        if(!$page  || !$teachers || !$fileimgs || !$chapters)
+        $size = "L";
+        $cover = $courseREST->getCourseCoverById($course_id,$size);
+
+        $chapters = $courseREST->getChapters($course_id);
+        $page = $courseREST->getCoursePage($course_id);
+        
+        $userREST = $this->get("userREST");
+        $students = $userREST->getCourseStudents($course_id);
+        $teachers = $userREST->getCourseTeachers($course_id);
+
+        if(!$page  || !$teachers || !$cover || !$chapters)
             return $this->render('RenaissanceWebBundle:Error:404.html.twig', array("error_msg"=>"课程正在编辑中"));
+
         $head_urls=array();
         foreach ($teachers as $key => $value) {
-            $profile=$curlHelper->curlGet("users/".$value->id."/profile");
-            $head_urls[]=$profile->avatar_url;
+            $profile = $userREST->getUserProfile($value->id);
+            $teacher_avatar_url=$profile->avatar_url;
+            $head_urls[] = $teacher_avatar_url;
         }
-        $cover=$fileimgs[0]->url;
+
         $page->body=substr($page->body, 3,-4);
 
         $site_url =  $this->container->getParameter('site_url');
 
         $data=array('course'=>$course,'students'=>$students,'teachers'=>$teachers,
             'page'=>$page,'heads'=>$head_urls,'cover'=>$cover,'chapters'=>$chapters,'start_end'=>$start_end,
-            'isEnrolled'=>$isEnrolled,'site_url'=>$site_url,'course_id'=>$course_id,'canvas_user_id'=>$canvas_user_id,'isStart'=>$isStart,
-            'stu_avatar_url'=>$stu_avatar_url);
+            'isEnrolled'=>$isEnrolled,'site_url'=>$site_url,'course_id'=>$course_id,'canvas_user_id'=>$canvas_user_id,'isStart'=>$isStart);
          return $this->render('RenaissanceWebBundle:Course:show.html.twig', $data); 
     }
     public function ajaxAction(){

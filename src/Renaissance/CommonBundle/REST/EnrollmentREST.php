@@ -16,6 +16,12 @@ class EnrollmentREST extends BaseREST{
 		return $this->execute();
 	}
 
+	public function getCourseEnrollmentByUserId($course_id, $canvas_user_id){
+		$this->api = "courses/".$course_id."/enrollments?user_id=".$canvas_user_id;
+		$enrollment = $this->execute();
+		return $enrollment;
+	}
+	
 	public function getCurrentEnrollment($user_id){
 		$enrollments = $this->getAllEnrollmentsByUserId($user_id);
 		if( !empty($enrollments) ){
