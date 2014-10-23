@@ -47,4 +47,61 @@ class CourseREST extends BaseREST{
 			$cover = null;
 		return $cover;
 	}
+	public function getCourseStartState($course){
+		$start_at = $course->start_at;
+		if(!empty($start_at)){
+			$start_time = substr($start_at, 2,8);
+			$time = time();
+	       		$time = date("y-m-d",$time);
+	        
+	        		$start_time = strtotime($start_time);
+	        		$time = strtotime($time);
+
+	        		if($start_time <= $time)
+	        		{
+	           			$isStart = true;
+	        		}else{
+	            			$isStart = false;
+	        		}
+	        		
+		}else{
+			$isStart = false;
+		}
+		return $isStart;
+	}
+	public function getCourseStartEnd($course){
+		$start_at = $course->start_at;
+		$end_at = $course->end_at;
+		if(!empty($start_at) && !empty($end_at)){
+			$start_time = substr($start_at, 2,8);
+	        		$start_at_month = substr($start_at,5,2);
+        			$start_at_day = substr($start_at, 8,2);
+        			$start_at = $start_at_month.'月'.$start_at_day.'日';
+        			$end_at_month = substr($end_at,5,2);
+        			$end_at_day = substr($end_at, 8,2);
+        			$end_at = $end_at_month.'月'.$end_at_day.'日';
+      
+        			$start_end =  array('start_at' =>$start_at.'---','end_at'=>$end_at );
+		}elseif(!empty($start_at) && empty($end_at)){
+			$start_time = substr($start_at, 2,8);
+	        		$start_at_month = substr($start_at,5,2);
+        			$start_at_day = substr($start_at, 8,2);
+        			$start_at = $start_at_month.'月'.$start_at_day.'日';
+        			$start_end =  array('start_at' =>$start_at.'---', 'end_at'=>"结束时间未知" );
+		}else{
+			$start_end = array('start_at' => "课程尚未开始", 'end_at'=>"");
+		}
+		return $start_end;
+	}
+	public function getCoursePage($course_id){
+		$this->api = "courses/".$course_id."/front_page";
+        		$page = $this->execute();
+        		return $page;
+	}
+	
+	public function getChapters($course_id){
+		$this->api = "courses/".$course_id."/modules?include[]=items";
+		$chapters = $this->execute();
+		return $chapters;
+	}
 }
