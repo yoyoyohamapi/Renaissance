@@ -27,12 +27,9 @@ services:
     fileREST:
         class: Renaissance\CommonBundle\REST\FileREST
         parent: baseREST
-<<<<<<< HEAD
     modulesREST:
         class: Renaissance\CommonBundle\REST\ModulesREST
         parent: baseREST
     pageREST:
         class: Renaissance\CommonBundle\REST\PageREST
         parent: baseREST
-=======
->>>>>>> 57719f222fc5c2870829b99857e77204b580dd26
