@@ -94,14 +94,12 @@ class CourseREST extends BaseREST{
 		return $start_end;
 	}
 	public function getCoursePage($course_id){
-		$this->api = "courses/".$course_id."/front_page";
-        		$page = $this->execute();
-        		return $page;
+		$pageRest = $this->container->get("pageRest");
+		return $pageRest->getPageByCourseId($course_id);
 	}
 	
 	public function getChapters($course_id){
-		$this->api = "courses/".$course_id."/modules?include[]=items";
-		$chapters = $this->execute();
-		return $chapters;
+		$modulesREST = $this->container->get("modulesREST");
+		return $modulesREST->getModulesByCourseId($course_id);
 	}
 }
