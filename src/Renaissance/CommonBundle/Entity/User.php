@@ -40,7 +40,17 @@ class User implements UserInterface, \Serializable
      */
     private $canvas_user_id;
 
+    /**
+     * @ORM\Column(name="avatar_url", type="string",length=255)
+     */
+    private $avatar_url = "bundles/renaissanceweb/img/default/avatar.png";
+
+
+
+
     private $password;
+
+    
     
     public function __construct()
     {
@@ -208,5 +218,28 @@ class User implements UserInterface, \Serializable
     public function getCanvasUserId()
     {
         return $this->canvas_user_id;
+    }
+
+    /**
+     * Set avatar_url
+     *
+     * @param string $avatar_url
+     * @return User
+     */
+    public function setAvatarUrl($avatar_url)
+    {
+        $this->avatar_url = $avatar_url;
+
+        return $this;
+    }
+
+    /**
+     * Get avatar_url
+     *
+     * @return string 
+     */
+    public function getAvatarUrl()
+    {
+        return $this->avatar_url;
     }
 }

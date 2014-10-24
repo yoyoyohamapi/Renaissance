@@ -3,6 +3,7 @@
 namespace Renaissance\WebBundle\Controller;
 use Renaissance\WebBundle\Controller\BaseController;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Response;
 
 class CourseController extends BaseController
 {
@@ -56,34 +57,57 @@ class CourseController extends BaseController
 
     public function showAction($course_id)
     {
-        $curlHelper=$this->get('curlHelper');
-        $api="courses/".$course_id;
-        $course=$curlHelper->curlGet($api); 
+        $courseREST = $this->get('courseREST');
+        $course = $courseREST->getCourseById($course_id);
         if($course == null)
                return $this->render('RenaissanceWebBundle:Error:404.html.twig', array("error_msg"=>"无此课程"));
-        $page=$curlHelper->curlGet($api."/front_page");
-        $students=$curlHelper->curlGet($api."/users?enrollment_type=student");
-        $teachers=$curlHelper->curlGet($api."/users?enrollment_type=teacher");
-        $folders=$curlHelper->curlGet($api."/folders/by_path/cover");
-        if($folders)
+
+        $isStart = $courseREST->getCourseStartState($course);
+        $start_end = $courseREST->getCourseStartEnd($course);
+
+        if(!empty($this->getUser()))
+            $canvas_user_id = $this->getUser()->getCanvasUserId();
+        else
+            $canvas_user_id = null;
+
+        $enrollmentREST = $this->get("enrollmentREST");
+        $enrollment = $enrollmentREST->getCourseEnrollmentByUserId($course_id, $canvas_user_id);
+        
+        if(count($enrollment) == 0)
         {
-            $cover_folder_id = $folders[count($folders)-1]->id;
-            $fileimgs = $curlHelper->curlGet('folders/'.$cover_folder_id.'/files?search_term=L.png');
+            $isEnrolled = false;
+        }else{
+            $isEnrolled = true;
         }
-        else $fileimgs=null;
-        $chapters=$curlHelper->curlGet($api."/modules?include[]=items");
-        if(!$page  || !$teachers || !$fileimgs || !$chapters)
+
+        $size = "L";
+        $cover = $courseREST->getCourseCoverById($course_id,$size);
+
+        $chapters = $courseREST->getChapters($course_id);
+        $page = $courseREST->getCoursePage($course_id);
+        
+        $userREST = $this->get("userREST");
+        $students = $userREST->getCourseStudents($course_id);
+        $teachers = $userREST->getCourseTeachers($course_id);
+
+        if(!$page  || !$teachers || !$cover || !$chapters)
             return $this->render('RenaissanceWebBundle:Error:404.html.twig', array("error_msg"=>"课程正在编辑中"));
+
         $head_urls=array();
         foreach ($teachers as $key => $value) {
-            $profile=$curlHelper->curlGet("users/".$value->id."/profile");
-            $head_urls[]=$profile->avatar_url;
+            $profile = $userREST->getUserProfile($value->id);
+            $teacher_avatar_url=$profile->avatar_url;
+            $head_urls[] = $teacher_avatar_url;
         }
-        $cover=$fileimgs[0]->url;
+
         $page->body=substr($page->body, 3,-4);
+
+        $site_url =  $this->container->getParameter('site_url');
+
         $data=array('course'=>$course,'students'=>$students,'teachers'=>$teachers,
-            'page'=>$page,'heads'=>$head_urls,'cover'=>$cover,'chapters'=>$chapters);
-        return $this->render('RenaissanceWebBundle:Course:show.html.twig', $data);    
+            'page'=>$page,'heads'=>$head_urls,'cover'=>$cover,'chapters'=>$chapters,'start_end'=>$start_end,
+            'isEnrolled'=>$isEnrolled,'site_url'=>$site_url,'course_id'=>$course_id,'canvas_user_id'=>$canvas_user_id,'isStart'=>$isStart);
+         return $this->render('RenaissanceWebBundle:Course:show.html.twig', $data); 
     }
     public function ajaxAction(){
 
@@ -130,4 +154,5 @@ class CourseController extends BaseController
             );
         return $this->render("RenaissanceWebBundle:Course:plaza_more.html.twig",$data);
     }
+
 }

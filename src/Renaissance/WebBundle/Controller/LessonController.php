@@ -16,14 +16,14 @@ class LessonController extends Controller
                 // api : http://localhost:3000/api/v1/courses/4
                 $course=  $curlHelper->curlGet("courses/".$course_id);
                 if(is_null($course) ){
-                                throw new \Exception("no such course");
+                                throw new \Exception("无此课程");//no such course
                 }
                 $course_name=$course->name;
                 //
                 // api : http://localhost:3000/api/v1/courses/4/modules
                 $all_modules=  $curlHelper->curlGet("courses/".$course_id."/modules");
                 if(is_null($all_modules) || empty($all_modules)){
-                                throw new \Exception("no module available");
+                                throw new \Exception("无此单元");//no module available
                 }
                 $module_name=null;
                 foreach ($all_modules as $module) {
@@ -32,7 +32,7 @@ class LessonController extends Controller
                                 }
                 }
                 if(is_null($module_name)){
-                                throw new \Exception("no such module(chapter)");
+                                throw new \Exception("无此单元");//no such module(chapter)
                 }
                 //
                 // api : http://localhost:3000/api/v1/courses/4/modules/3/items
@@ -73,8 +73,8 @@ class LessonController extends Controller
                    ));
             }catch (\Exception $e){
                 //echo "error:".$e->getMessage();
-                return $this->render('RenaissanceWebBundle:Error:404.html.twig', array(
-                        "error_msg"=>$e->getMessage()
+               return $this->render('RenaissanceWebBundle:Error:404.html.twig', array(
+                        "error_msg"=>"参数错误"
                 ));
             }
     }

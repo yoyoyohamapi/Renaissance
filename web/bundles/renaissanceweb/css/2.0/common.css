@@ -6,7 +6,10 @@ html{
 
 body{
 	min-height: 100%;
+	font-size: 14px;
 	background-color:#edeff0;
+	min-width: 992px;
+	overflow-x:scroll;
 }
 
 ::-webkit-input-placeholder { /* WebKit browsers */
@@ -276,9 +279,8 @@ a:hover{
 }
 
 
-/*Screen Adapt*/
 @media  screen and (max-width: 1366px) {
-	html{
-		font-size: 7px;
+	body{
+		font-size: 10px;
 	}
 }

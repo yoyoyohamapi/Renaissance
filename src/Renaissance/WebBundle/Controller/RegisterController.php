@@ -42,7 +42,6 @@ class RegisterController extends BaseController
 			"pseudonym" => $pseudonym,
 			"user" => $user
 		);
-		
 		$user_new = $curlHelper->curlCustom($api,$post_field,'POST');
 		if(!empty($user_new->id)){
 			$user = new User();
