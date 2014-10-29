@@ -154,5 +154,4 @@ class CourseController extends BaseController
             );
         return $this->render("RenaissanceWebBundle:Course:plaza_more.html.twig",$data);
     }
-
 }
