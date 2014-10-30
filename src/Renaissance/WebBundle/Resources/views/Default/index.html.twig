@@ -56,7 +56,7 @@
 		<div id="introVideo">
 			<img src="/bundles/renaissanceweb/img/2nd/intro_title.png" style="">
 			<p style="color: #FFFFFF;font-size: 260%;margin-top: 10%;margin-bottom: 10%;margin-right: 10%;text-align: right;">泛IT学科大讲堂</p>
-			<p style="color: #FFFFFF;font-size: 180%;margin-top: 10%;margin-bottom: 10%;margin-right: 10%;text-align: right;"><a href="javascript:void(0);" onclick="showVideo();">了解更多 <img src="/bundles/renaissanceweb/img/2nd/intro_direct.png" style="width: 30px;margin-bottom: 5px;"></a></p>
+			<p style="color: #FFFFFF;font-size: 180%;margin-top: 10%;margin-bottom: 10%;margin-right: 10%;text-align: right;"><a href="javascript:void(0);" id="show_modal">了解更多 <img src="/bundles/renaissanceweb/img/2nd/intro_direct.png" style="width: 30px;margin-bottom: 5px;"></a></p>
 		</div>
 		<!-- 登录表单 -->
 		<div>
@@ -214,59 +214,6 @@
 </div>
 </div>
 {% endblock %}
-{% block scripts %}
-<!-- self-defined js  -->
-<script type="text/javascript">
-var iden=null;//lcx-debug
-
-$(function(){
-	/*
-	//************************init
-	//$("#regRect").css("padding-top",$("#regRect").height()*2/5+"px");
-	//************
-	$("#formAction").mouseover(function(){
-		$(this).animate({
-			marginRight:'0px',
-		},'normal');
-	});
-	$("#formAction").mouseleave(function(){
-		$(this).animate({
-			marginRight:'5px',
-		},'normal');
-	});*/
-	//************************
-	$("#regBtn").click(function(){
-		$("html,body").animate({
-			scrollTop:$("#bodyWrapper").offset().top
-		},500,function(){
-			$("#formul").animate({
-				paddingTop:"35"
-			},100,function(){
-			$("#formul").animate({
-				paddingTop:"40"
-			},100,function(){
-			$("#formul").animate({
-				paddingTop:"35"
-			},100,function(){
-			$("#formul").animate({
-				paddingTop:"40"
-			},100);
-			});
-			});
-			});
-		});
-	});
-});
-function showVideo(){
-	//alert("a");
-	$('#myModal').modal('toggle');
-}
-</script>
-<script src="/bundles/renaissanceweb/js/showCourse.js"></script>
-<!-- <script src="/bundles/renaissanceweb/js/showCourseContent.js"></script>-->
-<script src="/bundles/renaissanceweb/js/detectScroll.js"></script>
-<!-- <script src="/bundles/renaissanceweb/js/formPanel.js"></script>-->
-
-{% endblock %}
 {% set base_bar="true" %}
 {% set footer="true" %}
+{% set script_action='default/index'%}

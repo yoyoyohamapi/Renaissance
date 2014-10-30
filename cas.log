@@ -532,3 +532,926 @@ SERVER IP ADDRESS: 0:0:0:0:0:0:0:1
 2014-10-28 10:11:00,544 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
 2014-10-28 10:13:00,544 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
 2014-10-28 10:13:00,544 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2014-10-29 22:37:25,818 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2014-10-29 22:37:26,763 INFO [org.jasig.cas.util.AutowiringSchedulerFactoryBean] - Starting Quartz Scheduler now
+2014-10-29 22:37:45,663 INFO [org.jasig.cas.ticket.registry.support.DefaultTicketRegistryCleaner] - Beginning ticket cleanup.
+2014-10-29 22:37:45,665 INFO [org.jasig.cas.ticket.registry.support.DefaultTicketRegistryCleaner] - 0 tickets found to be removed.
+2014-10-29 22:37:45,665 INFO [org.jasig.cas.ticket.registry.support.DefaultTicketRegistryCleaner] - Finished ticket cleanup.
+2014-10-29 22:39:25,907 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2014-10-29 22:39:25,907 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2014-10-29 22:41:25,896 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2014-10-29 22:41:25,896 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2014-10-29 22:43:25,896 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2014-10-29 22:43:25,896 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2014-10-29 22:45:25,897 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2014-10-29 22:45:25,898 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2014-10-29 22:47:25,896 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2014-10-29 22:47:25,897 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2014-10-29 22:49:25,896 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2014-10-29 22:49:25,896 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2014-10-29 22:51:25,895 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2014-10-29 22:51:25,896 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2014-10-29 22:53:25,895 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2014-10-29 22:53:25,896 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2014-10-29 22:55:25,896 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2014-10-29 22:55:25,896 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2014-10-29 22:57:25,893 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2014-10-29 22:57:25,893 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2014-10-29 22:59:25,893 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2014-10-29 22:59:25,893 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2014-10-29 23:01:25,897 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2014-10-29 23:01:25,897 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2014-10-29 23:03:25,897 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2014-10-29 23:03:25,897 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2014-10-29 23:05:25,894 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2014-10-29 23:05:25,894 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2014-10-29 23:07:25,897 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2014-10-29 23:07:25,898 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2014-10-29 23:09:25,897 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2014-10-29 23:09:25,897 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2014-10-29 23:11:25,896 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2014-10-29 23:11:25,897 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2014-10-29 23:13:25,895 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2014-10-29 23:13:25,896 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2014-10-29 23:15:25,895 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2014-10-29 23:15:25,895 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2014-10-29 23:17:25,896 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2014-10-29 23:17:25,896 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2014-10-29 23:19:25,896 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2014-10-29 23:19:25,896 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2014-10-29 23:21:25,895 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2014-10-29 23:21:25,896 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2014-10-29 23:23:25,896 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2014-10-29 23:23:25,896 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2014-10-29 23:25:25,896 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2014-10-29 23:25:25,896 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2014-10-29 23:27:25,896 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2014-10-29 23:27:25,896 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2014-10-29 23:29:25,894 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2014-10-29 23:29:25,894 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2014-10-29 23:31:25,896 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2014-10-29 23:31:25,896 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2014-10-29 23:33:25,894 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2014-10-29 23:33:25,894 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2014-10-29 23:35:25,896 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2014-10-29 23:35:25,896 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2014-10-29 23:37:25,896 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2014-10-29 23:37:25,897 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2014-10-29 23:39:25,895 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2014-10-29 23:39:25,895 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2014-10-29 23:40:40,614 INFO [org.jasig.cas.web.flow.InitialFlowSetupAction] - Setting path for cookies to: /cas/
+2014-10-29 23:40:40,614 INFO [org.jasig.cas.web.flow.InitialFlowSetupAction] - Setting path for cookies to: /cas/
+2014-10-29 23:41:25,891 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2014-10-29 23:41:25,891 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2014-10-29 23:43:25,894 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2014-10-29 23:43:25,894 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2014-10-29 23:45:25,893 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2014-10-29 23:45:25,893 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2014-10-29 23:47:25,895 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2014-10-29 23:47:25,895 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2014-10-29 23:49:25,893 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2014-10-29 23:49:25,893 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2014-10-29 23:51:25,895 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2014-10-29 23:51:25,896 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2014-10-29 23:53:25,895 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2014-10-29 23:53:25,896 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2014-10-29 23:55:25,897 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2014-10-29 23:55:25,897 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2014-10-29 23:57:25,897 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2014-10-29 23:57:25,897 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2014-10-29 23:59:25,895 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2014-10-29 23:59:25,896 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2014-10-30 00:01:05,637 INFO [org.jasig.cas.ticket.registry.support.DefaultTicketRegistryCleaner] - Beginning ticket cleanup.
+2014-10-30 00:01:05,638 INFO [org.jasig.cas.ticket.registry.support.DefaultTicketRegistryCleaner] - 0 tickets found to be removed.
+2014-10-30 00:01:05,638 INFO [org.jasig.cas.ticket.registry.support.DefaultTicketRegistryCleaner] - Finished ticket cleanup.
+2014-10-30 00:01:25,894 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2014-10-30 00:01:25,894 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2014-10-30 00:03:25,896 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2014-10-30 00:03:25,896 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2014-10-30 00:05:25,895 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2014-10-30 00:05:25,896 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2014-10-30 00:07:25,896 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2014-10-30 00:07:25,897 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2014-10-30 00:09:25,893 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2014-10-30 00:09:25,893 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2014-10-30 00:11:25,893 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2014-10-30 00:11:25,893 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2014-10-30 00:13:25,894 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2014-10-30 00:13:25,894 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2014-10-30 00:15:25,895 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2014-10-30 00:15:25,895 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2014-10-30 00:17:25,895 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2014-10-30 00:17:25,895 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2014-10-30 00:19:25,894 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2014-10-30 00:19:25,894 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2014-10-30 00:21:25,892 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2014-10-30 00:21:25,892 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2014-10-30 00:23:25,897 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2014-10-30 00:23:25,897 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2014-10-30 00:25:25,896 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2014-10-30 00:25:25,896 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2014-10-30 00:27:25,895 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2014-10-30 00:27:25,895 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2014-10-30 00:29:25,895 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2014-10-30 00:29:25,895 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2014-10-30 00:31:25,896 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2014-10-30 00:31:25,896 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2014-10-30 21:55:03,200 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2014-10-30 21:55:03,859 INFO [org.jasig.cas.util.AutowiringSchedulerFactoryBean] - Starting Quartz Scheduler now
+2014-10-30 21:55:23,054 INFO [org.jasig.cas.ticket.registry.support.DefaultTicketRegistryCleaner] - Beginning ticket cleanup.
+2014-10-30 21:55:23,056 INFO [org.jasig.cas.ticket.registry.support.DefaultTicketRegistryCleaner] - 0 tickets found to be removed.
+2014-10-30 21:55:23,056 INFO [org.jasig.cas.ticket.registry.support.DefaultTicketRegistryCleaner] - Finished ticket cleanup.
+2014-10-30 21:55:37,738 INFO [org.jasig.cas.web.flow.InitialFlowSetupAction] - Setting path for cookies to: /cas/
+2014-10-30 21:55:37,738 INFO [org.jasig.cas.web.flow.InitialFlowSetupAction] - Setting path for cookies to: /cas/
+2014-10-30 21:55:54,892 INFO [org.jasig.cas.authentication.AuthenticationManagerImpl] - org.jasig.cas.util.QueryDatabaseAuthenticationHandlerWithSalt successfully authenticated [username: wxj@qq.com]
+2014-10-30 21:55:54,893 INFO [org.jasig.cas.authentication.AuthenticationManagerImpl] - Resolved principal wxj@qq.com
+2014-10-30 21:55:54,894 INFO [org.jasig.cas.authentication.AuthenticationManagerImpl] - org.jasig.cas.util.QueryDatabaseAuthenticationHandlerWithSalt@431376b0 authenticated wxj@qq.com with credential [username: wxj@qq.com].
+2014-10-30 21:55:54,902 INFO [com.github.inspektr.audit.support.Slf4jLoggingAuditTrailManager] - Audit trail record BEGIN
+=============================================================
+WHO: [username: wxj@qq.com]
+WHAT: supplied credentials: [username: wxj@qq.com]
+ACTION: AUTHENTICATION_SUCCESS
+APPLICATION: CAS
+WHEN: Thu Oct 30 21:55:54 CST 2014
+CLIENT IP ADDRESS: 0:0:0:0:0:0:0:1
+SERVER IP ADDRESS: 0:0:0:0:0:0:0:1
+=============================================================
+
+
+2014-10-30 21:55:54,908 INFO [com.github.inspektr.audit.support.Slf4jLoggingAuditTrailManager] - Audit trail record BEGIN
+=============================================================
+WHO: [username: wxj@qq.com]
+WHAT: TGT-1-yVclWdkwHcOL2RIocfHPEAOGbVcj2ZNPT3CiP0FHjzddOXEZFl-cas01.example.org
+ACTION: TICKET_GRANTING_TICKET_CREATED
+APPLICATION: CAS
+WHEN: Thu Oct 30 21:55:54 CST 2014
+CLIENT IP ADDRESS: 0:0:0:0:0:0:0:1
+SERVER IP ADDRESS: 0:0:0:0:0:0:0:1
+=============================================================
+
+
+2014-10-30 21:55:54,916 INFO [org.jasig.cas.CentralAuthenticationServiceImpl] - Granted service ticket [ST-1-Vjb3X9CjWfFgXIU4n1Cu-cas01.example.org] for service [http://localhost:8000/] for user [wxj@qq.com]
+2014-10-30 21:55:54,916 INFO [com.github.inspektr.audit.support.Slf4jLoggingAuditTrailManager] - Audit trail record BEGIN
+=============================================================
+WHO: wxj@qq.com
+WHAT: ST-1-Vjb3X9CjWfFgXIU4n1Cu-cas01.example.org for http://localhost:8000/
+ACTION: SERVICE_TICKET_CREATED
+APPLICATION: CAS
+WHEN: Thu Oct 30 21:55:54 CST 2014
+CLIENT IP ADDRESS: 0:0:0:0:0:0:0:1
+SERVER IP ADDRESS: 0:0:0:0:0:0:0:1
+=============================================================
+
+
+2014-10-30 21:55:55,210 INFO [com.github.inspektr.audit.support.Slf4jLoggingAuditTrailManager] - Audit trail record BEGIN
+=============================================================
+WHO: audit:unknown
+WHAT: ST-1-Vjb3X9CjWfFgXIU4n1Cu-cas01.example.org
+ACTION: SERVICE_TICKET_VALIDATED
+APPLICATION: CAS
+WHEN: Thu Oct 30 21:55:55 CST 2014
+CLIENT IP ADDRESS: 0:0:0:0:0:0:0:1
+SERVER IP ADDRESS: 0:0:0:0:0:0:0:1
+=============================================================
+
+
+2014-10-30 21:57:03,251 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2014-10-30 21:57:03,251 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2014-10-30 21:59:03,251 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2014-10-30 21:59:03,251 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2014-10-30 22:01:03,251 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2014-10-30 22:01:03,252 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2014-10-30 22:03:03,253 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2014-10-30 22:03:03,253 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2014-10-30 22:05:03,254 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2014-10-30 22:05:03,254 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2014-10-30 22:07:03,249 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2014-10-30 22:07:03,249 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2014-10-30 22:09:03,249 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2014-10-30 22:09:03,250 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2014-10-30 22:11:03,250 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2014-10-30 22:11:03,250 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2014-10-30 22:13:03,249 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2014-10-30 22:13:03,250 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2014-10-30 22:15:03,253 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2014-10-30 22:15:03,253 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2014-10-30 22:17:03,252 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2014-10-30 22:17:03,252 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2014-10-30 22:19:03,251 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2014-10-30 22:19:03,251 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2014-10-30 22:21:03,251 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2014-10-30 22:21:03,251 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2014-10-30 22:23:03,250 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2014-10-30 22:23:03,250 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2014-10-30 22:25:03,255 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2014-10-30 22:25:03,255 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2014-10-30 22:27:03,253 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2014-10-30 22:27:03,253 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2014-10-30 22:29:03,251 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2014-10-30 22:29:03,251 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2014-10-30 22:31:03,249 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2014-10-30 22:31:03,249 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2014-10-30 22:33:03,251 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2014-10-30 22:33:03,251 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2014-10-30 22:35:03,250 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2014-10-30 22:35:03,250 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2014-10-30 22:37:03,253 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2014-10-30 22:37:03,253 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2014-10-30 22:39:03,251 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2014-10-30 22:39:03,252 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2014-10-30 22:41:03,250 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2014-10-30 22:41:03,250 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2014-10-30 22:43:03,254 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2014-10-30 22:43:03,254 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2014-10-30 22:45:03,252 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2014-10-30 22:45:03,252 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2014-10-30 22:47:03,250 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2014-10-30 22:47:03,250 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2014-10-30 22:49:03,253 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2014-10-30 22:49:03,254 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2014-10-30 22:51:03,253 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2014-10-30 22:51:03,253 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2014-10-30 22:53:03,252 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2014-10-30 22:53:03,253 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2014-10-30 22:55:03,252 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2014-10-30 22:55:03,252 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2014-10-30 22:57:03,253 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2014-10-30 22:57:03,253 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2014-10-30 22:59:03,252 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2014-10-30 22:59:03,253 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2014-10-30 23:01:03,252 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2014-10-30 23:01:03,252 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2014-10-30 23:03:03,251 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2014-10-30 23:03:03,251 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2014-10-30 23:04:53,280 INFO [com.github.inspektr.audit.support.Slf4jLoggingAuditTrailManager] - Audit trail record BEGIN
+=============================================================
+WHO: audit:unknown
+WHAT: TGT-1-yVclWdkwHcOL2RIocfHPEAOGbVcj2ZNPT3CiP0FHjzddOXEZFl-cas01.example.org
+ACTION: TICKET_GRANTING_TICKET_DESTROYED
+APPLICATION: CAS
+WHEN: Thu Oct 30 23:04:53 CST 2014
+CLIENT IP ADDRESS: 0:0:0:0:0:0:0:1
+SERVER IP ADDRESS: 0:0:0:0:0:0:0:1
+=============================================================
+
+
+2014-10-30 23:05:03,249 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2014-10-30 23:05:03,249 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2014-10-30 23:05:25,440 INFO [org.jasig.cas.authentication.AuthenticationManagerImpl] - org.jasig.cas.util.QueryDatabaseAuthenticationHandlerWithSalt successfully authenticated [username: jbl@qq.com]
+2014-10-30 23:05:25,441 INFO [org.jasig.cas.authentication.AuthenticationManagerImpl] - Resolved principal jbl@qq.com
+2014-10-30 23:05:25,441 INFO [org.jasig.cas.authentication.AuthenticationManagerImpl] - org.jasig.cas.util.QueryDatabaseAuthenticationHandlerWithSalt@431376b0 authenticated jbl@qq.com with credential [username: jbl@qq.com].
+2014-10-30 23:05:25,441 INFO [com.github.inspektr.audit.support.Slf4jLoggingAuditTrailManager] - Audit trail record BEGIN
+=============================================================
+WHO: [username: jbl@qq.com]
+WHAT: supplied credentials: [username: jbl@qq.com]
+ACTION: AUTHENTICATION_SUCCESS
+APPLICATION: CAS
+WHEN: Thu Oct 30 23:05:25 CST 2014
+CLIENT IP ADDRESS: 0:0:0:0:0:0:0:1
+SERVER IP ADDRESS: 0:0:0:0:0:0:0:1
+=============================================================
+
+
+2014-10-30 23:05:25,442 INFO [com.github.inspektr.audit.support.Slf4jLoggingAuditTrailManager] - Audit trail record BEGIN
+=============================================================
+WHO: [username: jbl@qq.com]
+WHAT: TGT-2-0hlQTzJ5u4dPXmR63J7ldkfHbrv0oQOcZFfy7oTaqxD9KqYMBR-cas01.example.org
+ACTION: TICKET_GRANTING_TICKET_CREATED
+APPLICATION: CAS
+WHEN: Thu Oct 30 23:05:25 CST 2014
+CLIENT IP ADDRESS: 0:0:0:0:0:0:0:1
+SERVER IP ADDRESS: 0:0:0:0:0:0:0:1
+=============================================================
+
+
+2014-10-30 23:05:25,443 INFO [org.jasig.cas.CentralAuthenticationServiceImpl] - Granted service ticket [ST-2-wQwPFMdYNvAG19A2QDNT-cas01.example.org] for service [http://localhost:8000] for user [jbl@qq.com]
+2014-10-30 23:05:25,444 INFO [com.github.inspektr.audit.support.Slf4jLoggingAuditTrailManager] - Audit trail record BEGIN
+=============================================================
+WHO: jbl@qq.com
+WHAT: ST-2-wQwPFMdYNvAG19A2QDNT-cas01.example.org for http://localhost:8000
+ACTION: SERVICE_TICKET_CREATED
+APPLICATION: CAS
+WHEN: Thu Oct 30 23:05:25 CST 2014
+CLIENT IP ADDRESS: 0:0:0:0:0:0:0:1
+SERVER IP ADDRESS: 0:0:0:0:0:0:0:1
+=============================================================
+
+
+2014-10-30 23:05:25,594 ERROR [org.jasig.cas.CentralAuthenticationServiceImpl] - ServiceTicket [ST-2-wQwPFMdYNvAG19A2QDNT-cas01.example.org] with service [http://localhost:8000 does not match supplied service [http://localhost:8000/]
+2014-10-30 23:05:25,595 INFO [com.github.inspektr.audit.support.Slf4jLoggingAuditTrailManager] - Audit trail record BEGIN
+=============================================================
+WHO: audit:unknown
+WHAT: ST-2-wQwPFMdYNvAG19A2QDNT-cas01.example.org
+ACTION: SERVICE_TICKET_VALIDATE_FAILED
+APPLICATION: CAS
+WHEN: Thu Oct 30 23:05:25 CST 2014
+CLIENT IP ADDRESS: 0:0:0:0:0:0:0:1
+SERVER IP ADDRESS: 0:0:0:0:0:0:0:1
+=============================================================
+
+
+2014-10-30 23:05:25,825 INFO [org.jasig.cas.CentralAuthenticationServiceImpl] - Granted service ticket [ST-3-aNQzG4RNJStUaaRBxmON-cas01.example.org] for service [http://localhost:8000/] for user [jbl@qq.com]
+2014-10-30 23:05:25,825 INFO [com.github.inspektr.audit.support.Slf4jLoggingAuditTrailManager] - Audit trail record BEGIN
+=============================================================
+WHO: jbl@qq.com
+WHAT: ST-3-aNQzG4RNJStUaaRBxmON-cas01.example.org for http://localhost:8000/
+ACTION: SERVICE_TICKET_CREATED
+APPLICATION: CAS
+WHEN: Thu Oct 30 23:05:25 CST 2014
+CLIENT IP ADDRESS: 0:0:0:0:0:0:0:1
+SERVER IP ADDRESS: 0:0:0:0:0:0:0:1
+=============================================================
+
+
+2014-10-30 23:05:25,960 INFO [com.github.inspektr.audit.support.Slf4jLoggingAuditTrailManager] - Audit trail record BEGIN
+=============================================================
+WHO: audit:unknown
+WHAT: ST-3-aNQzG4RNJStUaaRBxmON-cas01.example.org
+ACTION: SERVICE_TICKET_VALIDATED
+APPLICATION: CAS
+WHEN: Thu Oct 30 23:05:25 CST 2014
+CLIENT IP ADDRESS: 0:0:0:0:0:0:0:1
+SERVER IP ADDRESS: 0:0:0:0:0:0:0:1
+=============================================================
+
+
+2014-10-30 23:05:34,186 INFO [org.jasig.cas.CentralAuthenticationServiceImpl] - Granted service ticket [ST-4-TBSB9rAhSlI45CIY6esQ-cas01.example.org] for service [http://localhost:3000/login/cas] for user [jbl@qq.com]
+2014-10-30 23:05:34,186 INFO [com.github.inspektr.audit.support.Slf4jLoggingAuditTrailManager] - Audit trail record BEGIN
+=============================================================
+WHO: jbl@qq.com
+WHAT: ST-4-TBSB9rAhSlI45CIY6esQ-cas01.example.org for http://localhost:3000/login/cas
+ACTION: SERVICE_TICKET_CREATED
+APPLICATION: CAS
+WHEN: Thu Oct 30 23:05:34 CST 2014
+CLIENT IP ADDRESS: 0:0:0:0:0:0:0:1
+SERVER IP ADDRESS: 0:0:0:0:0:0:0:1
+=============================================================
+
+
+2014-10-30 23:05:34,346 INFO [com.github.inspektr.audit.support.Slf4jLoggingAuditTrailManager] - Audit trail record BEGIN
+=============================================================
+WHO: audit:unknown
+WHAT: ST-4-TBSB9rAhSlI45CIY6esQ-cas01.example.org
+ACTION: SERVICE_TICKET_VALIDATED
+APPLICATION: CAS
+WHEN: Thu Oct 30 23:05:34 CST 2014
+CLIENT IP ADDRESS: 0:0:0:0:0:0:0:1
+SERVER IP ADDRESS: 0:0:0:0:0:0:0:1
+=============================================================
+
+
+2014-10-30 23:05:34,766 INFO [org.jasig.cas.CentralAuthenticationServiceImpl] - Granted service ticket [ST-5-6Kbwr9OqLTlWZUISQ3TD-cas01.example.org] for service [http://localhost:3000/login/cas] for user [jbl@qq.com]
+2014-10-30 23:05:34,766 INFO [com.github.inspektr.audit.support.Slf4jLoggingAuditTrailManager] - Audit trail record BEGIN
+=============================================================
+WHO: jbl@qq.com
+WHAT: ST-5-6Kbwr9OqLTlWZUISQ3TD-cas01.example.org for http://localhost:3000/login/cas
+ACTION: SERVICE_TICKET_CREATED
+APPLICATION: CAS
+WHEN: Thu Oct 30 23:05:34 CST 2014
+CLIENT IP ADDRESS: 0:0:0:0:0:0:0:1
+SERVER IP ADDRESS: 0:0:0:0:0:0:0:1
+=============================================================
+
+
+2014-10-30 23:05:34,889 INFO [com.github.inspektr.audit.support.Slf4jLoggingAuditTrailManager] - Audit trail record BEGIN
+=============================================================
+WHO: audit:unknown
+WHAT: ST-5-6Kbwr9OqLTlWZUISQ3TD-cas01.example.org
+ACTION: SERVICE_TICKET_VALIDATED
+APPLICATION: CAS
+WHEN: Thu Oct 30 23:05:34 CST 2014
+CLIENT IP ADDRESS: 0:0:0:0:0:0:0:1
+SERVER IP ADDRESS: 0:0:0:0:0:0:0:1
+=============================================================
+
+
+2014-10-30 23:05:35,252 INFO [org.jasig.cas.CentralAuthenticationServiceImpl] - Granted service ticket [ST-6-mQzCYfmtkh7gOpwIlNEJ-cas01.example.org] for service [http://localhost:3000/login/cas] for user [jbl@qq.com]
+2014-10-30 23:05:35,252 INFO [com.github.inspektr.audit.support.Slf4jLoggingAuditTrailManager] - Audit trail record BEGIN
+=============================================================
+WHO: jbl@qq.com
+WHAT: ST-6-mQzCYfmtkh7gOpwIlNEJ-cas01.example.org for http://localhost:3000/login/cas
+ACTION: SERVICE_TICKET_CREATED
+APPLICATION: CAS
+WHEN: Thu Oct 30 23:05:35 CST 2014
+CLIENT IP ADDRESS: 0:0:0:0:0:0:0:1
+SERVER IP ADDRESS: 0:0:0:0:0:0:0:1
+=============================================================
+
+
+2014-10-30 23:05:35,379 INFO [com.github.inspektr.audit.support.Slf4jLoggingAuditTrailManager] - Audit trail record BEGIN
+=============================================================
+WHO: audit:unknown
+WHAT: ST-6-mQzCYfmtkh7gOpwIlNEJ-cas01.example.org
+ACTION: SERVICE_TICKET_VALIDATED
+APPLICATION: CAS
+WHEN: Thu Oct 30 23:05:35 CST 2014
+CLIENT IP ADDRESS: 0:0:0:0:0:0:0:1
+SERVER IP ADDRESS: 0:0:0:0:0:0:0:1
+=============================================================
+
+
+2014-10-30 23:05:35,752 INFO [org.jasig.cas.CentralAuthenticationServiceImpl] - Granted service ticket [ST-7-W5BG2vIcsXxPmfG3fGSB-cas01.example.org] for service [http://localhost:3000/login/cas] for user [jbl@qq.com]
+2014-10-30 23:05:35,752 INFO [com.github.inspektr.audit.support.Slf4jLoggingAuditTrailManager] - Audit trail record BEGIN
+=============================================================
+WHO: jbl@qq.com
+WHAT: ST-7-W5BG2vIcsXxPmfG3fGSB-cas01.example.org for http://localhost:3000/login/cas
+ACTION: SERVICE_TICKET_CREATED
+APPLICATION: CAS
+WHEN: Thu Oct 30 23:05:35 CST 2014
+CLIENT IP ADDRESS: 0:0:0:0:0:0:0:1
+SERVER IP ADDRESS: 0:0:0:0:0:0:0:1
+=============================================================
+
+
+2014-10-30 23:05:35,891 INFO [com.github.inspektr.audit.support.Slf4jLoggingAuditTrailManager] - Audit trail record BEGIN
+=============================================================
+WHO: audit:unknown
+WHAT: ST-7-W5BG2vIcsXxPmfG3fGSB-cas01.example.org
+ACTION: SERVICE_TICKET_VALIDATED
+APPLICATION: CAS
+WHEN: Thu Oct 30 23:05:35 CST 2014
+CLIENT IP ADDRESS: 0:0:0:0:0:0:0:1
+SERVER IP ADDRESS: 0:0:0:0:0:0:0:1
+=============================================================
+
+
+2014-10-30 23:05:36,080 INFO [org.jasig.cas.CentralAuthenticationServiceImpl] - Granted service ticket [ST-8-AGaAdlyTb0d3BSKAXZc3-cas01.example.org] for service [http://localhost:3000/login/cas] for user [jbl@qq.com]
+2014-10-30 23:05:36,080 INFO [com.github.inspektr.audit.support.Slf4jLoggingAuditTrailManager] - Audit trail record BEGIN
+=============================================================
+WHO: jbl@qq.com
+WHAT: ST-8-AGaAdlyTb0d3BSKAXZc3-cas01.example.org for http://localhost:3000/login/cas
+ACTION: SERVICE_TICKET_CREATED
+APPLICATION: CAS
+WHEN: Thu Oct 30 23:05:36 CST 2014
+CLIENT IP ADDRESS: 0:0:0:0:0:0:0:1
+SERVER IP ADDRESS: 0:0:0:0:0:0:0:1
+=============================================================
+
+
+2014-10-30 23:05:36,351 INFO [com.github.inspektr.audit.support.Slf4jLoggingAuditTrailManager] - Audit trail record BEGIN
+=============================================================
+WHO: audit:unknown
+WHAT: ST-8-AGaAdlyTb0d3BSKAXZc3-cas01.example.org
+ACTION: SERVICE_TICKET_VALIDATED
+APPLICATION: CAS
+WHEN: Thu Oct 30 23:05:36 CST 2014
+CLIENT IP ADDRESS: 0:0:0:0:0:0:0:1
+SERVER IP ADDRESS: 0:0:0:0:0:0:0:1
+=============================================================
+
+
+2014-10-30 23:05:37,814 INFO [org.jasig.cas.CentralAuthenticationServiceImpl] - Granted service ticket [ST-9-qQHtVhadklKdiaTHwIHv-cas01.example.org] for service [http://localhost:3000/login/cas] for user [jbl@qq.com]
+2014-10-30 23:05:37,814 INFO [com.github.inspektr.audit.support.Slf4jLoggingAuditTrailManager] - Audit trail record BEGIN
+=============================================================
+WHO: jbl@qq.com
+WHAT: ST-9-qQHtVhadklKdiaTHwIHv-cas01.example.org for http://localhost:3000/login/cas
+ACTION: SERVICE_TICKET_CREATED
+APPLICATION: CAS
+WHEN: Thu Oct 30 23:05:37 CST 2014
+CLIENT IP ADDRESS: 0:0:0:0:0:0:0:1
+SERVER IP ADDRESS: 0:0:0:0:0:0:0:1
+=============================================================
+
+
+2014-10-30 23:05:38,103 INFO [com.github.inspektr.audit.support.Slf4jLoggingAuditTrailManager] - Audit trail record BEGIN
+=============================================================
+WHO: audit:unknown
+WHAT: ST-9-qQHtVhadklKdiaTHwIHv-cas01.example.org
+ACTION: SERVICE_TICKET_VALIDATED
+APPLICATION: CAS
+WHEN: Thu Oct 30 23:05:38 CST 2014
+CLIENT IP ADDRESS: 0:0:0:0:0:0:0:1
+SERVER IP ADDRESS: 0:0:0:0:0:0:0:1
+=============================================================
+
+
+2014-10-30 23:05:38,312 INFO [org.jasig.cas.CentralAuthenticationServiceImpl] - Granted service ticket [ST-10-sm7WfC0reb4C4I7vh7x9-cas01.example.org] for service [http://localhost:3000/login/cas] for user [jbl@qq.com]
+2014-10-30 23:05:38,312 INFO [com.github.inspektr.audit.support.Slf4jLoggingAuditTrailManager] - Audit trail record BEGIN
+=============================================================
+WHO: jbl@qq.com
+WHAT: ST-10-sm7WfC0reb4C4I7vh7x9-cas01.example.org for http://localhost:3000/login/cas
+ACTION: SERVICE_TICKET_CREATED
+APPLICATION: CAS
+WHEN: Thu Oct 30 23:05:38 CST 2014
+CLIENT IP ADDRESS: 0:0:0:0:0:0:0:1
+SERVER IP ADDRESS: 0:0:0:0:0:0:0:1
+=============================================================
+
+
+2014-10-30 23:05:38,428 INFO [com.github.inspektr.audit.support.Slf4jLoggingAuditTrailManager] - Audit trail record BEGIN
+=============================================================
+WHO: audit:unknown
+WHAT: ST-10-sm7WfC0reb4C4I7vh7x9-cas01.example.org
+ACTION: SERVICE_TICKET_VALIDATED
+APPLICATION: CAS
+WHEN: Thu Oct 30 23:05:38 CST 2014
+CLIENT IP ADDRESS: 0:0:0:0:0:0:0:1
+SERVER IP ADDRESS: 0:0:0:0:0:0:0:1
+=============================================================
+
+
+2014-10-30 23:05:38,776 INFO [org.jasig.cas.CentralAuthenticationServiceImpl] - Granted service ticket [ST-11-VKDJyfDFboiMEKnC0ltF-cas01.example.org] for service [http://localhost:3000/login/cas] for user [jbl@qq.com]
+2014-10-30 23:05:38,777 INFO [com.github.inspektr.audit.support.Slf4jLoggingAuditTrailManager] - Audit trail record BEGIN
+=============================================================
+WHO: jbl@qq.com
+WHAT: ST-11-VKDJyfDFboiMEKnC0ltF-cas01.example.org for http://localhost:3000/login/cas
+ACTION: SERVICE_TICKET_CREATED
+APPLICATION: CAS
+WHEN: Thu Oct 30 23:05:38 CST 2014
+CLIENT IP ADDRESS: 0:0:0:0:0:0:0:1
+SERVER IP ADDRESS: 0:0:0:0:0:0:0:1
+=============================================================
+
+
+2014-10-30 23:05:38,896 INFO [com.github.inspektr.audit.support.Slf4jLoggingAuditTrailManager] - Audit trail record BEGIN
+=============================================================
+WHO: audit:unknown
+WHAT: ST-11-VKDJyfDFboiMEKnC0ltF-cas01.example.org
+ACTION: SERVICE_TICKET_VALIDATED
+APPLICATION: CAS
+WHEN: Thu Oct 30 23:05:38 CST 2014
+CLIENT IP ADDRESS: 0:0:0:0:0:0:0:1
+SERVER IP ADDRESS: 0:0:0:0:0:0:0:1
+=============================================================
+
+
+2014-10-30 23:05:39,321 INFO [org.jasig.cas.CentralAuthenticationServiceImpl] - Granted service ticket [ST-12-DOZoDkMPbPiB3PQgydLG-cas01.example.org] for service [http://localhost:3000/login/cas] for user [jbl@qq.com]
+2014-10-30 23:05:39,321 INFO [com.github.inspektr.audit.support.Slf4jLoggingAuditTrailManager] - Audit trail record BEGIN
+=============================================================
+WHO: jbl@qq.com
+WHAT: ST-12-DOZoDkMPbPiB3PQgydLG-cas01.example.org for http://localhost:3000/login/cas
+ACTION: SERVICE_TICKET_CREATED
+APPLICATION: CAS
+WHEN: Thu Oct 30 23:05:39 CST 2014
+CLIENT IP ADDRESS: 0:0:0:0:0:0:0:1
+SERVER IP ADDRESS: 0:0:0:0:0:0:0:1
+=============================================================
+
+
+2014-10-30 23:05:39,461 INFO [com.github.inspektr.audit.support.Slf4jLoggingAuditTrailManager] - Audit trail record BEGIN
+=============================================================
+WHO: audit:unknown
+WHAT: ST-12-DOZoDkMPbPiB3PQgydLG-cas01.example.org
+ACTION: SERVICE_TICKET_VALIDATED
+APPLICATION: CAS
+WHEN: Thu Oct 30 23:05:39 CST 2014
+CLIENT IP ADDRESS: 0:0:0:0:0:0:0:1
+SERVER IP ADDRESS: 0:0:0:0:0:0:0:1
+=============================================================
+
+
+2014-10-30 23:05:39,823 INFO [org.jasig.cas.CentralAuthenticationServiceImpl] - Granted service ticket [ST-13-UnZQa1vdPyUWcBbJpodh-cas01.example.org] for service [http://localhost:3000/login/cas] for user [jbl@qq.com]
+2014-10-30 23:05:39,823 INFO [com.github.inspektr.audit.support.Slf4jLoggingAuditTrailManager] - Audit trail record BEGIN
+=============================================================
+WHO: jbl@qq.com
+WHAT: ST-13-UnZQa1vdPyUWcBbJpodh-cas01.example.org for http://localhost:3000/login/cas
+ACTION: SERVICE_TICKET_CREATED
+APPLICATION: CAS
+WHEN: Thu Oct 30 23:05:39 CST 2014
+CLIENT IP ADDRESS: 0:0:0:0:0:0:0:1
+SERVER IP ADDRESS: 0:0:0:0:0:0:0:1
+=============================================================
+
+
+2014-10-30 23:05:39,945 INFO [com.github.inspektr.audit.support.Slf4jLoggingAuditTrailManager] - Audit trail record BEGIN
+=============================================================
+WHO: audit:unknown
+WHAT: ST-13-UnZQa1vdPyUWcBbJpodh-cas01.example.org
+ACTION: SERVICE_TICKET_VALIDATED
+APPLICATION: CAS
+WHEN: Thu Oct 30 23:05:39 CST 2014
+CLIENT IP ADDRESS: 0:0:0:0:0:0:0:1
+SERVER IP ADDRESS: 0:0:0:0:0:0:0:1
+=============================================================
+
+
+2014-10-30 23:05:43,925 INFO [com.github.inspektr.audit.support.Slf4jLoggingAuditTrailManager] - Audit trail record BEGIN
+=============================================================
+WHO: audit:unknown
+WHAT: TGT-2-0hlQTzJ5u4dPXmR63J7ldkfHbrv0oQOcZFfy7oTaqxD9KqYMBR-cas01.example.org
+ACTION: TICKET_GRANTING_TICKET_DESTROYED
+APPLICATION: CAS
+WHEN: Thu Oct 30 23:05:43 CST 2014
+CLIENT IP ADDRESS: 0:0:0:0:0:0:0:1
+SERVER IP ADDRESS: 0:0:0:0:0:0:0:1
+=============================================================
+
+
+2014-10-30 23:05:44,103 WARN [org.jasig.cas.util.HttpClient] - Error Sending message to url endpoint [http://localhost:3000/login/cas].  Error is [Server returned HTTP response code: 405 for URL: http://localhost:3000/login/cas]
+2014-10-30 23:05:44,822 WARN [org.jasig.cas.util.HttpClient] - Error Sending message to url endpoint [http://localhost:3000/login/cas].  Error is [Server returned HTTP response code: 405 for URL: http://localhost:3000/login/cas]
+2014-10-30 23:05:44,822 WARN [org.jasig.cas.util.HttpClient] - Error Sending message to url endpoint [http://localhost:3000/login/cas].  Error is [Server returned HTTP response code: 405 for URL: http://localhost:3000/login/cas]
+2014-10-30 23:05:44,822 WARN [org.jasig.cas.util.HttpClient] - Error Sending message to url endpoint [http://localhost:3000/login/cas].  Error is [Server returned HTTP response code: 405 for URL: http://localhost:3000/login/cas]
+2014-10-30 23:05:44,822 WARN [org.jasig.cas.util.HttpClient] - Error Sending message to url endpoint [http://localhost:3000/login/cas].  Error is [Server returned HTTP response code: 405 for URL: http://localhost:3000/login/cas]
+2014-10-30 23:05:45,508 WARN [org.jasig.cas.util.HttpClient] - Error Sending message to url endpoint [http://localhost:3000/login/cas].  Error is [Server returned HTTP response code: 405 for URL: http://localhost:3000/login/cas]
+2014-10-30 23:05:45,508 WARN [org.jasig.cas.util.HttpClient] - Error Sending message to url endpoint [http://localhost:3000/login/cas].  Error is [Server returned HTTP response code: 405 for URL: http://localhost:3000/login/cas]
+2014-10-30 23:05:45,508 WARN [org.jasig.cas.util.HttpClient] - Error Sending message to url endpoint [http://localhost:3000/login/cas].  Error is [Server returned HTTP response code: 405 for URL: http://localhost:3000/login/cas]
+2014-10-30 23:05:45,508 WARN [org.jasig.cas.util.HttpClient] - Error Sending message to url endpoint [http://localhost:3000/login/cas].  Error is [Server returned HTTP response code: 405 for URL: http://localhost:3000/login/cas]
+2014-10-30 23:05:45,508 WARN [org.jasig.cas.util.HttpClient] - Error Sending message to url endpoint [http://localhost:3000/login/cas].  Error is [Server returned HTTP response code: 405 for URL: http://localhost:3000/login/cas]
+2014-10-30 23:06:30,632 INFO [org.jasig.cas.authentication.AuthenticationManagerImpl] - org.jasig.cas.util.QueryDatabaseAuthenticationHandlerWithSalt successfully authenticated [username: jbl@qq.com]
+2014-10-30 23:06:30,633 INFO [org.jasig.cas.authentication.AuthenticationManagerImpl] - Resolved principal jbl@qq.com
+2014-10-30 23:06:30,633 INFO [org.jasig.cas.authentication.AuthenticationManagerImpl] - org.jasig.cas.util.QueryDatabaseAuthenticationHandlerWithSalt@431376b0 authenticated jbl@qq.com with credential [username: jbl@qq.com].
+2014-10-30 23:06:30,633 INFO [com.github.inspektr.audit.support.Slf4jLoggingAuditTrailManager] - Audit trail record BEGIN
+=============================================================
+WHO: [username: jbl@qq.com]
+WHAT: supplied credentials: [username: jbl@qq.com]
+ACTION: AUTHENTICATION_SUCCESS
+APPLICATION: CAS
+WHEN: Thu Oct 30 23:06:30 CST 2014
+CLIENT IP ADDRESS: 0:0:0:0:0:0:0:1
+SERVER IP ADDRESS: 0:0:0:0:0:0:0:1
+=============================================================
+
+
+2014-10-30 23:06:30,634 INFO [com.github.inspektr.audit.support.Slf4jLoggingAuditTrailManager] - Audit trail record BEGIN
+=============================================================
+WHO: [username: jbl@qq.com]
+WHAT: TGT-3-mtj4VaW7Yu2IWHesaL5k1QafxFbqZPdFgrbiD9j2ioLb3wDQvZ-cas01.example.org
+ACTION: TICKET_GRANTING_TICKET_CREATED
+APPLICATION: CAS
+WHEN: Thu Oct 30 23:06:30 CST 2014
+CLIENT IP ADDRESS: 0:0:0:0:0:0:0:1
+SERVER IP ADDRESS: 0:0:0:0:0:0:0:1
+=============================================================
+
+
+2014-10-30 23:06:30,636 INFO [org.jasig.cas.CentralAuthenticationServiceImpl] - Granted service ticket [ST-14-lbxRR1YmKLUYrVKil0bw-cas01.example.org] for service [http://localhost:8000] for user [jbl@qq.com]
+2014-10-30 23:06:30,636 INFO [com.github.inspektr.audit.support.Slf4jLoggingAuditTrailManager] - Audit trail record BEGIN
+=============================================================
+WHO: jbl@qq.com
+WHAT: ST-14-lbxRR1YmKLUYrVKil0bw-cas01.example.org for http://localhost:8000
+ACTION: SERVICE_TICKET_CREATED
+APPLICATION: CAS
+WHEN: Thu Oct 30 23:06:30 CST 2014
+CLIENT IP ADDRESS: 0:0:0:0:0:0:0:1
+SERVER IP ADDRESS: 0:0:0:0:0:0:0:1
+=============================================================
+
+
+2014-10-30 23:06:30,796 ERROR [org.jasig.cas.CentralAuthenticationServiceImpl] - ServiceTicket [ST-14-lbxRR1YmKLUYrVKil0bw-cas01.example.org] with service [http://localhost:8000 does not match supplied service [http://localhost:8000/]
+2014-10-30 23:06:30,797 INFO [com.github.inspektr.audit.support.Slf4jLoggingAuditTrailManager] - Audit trail record BEGIN
+=============================================================
+WHO: audit:unknown
+WHAT: ST-14-lbxRR1YmKLUYrVKil0bw-cas01.example.org
+ACTION: SERVICE_TICKET_VALIDATE_FAILED
+APPLICATION: CAS
+WHEN: Thu Oct 30 23:06:30 CST 2014
+CLIENT IP ADDRESS: 0:0:0:0:0:0:0:1
+SERVER IP ADDRESS: 0:0:0:0:0:0:0:1
+=============================================================
+
+
+2014-10-30 23:06:30,975 INFO [org.jasig.cas.CentralAuthenticationServiceImpl] - Granted service ticket [ST-15-nf3EKofSDbePDbg2yDfl-cas01.example.org] for service [http://localhost:8000/] for user [jbl@qq.com]
+2014-10-30 23:06:30,976 INFO [com.github.inspektr.audit.support.Slf4jLoggingAuditTrailManager] - Audit trail record BEGIN
+=============================================================
+WHO: jbl@qq.com
+WHAT: ST-15-nf3EKofSDbePDbg2yDfl-cas01.example.org for http://localhost:8000/
+ACTION: SERVICE_TICKET_CREATED
+APPLICATION: CAS
+WHEN: Thu Oct 30 23:06:30 CST 2014
+CLIENT IP ADDRESS: 0:0:0:0:0:0:0:1
+SERVER IP ADDRESS: 0:0:0:0:0:0:0:1
+=============================================================
+
+
+2014-10-30 23:06:31,097 INFO [com.github.inspektr.audit.support.Slf4jLoggingAuditTrailManager] - Audit trail record BEGIN
+=============================================================
+WHO: audit:unknown
+WHAT: ST-15-nf3EKofSDbePDbg2yDfl-cas01.example.org
+ACTION: SERVICE_TICKET_VALIDATED
+APPLICATION: CAS
+WHEN: Thu Oct 30 23:06:31 CST 2014
+CLIENT IP ADDRESS: 0:0:0:0:0:0:0:1
+SERVER IP ADDRESS: 0:0:0:0:0:0:0:1
+=============================================================
+
+
+2014-10-30 23:07:03,251 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2014-10-30 23:07:03,251 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2014-10-30 23:07:09,214 INFO [org.jasig.cas.CentralAuthenticationServiceImpl] - Granted service ticket [ST-16-FczAoM7c2z99vSTgfpWN-cas01.example.org] for service [http://localhost:3000/login/cas] for user [jbl@qq.com]
+2014-10-30 23:07:09,214 INFO [com.github.inspektr.audit.support.Slf4jLoggingAuditTrailManager] - Audit trail record BEGIN
+=============================================================
+WHO: jbl@qq.com
+WHAT: ST-16-FczAoM7c2z99vSTgfpWN-cas01.example.org for http://localhost:3000/login/cas
+ACTION: SERVICE_TICKET_CREATED
+APPLICATION: CAS
+WHEN: Thu Oct 30 23:07:09 CST 2014
+CLIENT IP ADDRESS: 0:0:0:0:0:0:0:1
+SERVER IP ADDRESS: 0:0:0:0:0:0:0:1
+=============================================================
+
+
+2014-10-30 23:07:09,346 INFO [com.github.inspektr.audit.support.Slf4jLoggingAuditTrailManager] - Audit trail record BEGIN
+=============================================================
+WHO: audit:unknown
+WHAT: ST-16-FczAoM7c2z99vSTgfpWN-cas01.example.org
+ACTION: SERVICE_TICKET_VALIDATED
+APPLICATION: CAS
+WHEN: Thu Oct 30 23:07:09 CST 2014
+CLIENT IP ADDRESS: 0:0:0:0:0:0:0:1
+SERVER IP ADDRESS: 0:0:0:0:0:0:0:1
+=============================================================
+
+
+2014-10-30 23:09:03,250 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2014-10-30 23:09:03,251 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2014-10-30 23:11:03,251 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2014-10-30 23:11:03,251 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2014-10-30 23:13:03,252 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2014-10-30 23:13:03,252 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2014-10-30 23:15:03,249 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2014-10-30 23:15:03,249 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2014-10-30 23:17:03,254 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2014-10-30 23:17:03,254 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2014-10-30 23:18:43,030 INFO [org.jasig.cas.ticket.registry.support.DefaultTicketRegistryCleaner] - Beginning ticket cleanup.
+2014-10-30 23:18:43,031 INFO [org.jasig.cas.ticket.registry.support.DefaultTicketRegistryCleaner] - 0 tickets found to be removed.
+2014-10-30 23:18:43,031 INFO [org.jasig.cas.ticket.registry.support.DefaultTicketRegistryCleaner] - Finished ticket cleanup.
+2014-10-30 23:19:03,249 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2014-10-30 23:19:03,249 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2014-10-30 23:21:03,253 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2014-10-30 23:21:03,253 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2014-10-30 23:23:03,251 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2014-10-30 23:23:03,251 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2014-10-30 23:24:25,070 INFO [com.github.inspektr.audit.support.Slf4jLoggingAuditTrailManager] - Audit trail record BEGIN
+=============================================================
+WHO: audit:unknown
+WHAT: TGT-3-mtj4VaW7Yu2IWHesaL5k1QafxFbqZPdFgrbiD9j2ioLb3wDQvZ-cas01.example.org
+ACTION: TICKET_GRANTING_TICKET_DESTROYED
+APPLICATION: CAS
+WHEN: Thu Oct 30 23:24:25 CST 2014
+CLIENT IP ADDRESS: 0:0:0:0:0:0:0:1
+SERVER IP ADDRESS: 0:0:0:0:0:0:0:1
+=============================================================
+
+
+2014-10-30 23:24:25,240 WARN [org.jasig.cas.util.HttpClient] - Error Sending message to url endpoint [http://localhost:3000/login/cas].  Error is [Server returned HTTP response code: 405 for URL: http://localhost:3000/login/cas]
+2014-10-30 23:24:45,450 INFO [org.jasig.cas.authentication.AuthenticationManagerImpl] - org.jasig.cas.util.QueryDatabaseAuthenticationHandlerWithSalt successfully authenticated [username: jbl@qq.com]
+2014-10-30 23:24:45,450 INFO [org.jasig.cas.authentication.AuthenticationManagerImpl] - Resolved principal jbl@qq.com
+2014-10-30 23:24:45,450 INFO [org.jasig.cas.authentication.AuthenticationManagerImpl] - org.jasig.cas.util.QueryDatabaseAuthenticationHandlerWithSalt@431376b0 authenticated jbl@qq.com with credential [username: jbl@qq.com].
+2014-10-30 23:24:45,450 INFO [com.github.inspektr.audit.support.Slf4jLoggingAuditTrailManager] - Audit trail record BEGIN
+=============================================================
+WHO: [username: jbl@qq.com]
+WHAT: supplied credentials: [username: jbl@qq.com]
+ACTION: AUTHENTICATION_SUCCESS
+APPLICATION: CAS
+WHEN: Thu Oct 30 23:24:45 CST 2014
+CLIENT IP ADDRESS: 0:0:0:0:0:0:0:1
+SERVER IP ADDRESS: 0:0:0:0:0:0:0:1
+=============================================================
+
+
+2014-10-30 23:24:45,451 INFO [com.github.inspektr.audit.support.Slf4jLoggingAuditTrailManager] - Audit trail record BEGIN
+=============================================================
+WHO: [username: jbl@qq.com]
+WHAT: TGT-4-ehP26VflEEmmIAo7heyP6eVdX7jvKps0HBX0dMdRXJ7AMYp0Dl-cas01.example.org
+ACTION: TICKET_GRANTING_TICKET_CREATED
+APPLICATION: CAS
+WHEN: Thu Oct 30 23:24:45 CST 2014
+CLIENT IP ADDRESS: 0:0:0:0:0:0:0:1
+SERVER IP ADDRESS: 0:0:0:0:0:0:0:1
+=============================================================
+
+
+2014-10-30 23:24:45,452 INFO [org.jasig.cas.CentralAuthenticationServiceImpl] - Granted service ticket [ST-17-wfrdx0FjvPupejkSlIbL-cas01.example.org] for service [http://localhost:8000/] for user [jbl@qq.com]
+2014-10-30 23:24:45,453 INFO [com.github.inspektr.audit.support.Slf4jLoggingAuditTrailManager] - Audit trail record BEGIN
+=============================================================
+WHO: jbl@qq.com
+WHAT: ST-17-wfrdx0FjvPupejkSlIbL-cas01.example.org for http://localhost:8000/
+ACTION: SERVICE_TICKET_CREATED
+APPLICATION: CAS
+WHEN: Thu Oct 30 23:24:45 CST 2014
+CLIENT IP ADDRESS: 0:0:0:0:0:0:0:1
+SERVER IP ADDRESS: 0:0:0:0:0:0:0:1
+=============================================================
+
+
+2014-10-30 23:24:45,620 INFO [com.github.inspektr.audit.support.Slf4jLoggingAuditTrailManager] - Audit trail record BEGIN
+=============================================================
+WHO: audit:unknown
+WHAT: ST-17-wfrdx0FjvPupejkSlIbL-cas01.example.org
+ACTION: SERVICE_TICKET_VALIDATED
+APPLICATION: CAS
+WHEN: Thu Oct 30 23:24:45 CST 2014
+CLIENT IP ADDRESS: 0:0:0:0:0:0:0:1
+SERVER IP ADDRESS: 0:0:0:0:0:0:0:1
+=============================================================
+
+
+2014-10-30 23:25:03,252 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2014-10-30 23:25:03,252 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2014-10-30 23:25:43,463 INFO [org.jasig.cas.authentication.AuthenticationManagerImpl] - org.jasig.cas.util.QueryDatabaseAuthenticationHandlerWithSalt successfully authenticated [username: jbl@qq.com]
+2014-10-30 23:25:43,463 INFO [org.jasig.cas.authentication.AuthenticationManagerImpl] - Resolved principal jbl@qq.com
+2014-10-30 23:25:43,463 INFO [org.jasig.cas.authentication.AuthenticationManagerImpl] - org.jasig.cas.util.QueryDatabaseAuthenticationHandlerWithSalt@431376b0 authenticated jbl@qq.com with credential [username: jbl@qq.com].
+2014-10-30 23:25:43,464 INFO [com.github.inspektr.audit.support.Slf4jLoggingAuditTrailManager] - Audit trail record BEGIN
+=============================================================
+WHO: [username: jbl@qq.com]
+WHAT: supplied credentials: [username: jbl@qq.com]
+ACTION: AUTHENTICATION_SUCCESS
+APPLICATION: CAS
+WHEN: Thu Oct 30 23:25:43 CST 2014
+CLIENT IP ADDRESS: 127.0.0.1
+SERVER IP ADDRESS: 127.0.0.1
+=============================================================
+
+
+2014-10-30 23:25:43,486 INFO [com.github.inspektr.audit.support.Slf4jLoggingAuditTrailManager] - Audit trail record BEGIN
+=============================================================
+WHO: [username: jbl@qq.com]
+WHAT: TGT-5-rsQPYpz5SMddY0YW9R3xp3FlrQurFVvtRXVhH41zBWdiO4NLNH-cas01.example.org
+ACTION: TICKET_GRANTING_TICKET_CREATED
+APPLICATION: CAS
+WHEN: Thu Oct 30 23:25:43 CST 2014
+CLIENT IP ADDRESS: 127.0.0.1
+SERVER IP ADDRESS: 127.0.0.1
+=============================================================
+
+
+2014-10-30 23:25:43,487 INFO [org.jasig.cas.CentralAuthenticationServiceImpl] - Granted service ticket [ST-18-MadGlxmckg76KqbYr16d-cas01.example.org] for service [http://localhost:8000/] for user [jbl@qq.com]
+2014-10-30 23:25:43,488 INFO [com.github.inspektr.audit.support.Slf4jLoggingAuditTrailManager] - Audit trail record BEGIN
+=============================================================
+WHO: jbl@qq.com
+WHAT: ST-18-MadGlxmckg76KqbYr16d-cas01.example.org for http://localhost:8000/
+ACTION: SERVICE_TICKET_CREATED
+APPLICATION: CAS
+WHEN: Thu Oct 30 23:25:43 CST 2014
+CLIENT IP ADDRESS: 127.0.0.1
+SERVER IP ADDRESS: 127.0.0.1
+=============================================================
+
+
+2014-10-30 23:25:43,665 INFO [com.github.inspektr.audit.support.Slf4jLoggingAuditTrailManager] - Audit trail record BEGIN
+=============================================================
+WHO: audit:unknown
+WHAT: ST-18-MadGlxmckg76KqbYr16d-cas01.example.org
+ACTION: SERVICE_TICKET_VALIDATED
+APPLICATION: CAS
+WHEN: Thu Oct 30 23:25:43 CST 2014
+CLIENT IP ADDRESS: 0:0:0:0:0:0:0:1
+SERVER IP ADDRESS: 0:0:0:0:0:0:0:1
+=============================================================
+
+
+2014-10-30 23:27:03,249 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2014-10-30 23:27:03,249 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2014-10-30 23:29:03,248 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2014-10-30 23:29:03,248 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2014-10-30 23:31:03,253 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2014-10-30 23:31:03,253 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2014-10-30 23:33:03,253 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2014-10-30 23:33:03,253 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2014-10-30 23:35:03,250 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2014-10-30 23:35:03,250 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2014-10-30 23:37:03,253 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2014-10-30 23:37:03,253 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2014-10-30 23:39:03,253 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2014-10-30 23:39:03,253 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2014-10-30 23:41:03,253 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2014-10-30 23:41:03,253 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2014-10-30 23:43:03,251 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2014-10-30 23:43:03,252 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2014-10-30 23:44:13,164 INFO [org.jasig.cas.CentralAuthenticationServiceImpl] - Granted service ticket [ST-19-Gka5FYUza51cFrDre7BP-cas01.example.org] for service [http://localhost:3000/login/cas] for user [jbl@qq.com]
+2014-10-30 23:44:13,165 INFO [com.github.inspektr.audit.support.Slf4jLoggingAuditTrailManager] - Audit trail record BEGIN
+=============================================================
+WHO: jbl@qq.com
+WHAT: ST-19-Gka5FYUza51cFrDre7BP-cas01.example.org for http://localhost:3000/login/cas
+ACTION: SERVICE_TICKET_CREATED
+APPLICATION: CAS
+WHEN: Thu Oct 30 23:44:13 CST 2014
+CLIENT IP ADDRESS: 0:0:0:0:0:0:0:1
+SERVER IP ADDRESS: 0:0:0:0:0:0:0:1
+=============================================================
+
+
+2014-10-30 23:44:13,286 INFO [com.github.inspektr.audit.support.Slf4jLoggingAuditTrailManager] - Audit trail record BEGIN
+=============================================================
+WHO: audit:unknown
+WHAT: ST-19-Gka5FYUza51cFrDre7BP-cas01.example.org
+ACTION: SERVICE_TICKET_VALIDATED
+APPLICATION: CAS
+WHEN: Thu Oct 30 23:44:13 CST 2014
+CLIENT IP ADDRESS: 0:0:0:0:0:0:0:1
+SERVER IP ADDRESS: 0:0:0:0:0:0:0:1
+=============================================================
+
+
+2014-10-30 23:45:03,253 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2014-10-30 23:45:03,253 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2014-10-30 23:47:03,252 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2014-10-30 23:47:03,253 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2014-10-30 23:49:03,249 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2014-10-30 23:49:03,249 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2014-10-30 23:51:03,251 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2014-10-30 23:51:03,251 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2014-10-30 23:53:03,248 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2014-10-30 23:53:03,248 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2014-10-30 23:55:03,253 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2014-10-30 23:55:03,253 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2014-10-30 23:57:03,249 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2014-10-30 23:57:03,249 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2014-10-30 23:59:03,249 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2014-10-30 23:59:03,249 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2014-10-31 00:01:03,251 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2014-10-31 00:01:03,251 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2014-10-31 00:03:03,251 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2014-10-31 00:03:03,252 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2014-10-31 00:05:03,250 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2014-10-31 00:05:03,250 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.

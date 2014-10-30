@@ -36,4 +36,8 @@ class DefaultController extends BaseController
         var_dump($test_rest->getFileByPath('course',4,'cover/S.PNG'));
         exit();
     }
+
+    public function seaJsAction(){
+        return $this->render('RenaissanceWebBundle:Default:seajs.html.twig',array());
+    }
 }
