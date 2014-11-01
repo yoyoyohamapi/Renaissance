@@ -4,8 +4,7 @@ namespace Renaissance\WebBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Renaissance\WebBundle\Controller\BaseController;
-use Renaissance\CommonBundle\REST\CourseREST;
-
+use Symfony\Component\HttpFoundation\Response;
 
 class DefaultController extends BaseController
 {
@@ -31,10 +30,10 @@ class DefaultController extends BaseController
     }
 
     public function testAction(){
-        $test_rest = $this->get('fileREST');
-        $user = $this->getUser();
-        var_dump($test_rest->getFileByPath('course',4,'cover/S.PNG'));
-        exit();
+        $test_rest = $this->get('assignmentREST');
+        $reports = $test_rest->getAssignments(3);
+        //var_dump($reports);
+        return new Response($reports[0]->name);
     }
 
     public function seaJsAction(){
