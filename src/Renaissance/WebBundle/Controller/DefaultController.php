@@ -36,7 +36,7 @@ class DefaultController extends BaseController
         return new Response($reports[0]->name);
     }
 
-    public function seaJsAction(){
-        return $this->render('RenaissanceWebBundle:Default:seajs.html.twig',array());
+    public function mtAction(){
+        return $this->render('RenaissanceWebBundle:Default:mt.html.twig',array());
     }
 }

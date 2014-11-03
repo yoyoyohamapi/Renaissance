@@ -66,9 +66,9 @@ test:
     path: /test
     defaults: {_controller:RenaissanceWebBundle:Default:test}
 
-seajs:
-    path: /seajs
-    defaults: {_controller:RenaissanceWebBundle:Default:seajs}
+mt:
+    path: /mt
+    defaults: {_controller:RenaissanceWebBundle:Default:mt}
 
 enroll_course:
     path: /enroll_course

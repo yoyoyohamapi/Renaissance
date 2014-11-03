@@ -1455,3 +1455,7 @@ SERVER IP ADDRESS: 0:0:0:0:0:0:0:1
 2014-10-31 00:03:03,252 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
 2014-10-31 00:05:03,250 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
 2014-10-31 00:05:03,250 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2014-10-31 00:07:03,253 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2014-10-31 00:07:03,254 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2014-10-31 00:09:03,250 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2014-10-31 00:09:03,250 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
