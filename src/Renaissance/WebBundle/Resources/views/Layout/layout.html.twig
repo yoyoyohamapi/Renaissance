@@ -5,7 +5,6 @@
 		<meta charset="UTF-8">
 		<title>{% block title %}{% endblock %}</title>
 		{% include "RenaissanceWebBundle:Layout:stylesheets.html.twig" %}
-		{% include "RenaissanceWebBundle:Layout:scripts.html.twig" %}
 		{% block stylesheets %}
 		{% endblock %}
 	</head>
@@ -24,7 +23,8 @@
 			{% if footer is defined %}
 			{% include "RenaissanceWebBundle:Layout:footer.html.twig" %}
 			{% endif %}
+			{% include "RenaissanceWebBundle:Layout:scripts.html.twig" %}
+
 		</div>
-	{% block scripts %}{% endblock %}
 	</body>
 </html>

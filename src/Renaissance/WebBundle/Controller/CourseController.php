@@ -4,6 +4,7 @@ namespace Renaissance\WebBundle\Controller;
 use Renaissance\WebBundle\Controller\BaseController;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Debug\Exception\ContextErrorException;
 
 class CourseController extends BaseController
 {
@@ -57,6 +58,7 @@ class CourseController extends BaseController
 
     public function showAction($course_id)
     {
+        try{
         $courseREST = $this->get('courseREST');
         $course = $courseREST->getCourseById($course_id);
         if($course == null)
@@ -90,8 +92,6 @@ class CourseController extends BaseController
         $students = $userREST->getCourseStudents($course_id);
         $teachers = $userREST->getCourseTeachers($course_id);
 
-        if(!$page  || !$teachers || !$cover || !$chapters)
-            return $this->render('RenaissanceWebBundle:Error:404.html.twig', array("error_msg"=>"课程正在编辑中"));
 
         $head_urls=array();
         foreach ($teachers as $key => $value) {
@@ -108,6 +108,10 @@ class CourseController extends BaseController
             'page'=>$page,'heads'=>$head_urls,'cover'=>$cover,'chapters'=>$chapters,'start_end'=>$start_end,
             'isEnrolled'=>$isEnrolled,'site_url'=>$site_url,'course_id'=>$course_id,'canvas_user_id'=>$canvas_user_id,'isStart'=>$isStart);
          return $this->render('RenaissanceWebBundle:Course:show.html.twig', $data); 
+        }catch(ContextErrorException $e){
+            return $this->render('RenaissanceWebBundle:Error:404.html.twig', array("error_msg"=>"课程正在编辑中"));
+
+        }
     }
     public function ajaxAction(){
 
@@ -154,5 +158,4 @@ class CourseController extends BaseController
             );
         return $this->render("RenaissanceWebBundle:Course:plaza_more.html.twig",$data);
     }
-
 }

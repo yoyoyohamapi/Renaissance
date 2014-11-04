@@ -1,8 +1,16 @@
-<div class="row" style="opacity:0.1;">
+<div id="class_row" class="row" style="opacity:0.1;">
 {% for course in courses %}
 	<div class="col-xs-4">
 	    	<div class="courseBox">
-			<p><a href="{{ path('course_show',{'course_id': course.id })}}"><img src="{{imgurls[loop.index0]}}"></a></p>
+			<p>
+				<a href="{{ path('course_show',{'course_id': course.id })}}">
+				{% if imgurls[loop.index0] == "" %}
+				<img src="{{asset('bundles/renaissanceweb/img/default/NoPic_S.png')}}">
+				{% else %}
+				<img src="{{imgurls[loop.index0]}}">
+				{% endif %}
+				</a>
+			</p>
 			<p class="title">{{course.name}}</p>
 			<div class="row" style="margin:0;">
 				<div class="col-xs-6" style="text-align:left;"><p class="content">2014-8-02</p></div>
@@ -19,13 +27,7 @@
 </div>
 </div>
 {% endif %}
-    <script type="text/javascript">
-	$(function(){
-		$(".row").transit({
-			opacity:1
-		},500);
-	});
-</script>
+{% set script_action='course/plazaMore' %}    
 
 
 

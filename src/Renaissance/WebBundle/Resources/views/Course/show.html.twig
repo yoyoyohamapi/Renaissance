@@ -4,12 +4,7 @@
 <link href="{{asset('bundles/renaissanceweb/css/star-rating.min.css')}}" rel="stylesheet" type="text/css"></link>
 <link href="{{asset('bundles/renaissanceweb/css/showcourse.css')}}" rel="stylesheet" type="text/css"></link>
 <link href="{{asset('bundles/renaissanceweb/css/video-js.css')}}" rel="stylesheet" type="text/css"></link>
-<script src="{{asset('bundles/renaissanceweb/js/video.js')}}"</script>
-<script>
-  videojs.options.flash.swf = "{{asset('bundles/renaissanceweb/media/video-js.swf')}}"
-</script> 
 {% endblock %}
-
 {% block content %}
 
 <div class="row">
@@ -19,7 +14,7 @@
 			<div class="col-xs-12" >
 				<ol class="breadcrumb courseBC">
 					<li><a href="#">课程分类</a></li>
-					<li><a href="#">Web前端开发技术</a></li>
+					<li><a href="#">{{course.name}}</a></li>
 				</ol>
 			</div>
 			<div class="col-xs-12 profileMain" style="">
@@ -124,18 +119,19 @@
 								<p class="title">授课老师</p>
 								<div class="row info"> 
 									{% for head in heads %}
-									 <div class="col-xs-4"><img class="headPic img-circle"src={{head}}></div>
+									 <div class="col-xs-4"><img class="headPic img-circle"src={{ head }}></div>
 									{% endfor %}	
-								</div>
-								 <div class="col-xs-8" style="text-align:center">
+									 <div class="col-xs-8">
 									{% for teacher in teachers %}
 									<div>
 									<p class="name">
-										{{teacher.short_name}}
+										{{ teacher.short_name }}
 									</p>
 									</div>
 									{% endfor %}
 								</div>
+								</div>
+
 							</div>
 							<div class="col-xs-6 col-md-12 profileComments">
 								<p class="title">我要评价</p>
@@ -205,28 +201,24 @@
 </div>
 <!-- rightcontrols -->
 <div class="col-xs-2 visible-lg-block visible-md-block rightControls">
-<ul>
-{% if user is empty %}
-<li class="">
-<a href="{{path('login')}}"><i class="fa fa-user" title="进入个人中心"></i></a>
-</li>								
-{% else %}
-<li class="">
-<a href="{{path('user_index',{'user_id': canvas_user_id }) }}"><i class="fa fa-user" title="进入个人中心"></i></a>
-</li>	
-{% endif %}
-<li class="">
-<a><i class="fa fa-qrcode" title="扫描二维码"></i></a>
-</li>
-<!-- 返回顶部 -->
-<li class="toTop">
-<a><i class="fa fa-angle-up" title="返回顶部"></i></a>
-</li>
-</ul>
+	<ul>
+		{% if user is empty %}
+		<li class="">
+			<a href="{{path('login')}}"><i class="fa fa-user" title="进入个人中心"></i></a>
+		</li>								
+		{% else %}
+		<li class="">
+			<a href="{{path('user_index',{'user_id': canvas_user_id }) }}"><i class="fa fa-user" title="进入个人中心"></i></a>
+		</li>	
+		{% endif %}
+		<li class="">
+			<a><i class="fa fa-qrcode" title="扫描二维码"></i></a>
+		</li>
+		<!-- 返回顶部 -->
+		<li class="toTop">
+			<a><i class="fa fa-angle-up" title="返回顶部"></i></a>
+		</li>
+	</ul>
 </div>
 {% endblock %}
-{% block scripts %}
-<script src="{{asset('bundles/renaissanceweb/js/star-rating.min.js')}}"></script>
-<script src="{{asset('bundles/renaissanceweb/js/courseIntro.js')}}"></script>
-<script src="{{asset('bundles/renaissanceweb/js/join_course.js')}}"></script>
-{% endblock %}
+{% set script_action='course/show' %}
