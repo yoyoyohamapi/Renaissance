@@ -2,8 +2,7 @@
 {% set no_navbar=TRUE %}
 {% block title %}复兴学堂------我们复兴学堂，更复兴教育{% endblock %}
 {% block stylesheets %}
-<link href="/bundles/renaissanceweb/css/1.0/frontpage.css" rel="stylesheet" type="text/css">
-<link href="/bundles/renaissanceweb/css/buttons.css" rel="stylesheet" type="text/css">
+	<link href="/bundles/renaissanceweb/css/1.0/frontpage.css" rel="stylesheet" type="text/css">
 {% endblock %}
 {% block content %}
 {% set user = getUser() %}
@@ -13,14 +12,17 @@
 	<div class="navbar-header" style="margin-left:5%">
 		<img src="/bundles/renaissanceweb/img/2nd/navi_logo.png">
 	</div>
-	{% if user is empty%}
 	<div class="collapse navbar-collapse" style="margin-right:5%">
 		<ul id="formul" class="nav navbar-nav navbar-right" style="padding-top:40px;">
+			{% if user is empty%}
 			<li id="toReg"><a href="/register" style="color:#ffffff;font-size: 22px;font-weight: 700;">注册</a></li>
 			<li id="toLogin1"><a href="/login" style="color:#ffffff;font-size: 22px;font-weight: 700;">登录</a></li>
+			{%  else %}
+			<li ><a href="/user/{{user.id}}" style="color:#ffffff;font-size: 22px;font-weight: 700;">我的主页</a></li>
+			<li ><a href="/logout" style="color:#ffffff;font-size: 22px;font-weight: 700;">登出</a></li>
+			{% endif %}
 		</ul>
 	</div>
-	{% endif %}
 </div>
 </nav>
 <div class="fullHeight">
