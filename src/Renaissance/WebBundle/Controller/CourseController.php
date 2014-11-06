@@ -110,7 +110,6 @@ class CourseController extends BaseController
          return $this->render('RenaissanceWebBundle:Course:show.html.twig', $data); 
         }catch(ContextErrorException $e){
             return $this->render('RenaissanceWebBundle:Error:404.html.twig', array("error_msg"=>"课程正在编辑中"));
-
         }
     }
     public function ajaxAction(){

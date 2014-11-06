@@ -19,4 +19,9 @@ parameters:
     cas_login_url: https://localhost:8443/cas/login
     cas_logout_url: https://localhost:8443/cas/logout
     cas_validation_url: https://localhost:8443/cas/serviceValidate
-    site_url: https://canvas.example.com/
+    site_url: "http://127.0.0.1:3000/"
+    canvas_db_host: 127.0.0.1
+    canvas_db_port: 5432
+    canvas_db_name: canvas_development
+    canvas_db_user: feiyu06
+    canvas_db_password: 123456

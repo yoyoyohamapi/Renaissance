@@ -30,10 +30,9 @@ class DefaultController extends BaseController
     }
 
     public function testAction(){
-        $test_rest = $this->get('assignmentREST');
-        $reports = $test_rest->getAssignments(3);
-        //var_dump($reports);
-        return new Response($reports[0]->name);
+        
+
+
     }
 
     public function mtAction(){
