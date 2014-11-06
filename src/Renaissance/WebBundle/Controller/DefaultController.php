@@ -30,9 +30,6 @@ class DefaultController extends BaseController
     }
 
     public function testAction(){
-        
-
-
     }
 
     public function mtAction(){
