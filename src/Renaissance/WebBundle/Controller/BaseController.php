@@ -20,10 +20,6 @@ class BaseController extends Controller
 	        $pg_password = $this->container->getParameter('canvas_db_password');
 	        $connect_string = "host=$pg_host port=$pg_port dbname=$pg_name user=$pg_user password=$pg_password";
 	        $dbconn =pg_connect($connect_string);
-	        if($dbnn){
-	        	return $dbconn;
-	        }else{
-            	return $this->render('RenaissanceWebBundle:Error:404.html.twig', array("error_msg"=>"Failed to connect canvas!"));
-	        }
+			return $dbconn;
 	    }
 }
