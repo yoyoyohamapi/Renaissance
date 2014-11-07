@@ -7,23 +7,27 @@ class CurlHelper {
 	protected $base_url;
 	protected $authed;
 	protected $get_header_opt;
-	public function __construct( $access_token,$base_url,$authed){
-		$this->access_token = $access_token;
-		$this->base_url = $base_url;
+	public function __construct($authed){
 		$this->authed = $authed;
 		$this->curl_handler = curl_init();
-		$this->get_header_opt  = 'Authorization:Bearer '.$this->access_token;
-		curl_setopt ( $this->curl_handler, CURLOPT_RETURNTRANSFER, 1 );
-    		curl_setopt($this->curl_handler,CURLOPT_SSL_VERIFYPEER,$this->authed);
+	}
+
+	public function __destruct(){
+		curl_close($this->curl_handler);
+	}
+
+	//通过初试化方法设定api地址、口令、响应头 
+	public function init($base_url,$access_token,$auth_head){
+		$this->access_token = $access_token;
+		$this->base_url = $base_url;
+		$this->get_header_opt  = $auth_head.' '.$this->access_token;
+		curl_setopt($this->curl_handler, CURLOPT_RETURNTRANSFER,1);
+		curl_setopt($this->curl_handler,CURLOPT_SSL_VERIFYPEER,$this->authed);
 		curl_setopt($this->curl_handler,CURLOPT_SSL_VERIFYHOST,$this->authed);
 		curl_setopt($this->curl_handler, CURLOPT_AUTOREFERER, true); //set referer on redirect
 		curl_setopt($this->curl_handler, CURLOPT_CONNECTTIMEOUT, 120); //timeout on connect
 		curl_setopt($this->curl_handler, CURLOPT_TIMEOUT, 30); //timeout on response
 		curl_setopt($this->curl_handler, CURLOPT_MAXREDIRS, 10); //stop after 10 redirects
-	}
-
-	public function __destruct(){
-		curl_close($this->curl_handler);
 	}
 
 	public function curlGet($api){

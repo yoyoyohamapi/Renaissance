@@ -11,6 +11,10 @@ class CourseController extends BaseController
     public function indexAction()
     {
         $curlHelper=$this->get('curlHelper');
+        $base_url = $this->container->getParameter('canvas_api_url');
+        $access_token = $this->container->getParameter('canvas_api_token');
+        $auth_head = $this->container->getParameter('canvas_api_auth_head');
+        $curlHelper->init($base_url,$access_token,$auth_head);
         $api="courses";
         $request=$this->getRequest();
         $pageNo=$request->query->get('pageno');
@@ -121,6 +125,10 @@ class CourseController extends BaseController
         $courses=$request->get('object');
         $pageNo=$request->query->get('pageno');
         $curlHelper=$this->get('curlHelper');
+        $base_url = $this->container->getParameter('canvas_api_url');
+        $access_token = $this->container->getParameter('canvas_api_token');
+        $auth_head = $this->container->getParameter('canvas_api_auth_head');
+        $curlHelper->init($base_url,$access_token,$auth_head);
         $api=$courses;
         if($pageNo=="")
             $pageNo="1";
