@@ -30,10 +30,10 @@ class DefaultController extends BaseController
     }
 
     public function testAction(){
-        $test_rest = $this->get('assignmentREST');
-        $reports = $test_rest->getAssignments(3);
+        $test_rest = $this->get('communicationREST');
+        $test_rest->deleteCalEvent(8,"课程取消");
         //var_dump($reports);
-        return new Response($reports[0]->name);
+        return new Response("name");
     }
 
     public function mtAction(){
