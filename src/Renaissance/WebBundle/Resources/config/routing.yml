@@ -29,7 +29,7 @@ user_index:
     defaults: { _controller: RenaissanceWebBundle:User:index }
     requirements:
       user_id:  \d+
-      
+
 course_index:
     path:     /course
     defaults: { _controller: RenaissanceWebBundle:Course:index }
