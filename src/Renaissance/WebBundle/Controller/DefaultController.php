@@ -4,8 +4,7 @@ namespace Renaissance\WebBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Renaissance\WebBundle\Controller\BaseController;
-use Renaissance\CommonBundle\REST\CourseREST;
-
+use Symfony\Component\HttpFoundation\Response;
 
 class DefaultController extends BaseController
 {
@@ -31,9 +30,9 @@ class DefaultController extends BaseController
     }
 
     public function testAction(){
-        $test_rest = $this->get('fileREST');
-        $user = $this->getUser();
-        var_dump($test_rest->getFileByPath('course',4,'cover/S.PNG'));
-        exit();
+    }
+
+    public function mtAction(){
+        return $this->render('RenaissanceWebBundle:Default:mt.html.twig',array());
     }
 }

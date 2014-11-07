@@ -1,8 +1,13 @@
-{# 用来装入常用JS文件 #}
-<script src="{{asset('bundles/renaissanceweb/js/jquery-1.11.1.min.js')}}"></script>
-<script src="{{asset('bundles/renaissanceweb/js/jquery.transit.js')}}"></script>
-<script src="{{asset('bundles/renaissanceweb/lib/bootstrap/js/bootstrap.js')}}"></script>
-<script src="{{asset('bundles/renaissanceweb/js/base.js')}}"></script>
-
+<script>
+  var app = {};
+  {% if script_action is defined %}
+    app.action = '{{ script_action }}';
+  {% endif %}
+</script>
+<script src="{{asset('assets/scripts/spm_modules/seajs/2.3.0/dist/sea.js')}}"></script>
+<script src="{{asset('assets/scripts/spm_modules/sea-config.js')}}"></script>
+<script>
+  seajs.use("{{asset('bundles/renaissanceweb/modules/app.js')}}");
+</script>
 
 

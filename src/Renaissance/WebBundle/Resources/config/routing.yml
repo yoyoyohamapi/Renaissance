@@ -66,6 +66,10 @@ test:
     path: /test
     defaults: {_controller:RenaissanceWebBundle:Default:test}
 
+mt:
+    path: /mt
+    defaults: {_controller:RenaissanceWebBundle:Default:mt}
+
 enroll_course:
     path: /enroll_course
     defaults: {_controller:RenaissanceWebBundle:Enroll:enroll}

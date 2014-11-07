@@ -2,8 +2,6 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 {% include "RenaissanceWebBundle:Layout:stylesheets.html.twig" %}
-<!-- JS文件 -->
-{% include "RenaissanceWebBundle:Layout:scripts.html.twig" %}
 <style type="text/css">
 	body{
 		min-width: 900px;
@@ -82,7 +80,7 @@
 			</div>
 		</div>
 	</div>
-
-<script src="{{asset("bundles/renaissanceweb/js/register.js")}}"></script>
-
 </body>
+{% set script_action='register/index' %}
+<!-- JS文件 -->
+{% include "RenaissanceWebBundle:Layout:scripts.html.twig" %}

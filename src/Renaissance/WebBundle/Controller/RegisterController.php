@@ -33,16 +33,15 @@ class RegisterController extends BaseController
 		$username = $request->request->get('username');
 		$email = $request->request->get('email');
 		$password = $request->request->get('password');
-		$curlHelper = $this->get('curlHelper');
-		$api = "accounts/2/users";
+		$userREST = $this->get('userREST');																																																				
 		$pseudonym['unique_id'] = $email;
 		$pseudonym['password'] = $password;
 		$user['name'] = $username;
-		$post_field = array(
+		$user_data = array(
 			"pseudonym" => $pseudonym,
 			"user" => $user
 		);
-		$user_new = $curlHelper->curlCustom($api,$post_field,'POST');
+		$user_new = $userREST->addUser($user_data);
 		if(!empty($user_new->id)){
 			$user = new User();
 			$user->setUsername($user_new->name);

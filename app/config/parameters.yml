@@ -19,4 +19,15 @@ parameters:
     cas_login_url: https://localhost:8443/cas/login
     cas_logout_url: https://localhost:8443/cas/logout
     cas_validation_url: https://localhost:8443/cas/serviceValidate
-    site_url: http://localhost:3000/
+    site_url: "http://127.0.0.1:3000/"
+    #canvas数据库信息
+    canvas_db_host: 127.0.0.1
+    canvas_db_port: 5432
+    canvas_db_name: canvas_development
+    canvas_db_user: feiyu06
+    canvas_db_password: 123456
+    #canvas的api地址、口令、响应头
+    canvas_api_url: "https://canvas.example.com/api/v1/"
+    canvas_api_token: IULKhnRJ2lVB5bza9NC70AUGnT9VtVaRgdt5737tlPhAGSMDVYcd7VBw9pfVR2GV
+    canvas_api_auth_head: Authorization:Bearer
+
