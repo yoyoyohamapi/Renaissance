@@ -1,10 +1,8 @@
 define(function(require,exports,module){
 	var plaza_nav = require('./plazaNav.js');
 	var page_next = require('./pageAjax.js');
-	var plaza_more_transit = require('./plazaMore.js');
 	exports.run = function(){
 			plaza_nav.run();
-			plaza_more_transit.run();
 			$(document).on('click','#get_more',getMore);
 	}
 	function getMore(){

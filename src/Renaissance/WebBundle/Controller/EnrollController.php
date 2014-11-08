@@ -12,6 +12,7 @@ class EnrollController extends BaseController
     {
     	$course_id = $request->request->get('course_id');
 	$user_id = $request->request->get('user_id');
+             $alt = $request->request->get('alt');
 	$curlHelper = $this->get('curlHelper');
 
         	$api = "courses/".$course_id."/enrollments";
@@ -24,8 +25,13 @@ class EnrollController extends BaseController
         		return $this->createJsonResponse(array("enroll"=>"success"));
         	}else {
 		return $this->render('RenaissanceWebBundle:Course:show.html.twig',array("error"=>"注册失败"));
-	}
-        	//retunr new Response(var_dump($user_new));
-        	
+	}  	
+    }
+
+    public function getToken($course_id,$user_id,$alt){
+        $str = $user_id.$course_id.$alt;
+        $token = sha1($str);
+        $token = $token.$course_id.$alt;
+        return $token;
     }
 }

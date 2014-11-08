@@ -11,6 +11,10 @@ class CourseController extends BaseController
     public function indexAction()
     {
         $curlHelper=$this->get('curlHelper');
+        $base_url = $this->container->getParameter('canvas_api_url');
+        $access_token = $this->container->getParameter('canvas_api_token');
+        $auth_head = $this->container->getParameter('canvas_api_auth_head');
+        $curlHelper->init($base_url,$access_token,$auth_head);
         $api="courses";
         $request=$this->getRequest();
         $pageNo=$request->query->get('pageno');
@@ -67,10 +71,26 @@ class CourseController extends BaseController
             $isStart = $courseREST->getCourseStartState($course);
             $start_end = $courseREST->getCourseStartEnd($course);
 
-            if(!empty($this->getUser()))
-                $canvas_user_id = $this->getUser()->getCanvasUserId();
-            else
+            if(!empty($this->getUser())){
+                    $canvas_user_id = $this->getUser()->getCanvasUserId();
+                    $dbconn = $this->getCanvasConn();
+                    $sql ="SELECT password_salt from pseudonyms where user_id=".$canvas_user_id;
+                    if($dbconn){
+                        $result = pg_query($dbconn,$sql);
+                        if(!empty($result)){
+                            $alt = pg_fetch_array($result,0);
+                            pg_close($dbconn);
+                            //echo $alt[0];
+                        }else{
+                            return $this->render('RenaissanceWebBundle:Error:404.html.twig', array("error_msg"=>"信息有误"));
+                        }
+                    }else{
+                         return $this->render('RenaissanceWebBundle:Error:404.html.twig', array("error_msg"=>"系统出错"));
+                    }
+            }else{
                 $canvas_user_id = null;
+            }
+                
 
             $enrollmentREST = $this->get("enrollmentREST");
             $enrollment = $enrollmentREST->getCourseEnrollmentByUserId($course_id, $canvas_user_id);
@@ -84,7 +104,7 @@ class CourseController extends BaseController
 
             $size = "L";
             $cover = $courseREST->getCourseCoverById($course_id,$size);
-
+            //var_dump($cover);
             $chapters = $courseREST->getChapters($course_id);
             $page = $courseREST->getCoursePage($course_id);
             
@@ -98,15 +118,17 @@ class CourseController extends BaseController
                 $profile = $userREST->getUserProfile($value->id);
                 $teacher_avatar_url=$profile->avatar_url;
                 $head_urls[] = $teacher_avatar_url;
+                //var_dump($teacher_avatar_url);
             }
 
             $page->body=substr($page->body, 3,-4);
 
             $site_url =  $this->container->getParameter('site_url');
 
-            $data=array('course'=>$course,'students'=>$students,'teachers'=>$teachers,
-                'page'=>$page,'heads'=>$head_urls,'cover'=>$cover,'chapters'=>$chapters,'start_end'=>$start_end,
-                'isEnrolled'=>$isEnrolled,'site_url'=>$site_url,'course_id'=>$course_id,'canvas_user_id'=>$canvas_user_id,'isStart'=>$isStart);
+            $data=array('course'=>$course,'students'=>$students,'teachers'=>$teachers, 'page'=>$page,
+                'heads'=>$head_urls,'cover'=>$cover,'chapters'=>$chapters,'start_end'=>$start_end,
+                'isEnrolled'=>$isEnrolled,'site_url'=>$site_url,'course_id'=>$course_id,'canvas_user_id'=>$canvas_user_id,
+                'isStart'=>$isStart,'alt'=>$alt[0]);
              return $this->render('RenaissanceWebBundle:Course:show.html.twig', $data); 
         }catch(ContextErrorException $e){
             return $this->render('RenaissanceWebBundle:Error:404.html.twig', array("error_msg"=>"课程正在编辑中"));
@@ -121,6 +143,10 @@ class CourseController extends BaseController
         $courses=$request->get('object');
         $pageNo=$request->query->get('pageno');
         $curlHelper=$this->get('curlHelper');
+        $base_url = $this->container->getParameter('canvas_api_url');
+        $access_token = $this->container->getParameter('canvas_api_token');
+        $auth_head = $this->container->getParameter('canvas_api_auth_head');
+        $curlHelper->init($base_url,$access_token,$auth_head);
         $api=$courses;
         if($pageNo=="")
             $pageNo="1";

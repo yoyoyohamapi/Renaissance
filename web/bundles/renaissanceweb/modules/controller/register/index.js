@@ -48,5 +48,5 @@ define(function(require,exports,module){
 		function throwError(message){
 			$("#error_msg").html(message);
 		}
-	});
+	}
 });

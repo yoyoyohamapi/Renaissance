@@ -59,7 +59,7 @@
 
 								{% if isEnrolled==false%}
 									<div class="col-xs-12">
-										<input id="doJoin" name="{{course_id}}-{{canvas_user_id}}" type="button" class="button button-large button-flat-flame" style="height:auto;" value="加入课程" onclick="javascript:void(0);" post_style="background-color:rgba(55, 171, 55, 1);border-bottom-color: #008000;height:auto"post_value="进入课程" post_id="doEnter" post_href = "javascrtpt:window.location.href='{{site_url}}courses/{{course_id}}'">
+										<input id="doJoin" name="{{course_id}}-{{canvas_user_id}}-{{alt}}" type="button" class="button button-large button-flat-flame" style="height:auto;" value="加入课程" onclick="javascript:void(0);" post_style="background-color:rgba(55, 171, 55, 1);border-bottom-color: #008000;height:auto"post_value="进入课程" post_id="doEnter" post_href = "javascrtpt:window.location.href='{{site_url}}courses/{{course_id}}'">
 									</div>
 								{%else%}
 									{%if isStart==true%}
