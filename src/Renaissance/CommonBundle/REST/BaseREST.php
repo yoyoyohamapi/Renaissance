@@ -10,11 +10,12 @@ class BaseREST{
 	public function __construct($curlHelper,$container){
 		$this->curlHelper = $curlHelper;
 		$this->container = $container;
-		//设定为canvas的api地址、口令、响应头
-		$base_url = $this->container->getParameter('canvas_api_url');
-		$access_token = $this->container->getParameter('canvas_api_token');
-		$auth_head = $this->container->getParameter('canvas_api_auth_head');
-		$this->curlHelper->init($base_url,$access_token,$auth_head);
+		$this->init();
+	}
+
+	//由不同子类进行重载
+	public function init(){
+
 	}
 
 	protected function execute($type=null){

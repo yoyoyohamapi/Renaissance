@@ -59,10 +59,10 @@
 
 								{% if isEnrolled==false%}
 									<div class="col-xs-12">
-										<input id="doJoin" name="{{course_id}}-{{canvas_user_id}}" type="button" class="button button-large button-flat-flame" style="height:auto;" value="加入课程" onclick="javascript:void(0);" post_style="background-color:rgba(55, 171, 55, 1);border-bottom-color: #008000;height:auto"post_value="进入课程" post_id="doEnter" post_href = "javascrtpt:window.location.href='{{site_url}}courses/{{course_id}}'">
+										<input id="doJoin" name="{{course_id}}-{{canvas_user_id}}-{{alt}}" type="button" class="button button-large button-flat-flame" style="height:auto;" value="加入课程" onclick="javascript:void(0);" post_style="background-color:rgba(55, 171, 55, 1);border-bottom-color: #008000;height:auto"post_value="进入课程" post_id="doEnter" post_href = "javascrtpt:window.location.href='{{site_url}}courses/{{course_id}}'">
 									</div>
 								{%else%}
-									{%if isStart==true%}
+									{%if isVisiable==true%}
 										<div class="col-xs-12">
 										<button id="doEnter" name="enter_course" type="button" class="button button-large button-flat-flame"style="height:auto;background-color:rgba(55, 171, 55, 1);border-bottom-color: #008000; " value="进入课程" onclick="javascrtpt:window.location.href='{{site_url}}courses/{{course_id}}'" >进入课程</button>
 										</div>
@@ -142,7 +142,7 @@
 									<ul>
 										<li class="clearfix">
 											<div class="row" style="margin: 0px;">
-												<div class="col-xs-2 headPic "><img class="img-circle" src="{{asset('bundles/renaissanceweb/img/commHead.jpg')}}"></div>
+												<div class="col-xs-2 headPic "><img class="img-circle" src="{{asset('bundles/renaissanceweb/img/default/commHead.jpg')}}"></div>
 												<div class="col-xs-8 detail">
 													<p>
 														<span class="name">田馥甄</span>
@@ -174,7 +174,7 @@
 		<div class="row">
 			<div class="col-xs-3 courseRecCard">
 				<div class="view viewForCard">
-					<img src="{{asset('bundles/renaissanceweb/img/相关课程jQuery.png')}}">
+					<img src="{{asset('bundles/renaissanceweb/img/default/相关课程jQuery.png')}}">
 					<div class="mask">
 					<h2>jQuery</h2>
 					<p>Jquery是继prototype之后又一个优秀的Javascript框架。它是轻量级的js库 ，它兼容CSS3，还兼容各种浏览器.jQuery使用户能更方便地处理HTML</p>
@@ -186,7 +186,7 @@
 			</div>
 			<div class="col-xs-3 courseRecCard">
 				<div class="view viewForCard">
-					<img src="{{asset('bundles/renaissanceweb/img/相关课程jQuery.png')}}">
+					<img src="{{asset('bundles/renaissanceweb/img/default/相关课程jQuery.png')}}">
 					<div class="mask">
 					<h2>jQuery</h2>
 					<p>Jquery是继prototype之后又一个优秀的Javascript框架。它是轻量级的js库 ，它兼容CSS3，还兼容各种浏览器.jQuery使用户能更方便地处理HTML</p>

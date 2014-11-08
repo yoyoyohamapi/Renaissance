@@ -13,34 +13,42 @@ services:
     baseREST:
         class: Renaissance\CommonBundle\REST\BaseREST
         arguments: [@curlHelper,@service_container]
+    canvasBaseREST:
+        class: Renaissance\CommonBundle\REST\Canvas\CanvasBaseREST
+        parent: baseREST
+    videoBaseREST:
+        class: Renaissance\CommonBundle\REST\Video\VideoBaseREST
+        parent: baseREST
     courseREST:
-        class: Renaissance\CommonBundle\REST\CourseREST
-        parent: baseREST
+        class: Renaissance\CommonBundle\REST\Canvas\CourseREST
+        parent: canvasBaseREST
     enrollmentREST:
-        class: Renaissance\CommonBundle\REST\EnrollmentREST
-        parent: baseREST
+        class: Renaissance\CommonBundle\REST\Canvas\EnrollmentREST
+        parent: canvasBaseREST
     userREST:
-        class: Renaissance\CommonBundle\REST\UserREST
-        parent: baseREST
+        class: Renaissance\CommonBundle\REST\Canvas\UserREST
+        parent: canvasBaseREST
     fileREST:
-        class: Renaissance\CommonBundle\REST\FileREST
-        parent: baseREST
-    moduleREST:
-        class: Renaissance\CommonBundle\REST\ModuleREST
-        parent: baseREST
+        class: Renaissance\CommonBundle\REST\Canvas\FileREST
+        parent: canvasBaseREST
+    modulesREST:
+        class: Renaissance\CommonBundle\REST\Canvas\ModulesREST
+        parent: canvasBaseREST
     pageREST:
-        class: Renaissance\CommonBundle\REST\PageREST
-        parent: baseREST
-<<<<<<< HEAD
-
-=======
+        class: Renaissance\CommonBundle\REST\Canvas\PageREST
+        parent: canvasBaseREST
     accountREST:
-        class: Renaissance\CommonBundle\REST\AccountREST
-        parent: baseREST
+        class: Renaissance\CommonBundle\REST\Canvas\AccountREST
+        parent: canvasBaseREST
     assignmentGroupsREST:
-        class: Renaissance\CommonBundle\REST\AssignmentGroupsREST
-        parent: baseREST
+        class: Renaissance\CommonBundle\REST\Canvas\AssignmentGroupsREST
+        parent: canvasBaseREST
     assignmentREST:
-        class: Renaissance\CommonBundle\REST\AssignmentREST
-        parent: baseREST 
->>>>>>> 4adc75344bef37167c3ad925dae2b588aee9abb8
+        class: Renaissance\CommonBundle\REST\Canvas\AssignmentREST
+        parent: canvasBaseREST 
+    calendarEventsREST:
+        class: Renaissance\CommonBundle\REST\Canvas\CalendarEventsREST
+        parent: canvasBaseREST 
+    communicationREST:
+        class: Renaissance\CommonBundle\REST\Canvas\CommunicationREST
+        parent: canvasBaseREST 

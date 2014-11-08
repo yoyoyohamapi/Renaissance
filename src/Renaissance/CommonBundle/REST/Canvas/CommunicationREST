@@ -1,0 +1,10 @@
+<?php
+namespace Renaissance\CommonBundle\REST\Canvas;
+
+class CommunicationREST extends CanvasBaseREST{
+	public function getCommunicationchannelsById($user_id){
+		$this->api = "users/".user_id."/communication_channels";
+		$channels = $this->execute();
+		return $channels;
+	}
+}
