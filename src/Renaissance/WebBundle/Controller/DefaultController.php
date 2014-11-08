@@ -30,6 +30,19 @@ class DefaultController extends BaseController
     }
 
     public function testAction(){
+              $dbconn = $this->getCanvasConn();
+              $sql ="SELECT password_salt from pseudonyms where user_id=1";
+              if($dbconn){//别忘记是否连接成功
+                            $result = pg_query($dbconn,$sql);
+                            if(!empty($result)){
+                                $alt = pg_fetch_array($result,0);
+                                return new Response($alt[0]);
+                            }else{
+                                return new Response("No Data");
+                            }
+              }else{
+                      return new Response("error");
+             }
     }
 
     public function mtAction(){

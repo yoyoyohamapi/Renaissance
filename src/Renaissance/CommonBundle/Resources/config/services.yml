@@ -1,5 +1,8 @@
 parameters:
     curlHelper.class:    Renaissance\CommonBundle\Tools\CurlHelper
+    
+    curlHelper.class.canvas_access_token:   waMepYblCfAk16WeOoX7uBsjZNbjzhbdKZTZyMgpBaGbRxR9DiEAWoJb12LjT7i1
+    curlHelper.class.base_url:   "https://canvas.example.com/api/v1/"
     curlHelper.class.authed:   FALSE
 services:
     curlHelper:
@@ -39,4 +42,10 @@ services:
         parent: baseREST
     assignmentREST:
         class: Renaissance\CommonBundle\REST\AssignmentREST
+        parent: baseREST 
+    calendarEventsREST:
+        class: Renaissance\CommonBundle\REST\CalendarEventsREST
+        parent: baseREST 
+    communicationREST:
+        class: Renaissance\CommonBundle\REST\CommunicationREST
         parent: baseREST 

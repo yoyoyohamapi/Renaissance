@@ -47,27 +47,41 @@ class CourseREST extends BaseREST{
 			$cover = null;
 		return $cover;
 	}
+	//获取课程状态
 	public function getCourseStartState($course){
 		$start_at = $course->start_at;
-		if(!empty($start_at)){
-			$start_time = substr($start_at, 2,8);
+		$end_at = $course->end_at;
+		if(!empty($start_at) && !empty($end_at)){
+			$start_time = substr($start_at, 2, 8);
+			$end_time = substr($end_at, 2, 8);
 			$time = time();
 	       		$time = date("y-m-d",$time);
-	        
+	        		
 	        		$start_time = strtotime($start_time);
+	        		$end_time = strtotime($end_time);
 	        		$time = strtotime($time);
 
-	        		if($start_time <= $time)
-	        		{
-	           			$isStart = true;
+	        		if(($time >= $start_time) && ($time <= $end_time)){
+	        			$isVisiable = true;
 	        		}else{
-	            			$isStart = false;
-	        		}
-	        		
+	        			$isVisiable = false;
+	        		}	
+		}elseif (!empty($start_at) && empty($end_at)) {
+			$start_time = substr($start_at, 2, 8);
+			$time = time();
+	       		$time = date("y-m-d",$time);
+
+	       		$start_time = strtotime($start_time);
+	       		$time = strtotime($time);
+	       		if ($start_time <= $time) {
+	       			$isVisiable = true;
+	       		}else{
+	       			$isVisiable = false;
+	       		}
 		}else{
-			$isStart = false;
+			$isVisiable = false;
 		}
-		return $isStart;
+		return $isVisiable;
 	}
 	public function getCourseStartEnd($course){
 		$start_at = $course->start_at;

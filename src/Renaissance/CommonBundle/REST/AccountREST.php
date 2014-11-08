@@ -39,7 +39,7 @@ class AccountREST extends BaseREST{
 	//创建子账户
 	public function createSubAccount($account_id, $sub_account_name){
 		$this->api = 'accounts/'.$account_id.'/sub_accounts';
-		$name = $sub_account_name;
+		$account['name'] = $sub_account_name;
 		$this->data_field = array(
 			"account"=>$account,
 		);
