@@ -20,7 +20,7 @@ class CurlHelper {
 	public function init($base_url,$access_token,$auth_head){
 		$this->access_token = $access_token;
 		$this->base_url = $base_url;
-		$this->get_header_opt  = $auth_head.' '.$this->access_token;
+		$this->get_header_opt  = 'Authorization:'.$auth_head.' '.$this->access_token;
 		curl_setopt($this->curl_handler, CURLOPT_RETURNTRANSFER,1);
 		curl_setopt($this->curl_handler,CURLOPT_SSL_VERIFYPEER,$this->authed);
 		curl_setopt($this->curl_handler,CURLOPT_SSL_VERIFYHOST,$this->authed);
