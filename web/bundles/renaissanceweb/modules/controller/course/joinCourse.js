@@ -5,11 +5,11 @@ define(function(require,exports,module){
 				var course_id = btn.attr('name').split('-')[0];
 				var user_id = btn.attr('name').split('-')[1];
 				var alt = btn.attr('name').split('-')[2];
-				alert(alt);
+				//alert(alt);
 				$.ajax({
 					url:"/enroll_course",
 					type:"post",
-					data:"course_id="+course_id+"&user_id="+user_id+"&alt="alt,
+					data:"course_id="+course_id+"&user_id="+user_id,//+"&alt="alt
 					dataType:"json",
 					success : function(data){
 						if(data == null)

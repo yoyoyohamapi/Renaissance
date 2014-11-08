@@ -72,6 +72,6 @@ mt:
 
 enroll_course:
     path: /enroll_course
-    defaults: {_controller:RenaissanceWebBundle:Enroll:enroll}
+    defaults: {_controller:RenaissanceWebBundle:Course:enroll}
     methods: [POST]
 
