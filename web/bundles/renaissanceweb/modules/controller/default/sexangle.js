@@ -4,25 +4,25 @@ define(function(require,exports,module){
 
 		var speed=200; // anime speed
 		
-		$("#imgOne").animate({
+		$("#img1").animate({
 			opacity:1
 		},speed,function(){
-			$("#imgTwo").animate({
+			$("#img2").animate({
 				opacity:1
 			},speed,function(){
-				$("#imgThree").animate({
+				$("#img3").animate({
 					opacity:1
 				},speed,function(){
-					$("#imgFour").animate({
+					$("#img4").animate({
 						opacity:1
 					},speed,function(){
-						$("#imgFive").animate({
+						$("#img5").animate({
 							opacity:1
 						},speed,function(){
-							$("#imgSix").animate({
+							$("#img6").animate({
 								opacity:1
 							},speed,function(){
-								$("#imgSeven").animate({
+								$("#img7").animate({
 									opacity:1
 								},speed,function(){
 									$("#courseTitleRect").css("background-size","91.7% auto");
