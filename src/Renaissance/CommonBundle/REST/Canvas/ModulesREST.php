@@ -1,8 +1,7 @@
 <?php
-namespace Renaissance\CommonBundle\REST;
-use Renaissance\CommonBundle\REST\REST_Base;
+namespace Renaissance\CommonBundle\REST\Canvas;
 
-class ModulesREST extends BaseREST{
+class ModulesREST extends CanvasBaseREST{
 	public function getModulesByCourseId($id){
 		$this->api = "courses/".$id."/modules?include[]=items";
 		$chapters = $this->execute();

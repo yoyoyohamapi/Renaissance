@@ -1,8 +1,7 @@
 <?php
-namespace Renaissance\CommonBundle\REST;
-use Renaissance\CommonBundle\REST\REST_Base;
+namespace Renaissance\CommonBundle\REST\Canvas;
 
-class CourseREST extends BaseREST{
+class CourseREST extends CanvasBaseREST{
 
 	public function getAllCourses(){
 		$this->api="courses";

@@ -1,8 +1,7 @@
 <?php
-namespace Renaissance\CommonBundle\REST;
-use Renaissance\CommonBundle\REST\REST_Base;
+namespace Renaissance\CommonBundle\REST\Canvas;
 
-class AssignmentREST extends BaseREST{
+class AssignmentREST extends CanvasBaseREST{
 	public function getAssignments($course_id){
 		$this->api = 'courses/'.$course_id.'/assignments';
 		return $this->execute();

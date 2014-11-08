@@ -1,8 +1,7 @@
 <?php
-namespace Renaissance\CommonBundle\REST;
-use Renaissance\CommonBundle\REST\REST_Base;
+namespace Renaissance\CommonBundle\REST\Canvas;
 
-class PageREST extends BaseREST{
+class PageREST extends CanvasBaseREST{
 	public function getPageByCourseId($id){
 		$this->api = "courses/".$id."/front_page";
         		$page = $this->execute();

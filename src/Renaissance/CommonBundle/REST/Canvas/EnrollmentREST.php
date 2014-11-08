@@ -1,6 +1,7 @@
 <?php
-namespace Renaissance\CommonBundle\REST;
-class EnrollmentREST extends BaseREST{
+namespace Renaissance\CommonBundle\REST\Canvas;
+
+class EnrollmentREST extends CanvasBaseREST{
 	public function getAllEnrollmentsByCourseId($id){
 		$this->api = 'course/'.$id.'/enrollments';
 		return $this->execute();

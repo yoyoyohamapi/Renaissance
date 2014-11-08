@@ -1,8 +1,7 @@
 <?php
-namespace Renaissance\CommonBundle\REST;
-use Renaissance\CommonBundle\REST\REST_Base;
+namespace Renaissance\CommonBundle\REST\Canvas;
 
-class CalendarEventsREST extends BaseREST{
+class CalendarEventsREST extends CanvasBaseREST{
 	public function getAllCalEvents(){
 		$this->api = "calendar_events?all_events=true";
         		$events = $this->execute();

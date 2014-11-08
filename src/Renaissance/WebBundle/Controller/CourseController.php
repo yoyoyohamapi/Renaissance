@@ -115,7 +115,6 @@ class CourseController extends BaseController
                 $teacher_avatar_url=$profile->avatar_url;
                 $head_urls[] = $teacher_avatar_url;
             }
-
             $page->body=substr($page->body, 3,-4);
 
             $site_url =  $this->container->getParameter('site_url');

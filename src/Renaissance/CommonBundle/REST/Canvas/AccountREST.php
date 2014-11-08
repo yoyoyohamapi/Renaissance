@@ -1,8 +1,7 @@
 <?php
-namespace Renaissance\CommonBundle\REST;
-use Renaissance\CommonBundle\REST\REST_Base;
+namespace Renaissance\CommonBundle\REST\Canvas;
 
-class AccountREST extends BaseREST{
+class AccountREST extends CanvasBaseREST{
 	public function getAccountReports($account_id){
 		$this->api = 'accounts/'.$account_id.'/reports';
 		$reports = $this->execute();
