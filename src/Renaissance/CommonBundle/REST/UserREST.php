@@ -18,7 +18,7 @@ class UserREST extends BaseREST{
 	}
 
 	public function addUser($user_data){
-		$this->api = "accounts/2/users";
+		$this->api = "accounts/1/users";
 		$this->data_field = $user_data;
 		$user_new = $this->execute('POST');
 		return $user_new;
