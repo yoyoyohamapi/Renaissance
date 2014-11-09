@@ -4,12 +4,12 @@ define(function(require,exports,module){
 				var btn = $(this);
 				var course_id = btn.attr('name').split('-')[0];
 				var user_id = btn.attr('name').split('-')[1];
-				var alt = btn.attr('name').split('-')[2];
-				//alert(alt);
+				var salt = btn.attr('name').split('-')[2];
+				//alert(salt);
 				$.ajax({
 					url:"/enroll_course",
 					type:"post",
-					data:"course_id="+course_id+"&user_id="+user_id,//+"&alt="alt
+					data:"course_id="+course_id+"&user_id="+user_id,//+"&salt="salt
 					dataType:"json",
 					success : function(data){
 						if(data == null)
@@ -20,6 +20,7 @@ define(function(require,exports,module){
 							btn.attr("value",btn.attr("post_value"));
 							btn.attr("onclick",btn.attr("post_href"));
 							btn.attr("style",btn.attr("post_style"));
+							btn.attr("disabled",btn.attr("post_disabled"));
 						}
 					}
 				});	

@@ -1,5 +1,6 @@
 <?php
 namespace Renaissance\CommonBundle\REST;
+
 class UserREST extends BaseREST{
 	public function getUserProfile($user_id){
 		$this->api = "users/".$user_id."/profile";
@@ -23,4 +24,5 @@ class UserREST extends BaseREST{
 		$user_new = $this->execute('POST');
 		return $user_new;
 	}
+
 }
