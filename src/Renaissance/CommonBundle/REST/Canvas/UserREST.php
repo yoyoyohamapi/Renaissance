@@ -24,4 +24,5 @@ class UserREST extends CanvasBaseREST{
 		$user_new = $this->execute('POST');
 		return $user_new;
 	}
+
 }

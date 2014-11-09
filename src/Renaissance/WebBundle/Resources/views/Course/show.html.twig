@@ -56,21 +56,27 @@
 										<input id="doJoin" name="noRegister" type="button" class="button button-large button-flat-flame" style="height:auto;" value="加入课程" onclick="javascrtpt:window.location.href='{{path('course_show_with_user',{'course_id': course.id }) }}'" post_style="background-color:rgba(55, 171, 55, 1);border-bottom-color: #008000;height:auto">
 									</div>
 								{% else %}
-
+								{%if isVisiable==true%}
 								{% if isEnrolled==false%}
 									<div class="col-xs-12">
-										<input id="doJoin" name="{{course_id}}-{{canvas_user_id}}-{{alt}}" type="button" class="button button-large button-flat-flame" style="height:auto;" value="加入课程" onclick="javascript:void(0);" post_style="background-color:rgba(55, 171, 55, 1);border-bottom-color: #008000;height:auto"post_value="进入课程" post_id="doEnter" post_href = "javascrtpt:window.location.href='{{site_url}}courses/{{course_id}}'">
+										<input id="doJoin" name="{{course_id}}-{{canvas_user_id}}-{{salt}}" type="button" class="button button-large button-flat-flame" style="height:auto;" value="加入课程" onclick="javascript:void(0);" post_style="background-color:rgba(55, 171, 55, 1);border-bottom-color: #008000;height:auto"post_value="进入课程" post_id="doEnter" post_href = "javascrtpt:window.location.href='{{site_url}}courses/{{course_id}}'">
 									</div>
 								{%else%}
-									{%if isVisiable==true%}
 										<div class="col-xs-12">
 										<button id="doEnter" name="enter_course" type="button" class="button button-large button-flat-flame"style="height:auto;background-color:rgba(55, 171, 55, 1);border-bottom-color: #008000; " value="进入课程" onclick="javascrtpt:window.location.href='{{site_url}}courses/{{course_id}}'" >进入课程</button>
 										</div>
-									{%else%}
-										<div class="col-xs-12">
+								{%endif%}
+								{%else%}
+								{% if isEnrolled==false%}
+									<div class="col-xs-12">
+										<input id="doJoin" name="{{course_id}}-{{canvas_user_id}}-{{salt}}" type="button" class="button button-large button-flat-flame" style="height:auto;" value="加入课程" onclick="javascript:void(0);" post_style="background-color:rgba(55, 171, 55, 1);border-bottom-color: #008000;height:auto"post_value="进入课程" post_id="doEnter" post_href = "javascrtpt:window.location.href='{{site_url}}courses/{{course_id}}'" post_disabled="disabled">
+									</div>
+								{%else%}
+									<div class="col-xs-12">
 										<button id="doEnter" name="enter_course" type="button" class="button button-large button-flat-flame" style="height:auto;background-color:rgba(55, 171, 55, 1);border-bottom-color: #008000; " value="进入课程" onclick="javascrtpt:window.location.href='{{site_url}}courses/{{course_id}}'" disabled="disabled">进入课程</button>
-										</div>
-									{%endif%}
+									</div>
+								{%endif%}
+									
 								{% endif %}
 								{% endif %}
 							</div>
