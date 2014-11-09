@@ -53,7 +53,7 @@
 								</div>
 								{% if user is empty %}
 									<div class="col-xs-12">
-										<input id="doJoin" name="noRegister" type="button" class="button button-large button-flat-flame" style="height:auto;" value="加入课程" onclick="javascrtpt:window.location.href='{{path('course_show_with_user',{'course_id': course.id }) }}'" post_style="background-color:rgba(55, 171, 55, 1);border-bottom-color: #008000;height:auto">
+										<input id="toLogin" name="noRegister" type="button" class="button button-large button-flat-flame" style="height:auto;" value="加入课程" onclick="javascrtpt:window.location.href='{{path('course_show_with_user',{'course_id': course.id }) }}'" post_style="background-color:rgba(55, 171, 55, 1);border-bottom-color: #008000;height:auto">
 									</div>
 								{% else %}
 								{%if isVisiable==true%}
