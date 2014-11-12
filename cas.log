@@ -1588,3 +1588,35 @@ SERVER IP ADDRESS: 0:0:0:0:0:0:0:1
 
 
 2014-11-08 13:31:22,760 WARN [org.jasig.cas.util.HttpClient] - Error Sending message to url endpoint [http://127.0.0.1:3000/login/cas].  Error is [Server returned HTTP response code: 405 for URL: http://127.0.0.1:3000/login/cas]
+2014-11-08 13:32:29,607 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2014-11-08 13:32:29,607 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2014-11-08 13:34:29,604 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2014-11-08 13:34:29,605 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2014-11-08 13:36:29,607 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2014-11-08 13:36:29,607 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2014-11-08 13:38:29,605 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2014-11-08 13:38:29,606 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2014-11-08 13:40:29,602 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2014-11-08 13:40:29,602 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2014-11-08 13:42:29,604 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2014-11-08 13:42:29,605 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2014-11-08 13:44:29,606 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2014-11-08 13:44:29,606 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2014-11-08 13:46:29,611 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2014-11-08 13:46:29,611 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2014-11-08 13:48:29,608 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2014-11-08 13:48:29,609 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2014-11-08 13:50:29,606 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2014-11-08 13:50:29,606 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2014-11-08 13:52:29,604 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2014-11-08 13:52:29,604 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2014-11-08 13:54:29,613 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2014-11-08 13:54:29,613 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2014-11-08 13:56:29,612 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2014-11-08 13:56:29,612 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2014-11-08 13:58:29,607 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2014-11-08 13:58:29,607 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2014-11-08 14:00:29,604 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2014-11-08 14:00:29,604 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2014-11-08 14:02:29,608 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2014-11-08 14:02:29,608 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.

@@ -53,7 +53,7 @@
 								</div>
 								{% if user is empty %}
 									<div class="col-xs-12">
-										<input id="doJoin" name="noRegister" type="button" class="button button-large button-flat-flame" style="height:auto;" value="加入课程" onclick="javascrtpt:window.location.href='{{path('course_show_with_user',{'course_id': course.id }) }}'" post_style="background-color:rgba(55, 171, 55, 1);border-bottom-color: #008000;height:auto">
+										<input id="toLogin" name="noRegister" type="button" class="button button-large button-flat-flame" style="height:auto;" value="加入课程" onclick="javascrtpt:window.location.href='{{path('course_show_with_user',{'course_id': course.id }) }}'" post_style="background-color:rgba(55, 171, 55, 1);border-bottom-color: #008000;height:auto">
 									</div>
 								{% else %}
 								{%if isVisiable==true%}
@@ -148,7 +148,7 @@
 									<ul>
 										<li class="clearfix">
 											<div class="row" style="margin: 0px;">
-												<div class="col-xs-2 headPic "><img class="img-circle" src="{{asset('bundles/renaissanceweb/img/commHead.jpg')}}"></div>
+												<div class="col-xs-2 headPic "><img class="img-circle" src="{{asset('bundles/renaissanceweb/img/default/commHead.jpg')}}"></div>
 												<div class="col-xs-8 detail">
 													<p>
 														<span class="name">田馥甄</span>
@@ -180,7 +180,7 @@
 		<div class="row">
 			<div class="col-xs-3 courseRecCard">
 				<div class="view viewForCard">
-					<img src="{{asset('bundles/renaissanceweb/img/相关课程jQuery.png')}}">
+					<img src="{{asset('bundles/renaissanceweb/img/default/相关课程jQuery.png')}}">
 					<div class="mask">
 					<h2>jQuery</h2>
 					<p>Jquery是继prototype之后又一个优秀的Javascript框架。它是轻量级的js库 ，它兼容CSS3，还兼容各种浏览器.jQuery使用户能更方便地处理HTML</p>
@@ -192,7 +192,7 @@
 			</div>
 			<div class="col-xs-3 courseRecCard">
 				<div class="view viewForCard">
-					<img src="{{asset('bundles/renaissanceweb/img/相关课程jQuery.png')}}">
+					<img src="{{asset('bundles/renaissanceweb/img/default/相关课程jQuery.png')}}">
 					<div class="mask">
 					<h2>jQuery</h2>
 					<p>Jquery是继prototype之后又一个优秀的Javascript框架。它是轻量级的js库 ，它兼容CSS3，还兼容各种浏览器.jQuery使用户能更方便地处理HTML</p>

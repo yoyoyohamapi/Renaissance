@@ -21,13 +21,17 @@ parameters:
     cas_validation_url: https://localhost:8443/cas/serviceValidate
 
     site_url: "https://canvas.example.com/"
+        #canvas数据库信息
     canvas_db_host: 127.0.0.1
     canvas_db_port: 5432
     canvas_db_name: canvas_production
     canvas_db_user: canvas
     canvas_db_password: sikeda0623
-
     #canvas的api地址、口令、响应头
     canvas_api_url: https://canvas.example.com/api/v1/
     canvas_api_token: waMepYblCfAk16WeOoX7uBsjZNbjzhbdKZTZyMgpBaGbRxR9DiEAWoJb12LjT7i1
-    canvas_api_auth_head: Authorization:Bearer
+    canvas_api_auth_head: Bearer
+    #video的api地址、口令、响应头
+    video_api_url: http://localhost:9000/api
+    video_api_token: 86c89de90f5e8f37e72fc2ca0de0a326
+    video_api_auth_head: RenaissanceVideo
