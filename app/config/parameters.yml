@@ -19,7 +19,6 @@ parameters:
     cas_login_url: https://localhost:8443/cas/login
     cas_logout_url: https://localhost:8443/cas/logout
     cas_validation_url: https://localhost:8443/cas/serviceValidate
-
     site_url: "http://127.0.0.1:3000/"
     #canvas数据库信息
     canvas_db_host: 127.0.0.1
@@ -32,6 +31,6 @@ parameters:
     canvas_api_token: 8hey7np2S3r44HC1hP8pCevy4ZL8IHK2Ux51ZPh5pfHBLlHRFYRY7X8zMobGNjjS
     canvas_api_auth_head: Bearer
     #video的api地址、口令、响应头
-    video_api_url: https://canvas.example.com/api/v1/
+    video_api_url: http://localhost:9000/api/
     video_api_token: waMepYblCfAk16WeOoX7uBsjZNbjzhbdKZTZyMgpBaGbRxR9DiEAWoJb12LjT7i1
-    video_api_auth_head: Bearer
+    video_api_auth_head: RenaissanceVideo
