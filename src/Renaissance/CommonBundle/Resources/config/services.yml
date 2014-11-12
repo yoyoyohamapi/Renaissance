@@ -52,3 +52,6 @@ services:
     communicationREST:
         class: Renaissance\CommonBundle\REST\Canvas\CommunicationREST
         parent: canvasBaseREST 
+    tokenREST:
+        class: Renaissance\CommonBundle\REST\Video\TokenREST
+        parent: videoBaseREST

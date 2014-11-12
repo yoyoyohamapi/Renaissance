@@ -2,6 +2,7 @@
 namespace Renaissance\CommonBundle\REST\Canvas;
 
 class UserREST extends CanvasBaseREST{
+
 	public function getUserProfile($user_id){
 		$this->api = "users/".$user_id."/profile";
 		$profile = $this->execute();
@@ -24,4 +25,5 @@ class UserREST extends CanvasBaseREST{
 		$user_new = $this->execute('POST');
 		return $user_new;
 	}
+
 }
