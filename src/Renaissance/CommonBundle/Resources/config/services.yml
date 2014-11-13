@@ -1,7 +1,5 @@
 parameters:
     curlHelper.class:    Renaissance\CommonBundle\Tools\CurlHelper
-    curlHelper.class.canvas_access_token:   waMepYblCfAk16WeOoX7uBsjZNbjzhbdKZTZyMgpBaGbRxR9DiEAWoJb12LjT7i1
-    curlHelper.class.base_url:   "https://canvas.example.com/api/v1/"
     curlHelper.class.authed:   FALSE
 services:
     curlHelper:

@@ -80,7 +80,6 @@ class CourseController extends BaseController
                                 $result = pg_query($dbconn,$sql);
                                 if(!empty($result)){
                                     $salt = pg_fetch_array($result,0);
-                                    echo $salt[0];
                                     pg_close($dbconn);
                                 }else{
                                     return $this->render('RenaissanceWebBundle:Error:404.html.twig', array("error_msg"=>"信息有误"));
@@ -123,7 +122,6 @@ class CourseController extends BaseController
 
             $tokenREST = $this->get("tokenREST");
             $token = $tokenREST->getToken($course_id,$canvas_user_id,$salt[0]);
-            var_dump($token);
             $data=array('course'=>$course,'students'=>$students,'teachers'=>$teachers, 'page'=>$page,
                 'heads'=>$head_urls,'cover'=>$cover,'chapters'=>$chapters,'start_end'=>$start_end,
                 'isEnrolled'=>$isEnrolled,'site_url'=>$site_url,'course_id'=>$course_id,'canvas_user_id'=>$canvas_user_id,

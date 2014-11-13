@@ -25,3 +25,4 @@ security:
         - { path: ^/login, roles: ROLE_USER }
         - { path: ^/course/.*/with_user, roles: ROLE_USER }
         - { path: /.*, role: IS_AUTHENTICATED_ANONYMOUSLY }
+
