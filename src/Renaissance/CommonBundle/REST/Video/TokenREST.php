@@ -14,7 +14,6 @@ class TokenREST extends VideoBaseREST{
 	function getToken($course_id,$user_id,$salt){
 		$str = $user_id.$course_id.$salt;
 		$token = sha1($str);
-		$token = $token.$course_id.$salt;
 		return $token;
 	}
 }
