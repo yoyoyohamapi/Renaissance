@@ -7,7 +7,7 @@ class TokenREST extends VideoBaseREST{
 		$this->data_field = array(
 			"video_token"=>$token,
 		);
-		$this->execute('POST');
+		return $this->execute('POST');
 	}
 
 	//获取token

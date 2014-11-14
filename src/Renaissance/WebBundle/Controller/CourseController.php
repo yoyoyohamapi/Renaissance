@@ -190,10 +190,8 @@ class CourseController extends BaseController
         if (!empty($course_id)&&!empty($user_id)&&!empty($salt)) {
             $enrollmentREST = $this->get("enrollmentREST");
             $enrollmentREST->enrollAStudentToCourse($course_id,$user_id);
-
             $tokenREST = $this->get("tokenREST");
             $token = $tokenREST->getToken($course_id,$user_id,$salt);
-            $tokenREST->saveToken($token);
             return $this->createJsonResponse(array("enroll"=>"success"));  
         }
         
