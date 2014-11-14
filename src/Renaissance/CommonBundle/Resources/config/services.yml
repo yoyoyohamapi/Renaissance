@@ -1,7 +1,5 @@
 parameters:
     curlHelper.class:    Renaissance\CommonBundle\Tools\CurlHelper
-    curlHelper.class.canvas_access_token:   YkCiKIOC8CZ4ZMTHZ3cTRv884pwr88pCmgeeztMxjziDuaUvSSHEI0ZrJb4uJvYS
-    curlHelper.class.base_url:   "http://localhost:3000/api/v1/"
     curlHelper.class.authed:   FALSE
 services:
     curlHelper:
@@ -54,3 +52,6 @@ services:
     communicationREST:
         class: Renaissance\CommonBundle\REST\Canvas\CommunicationREST
         parent: canvasBaseREST 
+    tokenREST:
+        class: Renaissance\CommonBundle\REST\Video\TokenREST
+        parent: videoBaseREST
