@@ -63,7 +63,6 @@ class CourseController extends BaseController
 
     public function showAction($course_id)
     {
-    try{
             $courseREST = $this->get('courseREST');
             $course = $courseREST->getCourseById($course_id);
             if($course == null)
@@ -125,9 +124,6 @@ class CourseController extends BaseController
                 'isEnrolled'=>$isEnrolled,'site_url'=>$site_url,'course_id'=>$course_id,'canvas_user_id'=>$canvas_user_id,
                 'isVisiable'=>$isVisiable,'salt'=>$salt[0]);
              return $this->render('RenaissanceWebBundle:Course:show.html.twig', $data); 
-       }catch(ContextErrorException $e){
-            return $this->render('RenaissanceWebBundle:Error:404.html.twig', array("error_msg"=>"课程正在编辑中"));
-        }
     }
     public function ajaxAction(){
 

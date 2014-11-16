@@ -1,8 +1,7 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
-        "This file is @generated automatically"
+        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
     "hash": "8b0035a6eb80748e7e91996c78a38352",
     "packages": [
@@ -614,33 +613,13 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/doctrine2.git",
-<<<<<<< HEAD
-                "reference": "bebacf79d8d4dae9168f0f9bc6811e6c2cb6a4d9",
-                "mirrors": [
-                    {
-                        "url": "/%package%/%normalizedUrl%.%type%",
-                        "preferred": true
-                    }
-                ]
-=======
                 "reference": "bebacf79d8d4dae9168f0f9bc6811e6c2cb6a4d9"
->>>>>>> f3c369bd47289ecd3ef1b8945390944f26d822ce
             },
             "dist": {
                 "type": "zip",
                 "url": "https://api.github.com/repos/doctrine/doctrine2/zipball/bebacf79d8d4dae9168f0f9bc6811e6c2cb6a4d9",
                 "reference": "bebacf79d8d4dae9168f0f9bc6811e6c2cb6a4d9",
-<<<<<<< HEAD
-                "shasum": "",
-                "mirrors": [
-                    {
-                        "url": "http://pkg.phpcomposer.com/repo/packagist/dists/%package%/%version%/%reference%.%type%",
-                        "preferred": true
-                    }
-                ]
-=======
                 "shasum": ""
->>>>>>> f3c369bd47289ecd3ef1b8945390944f26d822ce
             },
             "require": {
                 "doctrine/collections": "~1.1",
@@ -931,33 +910,13 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Seldaek/monolog.git",
-<<<<<<< HEAD
-                "reference": "ec3961874c43840e96da3a8a1ed20d8c73d7e5aa",
-                "mirrors": [
-                    {
-                        "url": "/%package%/%normalizedUrl%.%type%",
-                        "preferred": true
-                    }
-                ]
-=======
                 "reference": "ec3961874c43840e96da3a8a1ed20d8c73d7e5aa"
->>>>>>> f3c369bd47289ecd3ef1b8945390944f26d822ce
             },
             "dist": {
                 "type": "zip",
                 "url": "https://api.github.com/repos/Seldaek/monolog/zipball/ec3961874c43840e96da3a8a1ed20d8c73d7e5aa",
                 "reference": "ec3961874c43840e96da3a8a1ed20d8c73d7e5aa",
-<<<<<<< HEAD
-                "shasum": "",
-                "mirrors": [
-                    {
-                        "url": "http://pkg.phpcomposer.com/repo/packagist/dists/%package%/%version%/%reference%.%type%",
-                        "preferred": true
-                    }
-                ]
-=======
                 "shasum": ""
->>>>>>> f3c369bd47289ecd3ef1b8945390944f26d822ce
             },
             "require": {
                 "php": ">=5.3.0",
@@ -1214,33 +1173,13 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/swiftmailer/swiftmailer.git",
-<<<<<<< HEAD
-                "reference": "b86b927dfefdb56ab0b22d1350033d9a38e9f205",
-                "mirrors": [
-                    {
-                        "url": "/%package%/%normalizedUrl%.%type%",
-                        "preferred": true
-                    }
-                ]
-=======
                 "reference": "b86b927dfefdb56ab0b22d1350033d9a38e9f205"
->>>>>>> f3c369bd47289ecd3ef1b8945390944f26d822ce
             },
             "dist": {
                 "type": "zip",
                 "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/b86b927dfefdb56ab0b22d1350033d9a38e9f205",
                 "reference": "b86b927dfefdb56ab0b22d1350033d9a38e9f205",
-<<<<<<< HEAD
-                "shasum": "",
-                "mirrors": [
-                    {
-                        "url": "http://pkg.phpcomposer.com/repo/packagist/dists/%package%/%version%/%reference%.%type%",
-                        "preferred": true
-                    }
-                ]
-=======
                 "shasum": ""
->>>>>>> f3c369bd47289ecd3ef1b8945390944f26d822ce
             },
             "require": {
                 "php": ">=5.3.3"
@@ -1513,33 +1452,13 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/symfony.git",
-<<<<<<< HEAD
-                "reference": "2aef97bbc95d0c4ae63537cca81bd6d984427d81",
-                "mirrors": [
-                    {
-                        "url": "/%package%/%normalizedUrl%.%type%",
-                        "preferred": true
-                    }
-                ]
-=======
                 "reference": "2aef97bbc95d0c4ae63537cca81bd6d984427d81"
->>>>>>> f3c369bd47289ecd3ef1b8945390944f26d822ce
             },
             "dist": {
                 "type": "zip",
                 "url": "https://api.github.com/repos/symfony/symfony/zipball/2aef97bbc95d0c4ae63537cca81bd6d984427d81",
                 "reference": "2aef97bbc95d0c4ae63537cca81bd6d984427d81",
-<<<<<<< HEAD
-                "shasum": "",
-                "mirrors": [
-                    {
-                        "url": "http://pkg.phpcomposer.com/repo/packagist/dists/%package%/%version%/%reference%.%type%",
-                        "preferred": true
-                    }
-                ]
-=======
                 "shasum": ""
->>>>>>> f3c369bd47289ecd3ef1b8945390944f26d822ce
             },
             "require": {
                 "doctrine/common": "~2.2",
@@ -1691,31 +1610,6 @@
         },
         {
             "name": "twig/twig",
-<<<<<<< HEAD
-            "version": "v1.16.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/fabpot/Twig.git",
-                "reference": "7c4c01dcf578523cfcddf383641a4f12790270ec",
-                "mirrors": [
-                    {
-                        "url": "/%package%/%normalizedUrl%.%type%",
-                        "preferred": true
-                    }
-                ]
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/fabpot/Twig/zipball/7c4c01dcf578523cfcddf383641a4f12790270ec",
-                "reference": "7c4c01dcf578523cfcddf383641a4f12790270ec",
-                "shasum": "",
-                "mirrors": [
-                    {
-                        "url": "http://pkg.phpcomposer.com/repo/packagist/dists/%package%/%version%/%reference%.%type%",
-                        "preferred": true
-                    }
-                ]
-=======
             "version": "v1.16.2",
             "source": {
                 "type": "git",
@@ -1727,7 +1621,6 @@
                 "url": "https://api.github.com/repos/fabpot/Twig/zipball/42f758d9fe2146d1f0470604fc05ee43580873fc",
                 "reference": "42f758d9fe2146d1f0470604fc05ee43580873fc",
                 "shasum": ""
->>>>>>> f3c369bd47289ecd3ef1b8945390944f26d822ce
             },
             "require": {
                 "php": ">=5.2.4"
@@ -1770,11 +1663,7 @@
             "keywords": [
                 "templating"
             ],
-<<<<<<< HEAD
-            "time": "2014-10-10 14:09:53"
-=======
             "time": "2014-10-17 12:53:44"
->>>>>>> f3c369bd47289ecd3ef1b8945390944f26d822ce
         }
     ],
     "packages-dev": [
@@ -1827,18 +1716,13 @@
             "time": "2014-09-22 14:56:14"
         }
     ],
-    "aliases": [
-
-    ],
+    "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
         "besimple/sso-auth-bundle": 20
     },
-    "prefer-stable": false,
     "platform": {
         "php": ">=5.3.3"
     },
-    "platform-dev": [
-
-    ]
+    "platform-dev": []
 }

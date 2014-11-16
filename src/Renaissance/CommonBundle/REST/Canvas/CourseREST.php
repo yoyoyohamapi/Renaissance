@@ -1,6 +1,10 @@
 <?php
 namespace Renaissance\CommonBundle\REST\Canvas;
 
+use Symfony\Component\DomCrawler\Crawler;
+use Symfony\Component\Debug\Exception\ContextErrorException;
+
+
 class CourseREST extends CanvasBaseREST{
 
 	public function getAllCourses(){
@@ -114,5 +118,79 @@ class CourseREST extends CanvasBaseREST{
 	public function getChapters($course_id){
 		$modulesREST = $this->container->get("modulesREST");
 		return $modulesREST->getModulesByCourseId($course_id);
+	}
+
+	//根据课程号获得课程信息
+	public function getCourseInfo($course_id){
+		$crawler = new Crawler();
+		$course_info = array();
+		$page = $this->getCoursePage($course_id);
+		try{
+			$page_html = $page->body;
+			$crawler->addHTMLContent($page_html,'UTF-8');
+			$lis = $crawler->filter('li');
+			foreach( $lis as $li ){
+				$info = split(':',$li->nodeValue);
+				$course_info[$info[0]] = $info[1];
+			}
+		}catch(ContextErrorException $e){
+			return null;
+		}
+		return $course_info;
+	}
+
+	//获得所有课程体系
+	public function getAllSystems(){
+		$systems = array();
+		//获得所有课程 
+		$courses = $this->getAllCourses();
+		//遍历课程取得分类
+		foreach ($courses as $course){
+			$course_info = $this->getCourseInfo($course->id);
+			$system =  $course_info['所属课程体系'];
+			if($system)
+				$systems[] = $sys;
+		}
+		$systems[] = "其他";
+		return $systems;
+	}
+
+	//根据体系名字获得某体系下分类
+	public function getAllCategoriesBySysName($sys_name){
+		$categories = array();
+		//获得所有课程
+		$courses = $this->getAllCourses();
+		//遍历课程获得分类
+		foreach($courses as $course){
+			$course_info = $this->getCourseInfo($course->id);
+			$system =  $course_info['所属课程体系'];
+			$category = $course_info['所属体系分类'];
+			if($category){
+				if( ($system == $sys_name) || ($sys_name == '其他' && !$system) ) 
+					$categories[] = $category;
+			}
+		}
+		return $categories;
+	}
+
+	//根据体系名，分类名获得对应所有课程
+	public function getCoursesBySysCate($sys_name,$cate_name){
+		$courses = array();
+		$courses_all = $this->getAllCourses();
+		foreach($courses_all as $crs){
+			$crs_info = $this->getCourseInfo($crs->id);
+			$system =  $crs_info['所属课程体系'];
+			$category = $crs_info['所属体系分类'];
+			//如果课程体系，体系分类都已录入
+			if( $system && $category){
+				if( $sys_name==$system && $category==$cate_name )
+					$courses[] = $crs;
+			}else if( !$system && $sys_name=='其他'){
+				//如果体系为'其他',分类为'其他'
+				if( (!$category && $cate_name=='全部') || $category==$cate_name )
+					$courses[] = $crs;  
+			}
+		}
+		return $courses;
 	}
 }
