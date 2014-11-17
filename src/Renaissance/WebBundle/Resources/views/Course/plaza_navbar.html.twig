@@ -1,5 +1,4 @@
-
-<div class="row plazaPanel" >
+<div class="row plazaPanel">
 	<ul class="list-unstyled" style="margin:0px;">
 		<div id="left_panel">
 			<div id="d1"><li id="n1" class="naviBox"><i class="fa fa-book"></i><strong class="naviHead">全部课程</strong></li></div>
@@ -9,33 +8,30 @@
 			
 		</div>
 	</ul>
-</div>
-<div>
 	<div id="hide_icon" class="naviMenuIconPanel" style="display:none;">
-	<ul class="list-unstyled" style="margin:0px;">
-		<li id="m1" class="naviBox"><i class="fa fa-book"></i></li>
+		<ul class="list-unstyled" style="margin:0px;">
+			<li id="m1" class="naviBox"><i class="fa fa-book"></i></li>
+			{% for item in items %}
+			    <li id="m{{loop.index+1}}" class="naviBox"><i class="fa fa-book"></i></li>
+			{% endfor %}		
+		</ul>
+	</div>
+	<div id="hide_content" class="naviMenuContentPanel" style="display:none;">
+		<div id="p1" style="display:none;" >
+			<ul class="list-unstyled" style="margin:0px;">
+				<li class="naviBox"><strong class="naviTitle">全部课程</strong></li>
+	    			<li class="naviBox naviBox-sm"><strong class="naviContent"><a href="{{path('course_index')}}">查看全部</a> </strong></li>
+			</ul>
+		</div>
 		{% for item in items %}
-		    <li id="m{{loop.index+1}}" class="naviBox"><i class="fa fa-book"></i></li>
-		{% endfor %}		
-	</ul>
-	</div>
-</div>
-<div id="hide_content" class="naviMenuContentPanel" style="display:none;">
-	<div id="p1" style="display:none;" >
-		<ul class="list-unstyled" style="margin:0px;">
-			<li class="naviBox"><strong class="naviTitle">全部课程</strong></li>
-    			<li class="naviBox naviBox-sm"><strong class="naviContent"><a href="{{path('course_index')}}">查看全部</a> </strong></li>
-		</ul>
-	</div>
-	{% for item in items %}
-	    <div id="p{{loop.index+1}}" style="display:none;" >
-		<ul class="list-unstyled" style="margin:0px;">
-			<li class="naviBox"><strong class="naviTitle">{{item.system}}</strong></li>
-			{% for category in item.categories %}
-    			<li class="naviBox naviBox-sm"><strong class="naviContent"><a href="{{path('course_index',{'system':item.system,'category':category})}}">{{category}}</a> </strong></li>
-			{% endfor %}
-		</ul>
-	</div>
-	{% endfor %}
-
+		    <div id="p{{loop.index+1}}" style="display:none;" >
+			<ul class="list-unstyled" style="margin:0px;">
+				<li class="naviBox"><strong class="naviTitle">{{item.system}}</strong></li>
+				{% for category in item.categories %}
+	    			<li class="naviBox naviBox-sm"><strong class="naviContent"><a href="{{path('course_index',{'system':item.system,'category':category})}}">{{category}}</a> </strong></li>
+				{% endfor %}
+			</ul>
+		</div>
+		{% endfor %}
+	</div>	
 </div>
