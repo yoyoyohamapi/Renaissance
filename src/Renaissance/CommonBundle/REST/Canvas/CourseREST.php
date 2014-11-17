@@ -12,7 +12,11 @@ class CourseREST extends CanvasBaseREST{
 		$courses = $this->execute();
 		return $courses;
 	}
-
+	public function getPerPageCourses($per_page,$page_no){
+		$this->api="courses?per_page=".$per_page."&page=".$page_no;
+		$courses=$this->execute();
+		return $courses;
+	}
 	public function getCoursesForCurrentUser($id){
 		$enrollmentREST = $this->container->get('enrollmentREST');
 		$enrollments = $enrollmentREST->getAllEnrollmentsByUserId($id);
@@ -147,9 +151,11 @@ class CourseREST extends CanvasBaseREST{
 		//遍历课程取得分类
 		foreach ($courses as $course){
 			$course_info = $this->getCourseInfo($course->id);
+			if(empty($course_info))
+				continue;
 			$system =  $course_info['所属课程体系'];
 			if($system)
-				$systems[] = $sys;
+				$systems[] = $system;
 		}
 		$systems[] = "其他";
 		return $systems;
@@ -163,6 +169,8 @@ class CourseREST extends CanvasBaseREST{
 		//遍历课程获得分类
 		foreach($courses as $course){
 			$course_info = $this->getCourseInfo($course->id);
+			if(empty($course_info))
+				continue;
 			$system =  $course_info['所属课程体系'];
 			$category = $course_info['所属体系分类'];
 			if($category){
@@ -170,6 +178,10 @@ class CourseREST extends CanvasBaseREST{
 					$categories[] = $category;
 			}
 		}
+		if(!empty($categories))
+			$categories[]='其他';
+		else
+			$categories[]='全部';
 		return $categories;
 	}
 
@@ -179,18 +191,30 @@ class CourseREST extends CanvasBaseREST{
 		$courses_all = $this->getAllCourses();
 		foreach($courses_all as $crs){
 			$crs_info = $this->getCourseInfo($crs->id);
-			$system =  $crs_info['所属课程体系'];
-			$category = $crs_info['所属体系分类'];
+			if(empty($crs_info)){
+				$system = '其他';
+				$category = '全部';
+			}else {
+				$system =  $crs_info['所属课程体系'];
+				$category = $crs_info['所属体系分类'];
+			}
+			if(empty($category))
+				$category = '其他';
 			//如果课程体系，体系分类都已录入
-			if( $system && $category){
-				if( $sys_name==$system && $category==$cate_name )
+			if( $sys_name==$system && $category==$cate_name ){
 					$courses[] = $crs;
-			}else if( !$system && $sys_name=='其他'){
-				//如果体系为'其他',分类为'其他'
-				if( (!$category && $cate_name=='全部') || $category==$cate_name )
-					$courses[] = $crs;  
 			}
 		}
 		return $courses;
+	}
+	//根据体系名，分类名，每页课程数，课程页数获得对应课程页
+	public function getPerPageCoursesBySysCate($sys_name,$cate_name,$per_page,$page_no){
+		$courses=$this->getCoursesBySysCate($sys_name,$cate_name);
+		$start=$per_page*($page_no-1);
+		$end=$start+$per_page;
+		$length=count($courses);
+		if($end>$length)$end=$length;
+		$per_page_courses=array_slice($courses,$start,$end);
+		return $per_page_courses;
 	}
 }

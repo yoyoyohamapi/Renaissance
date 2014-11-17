@@ -11,56 +11,75 @@ class CourseController extends BaseController
 {
     public function indexAction()
     {
-        $curlHelper=$this->get('curlHelper');
-        $base_url = $this->container->getParameter('canvas_api_url');
-        $access_token = $this->container->getParameter('canvas_api_token');
-        $auth_head = $this->container->getParameter('canvas_api_auth_head');
-        $curlHelper->init($base_url,$access_token,$auth_head);
-        $api="courses";
-        $request=$this->getRequest();
-        $pageNo=$request->query->get('pageno');
-        if($pageNo==null)
-            $pageNo="1";
-        if($pageNo=="1")$hasprevPage=false;
-        else $hasprevPage=true;
-        $prev_pageNo=$pageNo-1;
-        $next_pageNo=$pageNo+2;
-        $cur_page=$curlHelper->curlGet($api."?per_page=6&page=".$pageNo);
-        if($cur_page == null){   
-        $data=array(
-            'page'=>array(),'courses'=>array(),'imgurls'=>array()
-            );
-        return $this->render('RenaissanceWebBundle:Course:index.html.twig',$data);
+        $courseREST=$this->get('courseREST');
+        $systems=$courseREST->getAllSystems();
+        $items=array();
+        foreach ($systems as $key => $system) {
+            $categories=$courseREST->getAllCategoriesBySysName($system);
+            $item=array(
+                'system'=>$system,
+                'categories'=>$categories,
+                );
+            $items[]=$item;
         }
-        $next_page=$curlHelper->curlGet($api."?per_page=3&page=".$next_pageNo);
+        $request=$this->getRequest();
+        $page_no=$request->query->get('pageno');
+        $course_sys=$request->query->get('system');
+        $course_cate=$request->query->get('category');
+        if($page_no==null)
+            $page_no="1";
+        if($page_no=="1")$hasprevPage=false;
+        else $hasprevPage=true;
+        $prev_page_no=$page_no-1;
+        $next_page_no=$page_no+2;
+        if($course_sys==null&&$course_cate==null)
+        {
+            //$course_sys="";
+            //$course_cate="";
+            $per_page=6;
+            $cur_page=$courseREST->getPerPageCourses($per_page,$page_no);
+            $per_page=3;
+            $next_page=$courseREST->getPerPageCourses($per_page,$next_page_no);
+        }
+        else
+        {
+            $per_page=6;
+            $cur_page=$courseREST->getPerPageCoursesBySysCate($course_sys,$course_cate,$per_page,$page_no);
+            $per_page=3;
+            $next_page=$courseREST->getPerPageCoursesBySysCate($course_sys,$course_cate,$per_page,$next_page_no);
+        }
+        if($cur_page == null){   
+            $data=array(
+                'page'=>array(),'courses'=>array(),'imgurls'=>array(),'items'=>$items,
+                );
+            return $this->render('RenaissanceWebBundle:Course:index.html.twig',$data);
+        }
+
         $hasnextPage=!empty($next_page);
         $img_urls=array();
         foreach ($cur_page as $key => $value) {
-            $folders=$curlHelper->curlGet($api."/".$value->id."/folders/by_path/cover");
-            if(!$folders)
+            $course_cover = $courseREST->getCourseCoverById($value->id,"S");
+            if(!$course_cover)
                 $img_urls[]="";
             else
             {
-              $cover_folder_id = $folders[count($folders)-1]->id;
-              $course_img = $curlHelper->curlGet('folders/'.$cover_folder_id.'/files?search_term=S.png');
-              if(!$course_img)
-                 $img_urls[]="";
-             else $img_urls[]=$course_img[0]->url; 
+                $img_urls[]=$course_cover->url; 
             }
             $page=array(
             'hasnextPage'=>$hasnextPage,
             'hasprevPage'=>$hasprevPage,            
-            'currentPage'=>$pageNo,
-            'nextPage'=>$next_pageNo,
-            'prevPage'=>$prev_pageNo
+            'currentPage'=>$page_no,
+            'nextPage'=>$next_page_no,
+            'prevPage'=>$prev_page_no,
+            'system'=>$course_sys,
+            'category'=>$course_cate
             );
             $data=array(
-            'page'=>$page,'courses'=>$cur_page,'imgurls'=>$img_urls
+            'page'=>$page,'courses'=>$cur_page,'imgurls'=>$img_urls,'items'=>$items,
             );
         }
         return $this->render('RenaissanceWebBundle:Course:index.html.twig',$data);    
     }
-
     public function showAction($course_id)
     {
             $courseREST = $this->get('courseREST');
@@ -125,48 +144,52 @@ class CourseController extends BaseController
                 'isVisiable'=>$isVisiable,'salt'=>$salt[0]);
              return $this->render('RenaissanceWebBundle:Course:show.html.twig', $data); 
     }
-    public function ajaxAction(){
-
-    }
     public function showMoreAction(){
         $request=$this->getRequest();
         $courses=$request->get('object');
-        $pageNo=$request->query->get('pageno');
-        $curlHelper=$this->get('curlHelper');
-        $base_url = $this->container->getParameter('canvas_api_url');
-        $access_token = $this->container->getParameter('canvas_api_token');
-        $auth_head = $this->container->getParameter('canvas_api_auth_head');
-        $curlHelper->init($base_url,$access_token,$auth_head);
-        $api=$courses;
-        if($pageNo=="")
-            $pageNo="1";
-        if($pageNo=="1")$hasprevPage=false;
+        $page_no=$request->query->get('pageno');
+        $course_sys=$request->query->get('system');
+        $course_cate=$request->query->get('category');
+        $courseREST=$this->get('courseREST');
+        //var_dump($course_sys);
+        if($page_no=="")
+            $page_no="1";
+        if($page_no=="1")$hasprevPage=false;
         else $hasprevPage=true;
-        $prev_pageNo=$pageNo-1;
-        $next_pageNo=$pageNo+1;
-        $cur_page=$curlHelper->curlGet($api."?per_page=3&page=".$pageNo);
-        $next_page=$curlHelper->curlGet($api."?per_page=3&page=".$next_pageNo);
+        $prev_page_no=$page_no-1;
+        $next_page_no=$page_no+1;
+        $per_page=3;
+        if($course_sys==null&&$course_cate==null)
+        {
+            //$course_sys="";
+            //$course_cate="";
+            $cur_page=$courseREST->getPerPageCourses($per_page,$page_no);
+            $next_page=$courseREST->getPerPageCourses($per_page,$next_page_no);
+        }
+        else
+        {
+            $cur_page=$courseREST->getPerPageCoursesBySysCate($course_sys,$course_cate,$per_page,$page_no);
+            $next_page=$courseREST->getPerPageCoursesBySysCate($course_sys,$course_cate,$per_page,$next_page_no);
+        }
         $hasnextPage=!empty($next_page);
         $img_urls=array();
         foreach ($cur_page as $key => $value) {
-            $folders=$curlHelper->curlGet($api."/".$value->id."/folders/by_path/cover");
-            if(!$folders)
+            $course_cover = $courseREST->getCourseCoverById($value->id,"S");
+            if(!$course_cover)
                 $img_urls[]="";
             else
             {
-              $cover_folder_id = $folders[count($folders)-1]->id;
-              $course_img = $curlHelper->curlGet('folders/'.$cover_folder_id.'/files?search_term=S.png');
-              if(!$course_img)
-                 $img_urls[]="";
-             else $img_urls[]=$course_img[0]->url; 
+                $img_urls[]=$course_cover->url; 
             }
         }
-         $page=array(
+            $page=array(
             'hasnextPage'=>$hasnextPage,
-            'hasprevPage'=>$hasprevPage,
-            'currentPage'=>$pageNo,
-            'nextPage'=>$next_pageNo,
-            'prevPage'=>$prev_pageNo
+            'hasprevPage'=>$hasprevPage,            
+            'currentPage'=>$page_no,
+            'nextPage'=>$next_page_no,
+            'prevPage'=>$prev_page_no,
+            //'system'=>$course_sys,
+            //'category'=>$course_cate
             );
         $data=array(
             'page'=>$page,'courses'=>$cur_page,'imgurls'=>$img_urls
