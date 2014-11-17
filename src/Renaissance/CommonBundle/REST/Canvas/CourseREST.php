@@ -7,6 +7,9 @@ use Symfony\Component\Debug\Exception\ContextErrorException;
 
 class CourseREST extends CanvasBaseREST{
 
+	//课程信息必须属性
+	private $course_info_attrs = array('课程介绍','所属课程体系','所属体系分类');
+
 	public function getAllCourses(){
 		$this->api="courses";
 		$courses = $this->execute();
@@ -138,7 +141,18 @@ class CourseREST extends CanvasBaseREST{
 				$course_info[$info[0]] = $info[1];
 			}
 		}catch(ContextErrorException $e){
-			return null;
+			$course_info = array();
+		}
+		$course_info = $this->adjustCourseInfo($course_info,$this->course_info_attrs);
+		return $course_info;
+	}
+
+	//校正课程信息:根据需要的属性校正课程信息
+	public function adjustCourseInfo($course_info,$attrs){
+		foreach( $attrs as $attr){
+			//若课程中不存在某属性，则该属性对应值为空
+			if( !array_key_exists($attr,$course_info) )
+				$course_info[$attr] = '';
 		}
 		return $course_info;
 	}
@@ -151,8 +165,8 @@ class CourseREST extends CanvasBaseREST{
 		//遍历课程取得分类
 		foreach ($courses as $course){
 			$course_info = $this->getCourseInfo($course->id);
-			if(empty($course_info))
-				continue;
+			// if(empty($course_info))
+			// 	continue;
 			$system =  $course_info['所属课程体系'];
 			if($system)
 				$systems[] = $system;
@@ -169,11 +183,11 @@ class CourseREST extends CanvasBaseREST{
 		//遍历课程获得分类
 		foreach($courses as $course){
 			$course_info = $this->getCourseInfo($course->id);
-			if(empty($course_info))
-				continue;
+			// if(empty($course_info))
+			// 	continue;
 			$system =  $course_info['所属课程体系'];
 			$category = $course_info['所属体系分类'];
-			if($category){
+			if(!empty($category)){
 				if( ($system == $sys_name) || ($sys_name == '其他' && !$system) ) 
 					$categories[] = $category;
 			}
@@ -191,15 +205,15 @@ class CourseREST extends CanvasBaseREST{
 		$courses_all = $this->getAllCourses();
 		foreach($courses_all as $crs){
 			$crs_info = $this->getCourseInfo($crs->id);
-			if(empty($crs_info)){
+			$system =  $crs_info['所属课程体系'];
+			$category = $crs_info['所属体系分类'];
+			if(empty($system)){
 				$system = '其他';
 				$category = '全部';
-			}else {
-				$system =  $crs_info['所属课程体系'];
-				$category = $crs_info['所属体系分类'];
 			}
-			if(empty($category))
+			else if(empty($category)){
 				$category = '其他';
+			}
 			//如果课程体系，体系分类都已录入
 			if( $sys_name==$system && $category==$cate_name ){
 					$courses[] = $crs;

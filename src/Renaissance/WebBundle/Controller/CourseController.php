@@ -124,8 +124,7 @@ class CourseController extends BaseController
                  return $this->render('RenaissanceWebBundle:Error:404.html.twig', array("error_msg"=>"课程正在编辑中"));
              }
             $chapters = $courseREST->getChapters($course_id);
-            $page = $courseREST->getCoursePage($course_id);
-            
+            $course_info = $courseREST->getCourseInfo($course_id);
             $userREST = $this->get("userREST");
             $students = $userREST->getCourseStudents($course_id);
             $teachers = $userREST->getCourseTeachers($course_id);
@@ -136,9 +135,17 @@ class CourseController extends BaseController
                 $teacher_avatar_url=$profile->avatar_url;
                 $head_urls[] = $teacher_avatar_url;
             }
-            $page->body=substr($page->body, 3,-4);
             $site_url =  $this->container->getParameter('site_url');
-            $data=array('course'=>$course,'students'=>$students,'teachers'=>$teachers, 'page'=>$page,
+            //设置课程信息
+            if( empty($course_info['课程介绍']) )
+                $course_info['课程介绍'] = '暂无介绍';
+            if( empty($course_info['所属课程体系']) ){
+                $course_info['所属课程体系'] = '其他';
+                $course_info['所属体系分类'] = '全部'; 
+            }       
+            elseif( empty($course_info['所属体系分类']) )
+                $course_info['所属体系分类'] = '其他';        
+            $data=array('course'=>$course,'students'=>$students,'teachers'=>$teachers, 'course_info'=>$course_info,
                 'heads'=>$head_urls,'cover'=>$cover,'chapters'=>$chapters,'start_end'=>$start_end,
                 'isEnrolled'=>$isEnrolled,'site_url'=>$site_url,'course_id'=>$course_id,'canvas_user_id'=>$canvas_user_id,
                 'isVisiable'=>$isVisiable,'salt'=>$salt[0]);
@@ -204,18 +211,25 @@ class CourseController extends BaseController
         $course_id = $request->request->get('course_id');
         $user_id = $request->request->get('user_id');
         $salt = $request->request->get('salt');
+        $json_data = null;
+        $json_status = 0;
+        $json_message = "加入课程失败";
         if (!empty($course_id)&&!empty($user_id)&&!empty($salt)) {
             $enrollmentREST = $this->get("enrollmentREST");
             $enrollmentREST->enrollAStudentToCourse($course_id,$user_id);
             $tokenREST = $this->get("tokenREST");
             $token = $tokenREST->getToken($course_id,$user_id,$salt);
             $res = $tokenREST->saveToken($token);
-            if($res)
-                $info = array("enroll"=>"success");
-            else
-                $info = array("enroll"=>"failed");
-            return $this->createJsonResponse($info);  
+            if($res){
+                $json_status = 1;
+            }
+            else{
+                $json_status = 0;
+                $json_message = '加入课程失败';
+            }
         }
+        return $this->createJsonResponse($json_data,$json_status,$json_message);  
+
         
     }
 
