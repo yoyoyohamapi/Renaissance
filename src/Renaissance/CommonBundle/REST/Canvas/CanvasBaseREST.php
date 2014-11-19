@@ -8,6 +8,7 @@ class CanvasBaseREST extends BaseREST{
 		$base_url = $this->container->getParameter('canvas_api_url');
 		$access_token = $this->container->getParameter('canvas_api_token');
 		$auth_head = $this->container->getParameter('canvas_api_auth_head');
-		$this->curlHelper->init($base_url,$access_token,$auth_head);
+		$error_head = $this->container->getParameter('canvas_api_error_head');
+		$this->curlHelper->init($base_url,$access_token,$auth_head,$error_head);
 	}
 }

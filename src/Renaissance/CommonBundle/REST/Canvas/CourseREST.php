@@ -163,6 +163,8 @@ class CourseREST extends CanvasBaseREST{
 		//获得所有课程 
 		$courses = $this->getAllCourses();
 		//遍历课程取得分类
+		if(empty($courses))
+			return null;
 		foreach ($courses as $course){
 			$course_info = $this->getCourseInfo($course->id);
 			// if(empty($course_info))
