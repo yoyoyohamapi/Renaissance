@@ -26,7 +26,7 @@ define(function(require,exports,module){
 					dataType: "json",
 					success:function(info){
 						e.preventDefault();
-						if(info.validate_info=="accept"){
+						if(info.status==1){
 							$.ajax({
 								url : "/register/reg_user",
 								type : "post",
