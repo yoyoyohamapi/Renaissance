@@ -145,10 +145,30 @@ class CourseController extends BaseController
             }       
             elseif( empty($course_info['所属体系分类']) )
                 $course_info['所属体系分类'] = '其他';        
+
+            //推荐课程 (默认课程不空 && 取3个)
+            $remm_courses=$courseREST->getPerPageCourses(4,1);
+            $remm_img_urls=array();
+            $remm_info=array();
+            foreach ($remm_courses as $key => $value) {
+                $course_cover = $courseREST->getCourseCoverById($value->id,"S");
+                if(!$course_cover)
+                    $remm_img_urls[]="";
+                else
+                {
+                    $remm_img_urls[]=$course_cover->url; 
+                }
+                $course_info=$courseREST->getCourseInfo($value->id);
+                if( empty($course_info['课程介绍']) )
+                    $course_info['课程介绍'] = '暂无介绍';
+                $remm_info[]=$course_info;
+            }
+
             $data=array('course'=>$course,'students'=>$students,'teachers'=>$teachers, 'course_info'=>$course_info,
                 'heads'=>$head_urls,'cover'=>$cover,'chapters'=>$chapters,'start_end'=>$start_end,
                 'isEnrolled'=>$isEnrolled,'site_url'=>$site_url,'course_id'=>$course_id,'canvas_user_id'=>$canvas_user_id,
-                'isVisiable'=>$isVisiable,'salt'=>$salt[0]);
+                'isVisiable'=>$isVisiable,'salt'=>$salt[0],'remm_courses'=>$remm_courses, 'remm_img_urls'=> $remm_img_urls,
+                'remm_info'=> $remm_info);
              return $this->render('RenaissanceWebBundle:Course:show.html.twig', $data); 
     }
     public function showMoreAction(){

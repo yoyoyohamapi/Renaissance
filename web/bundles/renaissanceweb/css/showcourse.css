@@ -264,6 +264,10 @@
 .courseRec .courseRecCard{
 	position:relative;
 	overflow: hidden;
+            text-align: center;
+            box-shadow: 5px 5px 5px rgb(230, 222, 222);
+            padding: 0px;
+            margin: 5px;
 }
 
 .courseRec .courseRecCard img{
@@ -303,6 +307,7 @@
 	text-align: center;
 	cursor: default;
 	background: #fff  center center;
+             height:150px; 
 }
 .view:hover div.info{
 	display: none;
