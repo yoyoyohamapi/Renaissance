@@ -190,7 +190,7 @@ class CourseController extends BaseController
             $enrollmentREST->enrollAStudentToCourse($course_id,$user_id);
             $tokenREST = $this->get("tokenREST");
             $token = $tokenREST->getToken($course_id,$user_id,$salt);
-            return $this->createJsonResponse(array("enroll"=>"success"));  
+            return $this->createJsonResponse(array("enroll"=>"success"));
         }
         
     }

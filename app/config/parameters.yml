@@ -5,7 +5,7 @@ parameters:
     database_port: 3306
     database_name: renaissance
     database_user: root
-    database_password: root
+    database_password: root 
     mailer_transport: smtp
     mailer_host: 127.0.0.1
     mailer_user: null
@@ -33,6 +33,6 @@ parameters:
     canvas_api_token: YkCiKIOC8CZ4ZMTHZ3cTRv884pwr88pCmgeeztMxjziDuaUvSSHEI0ZrJb4uJvYS
     canvas_api_auth_head: Bearer
     #video的api地址、口令、响应头
-    video_api_url: https://canvas.example.com/api/v1/
-    video_api_token: waMepYblCfAk16WeOoX7uBsjZNbjzhbdKZTZyMgpBaGbRxR9DiEAWoJb12LjT7i1
-    video_api_auth_head: Bearer
+    video_api_url: http://127.0.0.1:9000/api/
+    video_api_token: 0822c72a5ad8e977b1ed2043d2b0994d
+    video_api_auth_head: RenaissanceVideo
