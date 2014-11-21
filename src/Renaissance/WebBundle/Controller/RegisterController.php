@@ -23,10 +23,16 @@ class RegisterController extends BaseController
 	public function validateAction(Request $request){
 		$email = $request->request->get('email');
 		$user = $this->getDoctrine()->getRepository('RenaissanceCommonBundle:User')->findOneByEmail($email);
-		if(empty($user))
-			 return $this->createJsonResponse(array("validate_info"=>"accept"));
+		$json_data = null;
+		$json_status = 0;
+		$json_message = "Sorry,something that refused to join us";
+		if(empty($user)){
+			$json_status = 1;
+			$json_message = "";
+		}
 		else
-			return $this->createJsonResponse(array("validate_info"=>"refuse"));
+			$status = 0;
+		return $this->createJsonResponse($json_data,$json_status,$json_message);
 	}
 
 	public function regUserAction(Request $request){
@@ -42,6 +48,9 @@ class RegisterController extends BaseController
 			"user" => $user
 		);
 		$user_new = $userREST->addUser($user_data);
+		$json_data = null;
+		$json_status = 0;
+		$json_message = "Sorry,something that refused to join us";
 		if(!empty($user_new->id)){
 			$user = new User();
 			$user->setUsername($user_new->name);
@@ -50,10 +59,12 @@ class RegisterController extends BaseController
 			$em = $this->getDoctrine()->getManager();
 			$em->persist($user);
 			$em->flush();
-			return $this->createJsonResponse(array("toLogin"=>"ok"));
+			$json_status = 1;
+			$json_message = "";
 		}else {
 			return $this->render('RenaissanceWebBundle:Register:index.html.twig',array("error"=>"注册失败"));
 		}
+		return $this->createJsonResponse($json_data,$json_status,$json_message);
 	}
     
 }

@@ -4,6 +4,7 @@ namespace Renaissance\CommonBundle\Tools;
 
 class CurlHelper {
 	protected $access_token;
+	protected $error_head;
 	protected $base_url;
 	protected $authed;
 	protected $get_header_opt;
@@ -17,8 +18,9 @@ class CurlHelper {
 	}
 
 	//通过初试化方法设定api地址、口令、响应头 
-	public function init($base_url,$access_token,$auth_head){
+	public function init($base_url,$access_token,$auth_head,$error_head){
 		$this->access_token = $access_token;
+		$this->error_head = $error_head;
 		$this->base_url = $base_url;
 		$this->get_header_opt  = 'Authorization:'.$auth_head.' '.$this->access_token;
 		curl_setopt($this->curl_handler, CURLOPT_RETURNTRANSFER,1);
@@ -55,7 +57,10 @@ class CurlHelper {
 	public function curlExec($curl_handler){
 		$response =curl_exec($curl_handler);
 		$response = json_decode($response);
-		if( !empty($response->error_report_id) || $response == false)
+		if(empty($response))
+			return NULL;
+		$error = array_key_exists($this->error_head, $response);
+		if( $error )
 			return NULL;
 		else
 			return $response;

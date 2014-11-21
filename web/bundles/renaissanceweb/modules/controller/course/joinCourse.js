@@ -12,7 +12,7 @@ define(function(require,exports,module){
 				data:"course_id="+course_id+"&user_id="+user_id+"&salt="+salt,
 				dataType:"json",
 				success : function(data){
-					if(data == null)
+					if(data.status == 0)
 					{
 						alert("加入失败");
 					}else{
