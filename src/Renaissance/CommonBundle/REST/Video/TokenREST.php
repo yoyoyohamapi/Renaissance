@@ -3,7 +3,7 @@ namespace Renaissance\CommonBundle\REST\Video;
 
 class TokenREST extends VideoBaseREST{
 	public function saveToken($token){
-		$this->api = "save/videotoken";
+		$this->api = "videotokens";
 		$this->data_field = array(
 			"video_token"=>$token,
 		);

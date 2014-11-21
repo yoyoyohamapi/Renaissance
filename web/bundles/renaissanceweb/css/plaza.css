@@ -55,22 +55,26 @@
 .naviContent.naviContent-sm{
 	font-size:12px;
 }
-.naviMenuIconPanel{
+.naviMenuIconPanel,.naviMenuContentPanel{
 	position:absolute;
 	top:0px;
+	height:100%;
+}
+
+.naviMenuIconPanel{
 	left:0px;
 	width:30%;
-	height:480px;
 	background-color:#ffffff;
 }
 
 .naviMenuContentPanel{
-	position:absolute;
-	top:0px;
 	right:0px;
 	width:70%;
-	height:480px;
 	background-color:#cbcbcb;
+}
+
+.naviMenuContentPanel ul li a{
+	color:white;
 }
 /*mid-col show course*/
 .courseBox{

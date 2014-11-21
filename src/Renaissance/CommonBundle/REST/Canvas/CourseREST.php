@@ -7,12 +7,19 @@ use Symfony\Component\Debug\Exception\ContextErrorException;
 
 class CourseREST extends CanvasBaseREST{
 
+	//课程信息必须属性
+	private $course_info_attrs = array('课程介绍','所属课程体系','所属体系分类');
+
 	public function getAllCourses(){
 		$this->api="courses";
 		$courses = $this->execute();
 		return $courses;
 	}
-
+	public function getPerPageCourses($per_page,$page_no){
+		$this->api="courses?per_page=".$per_page."&page=".$page_no;
+		$courses=$this->execute();
+		return $courses;
+	}
 	public function getCoursesForCurrentUser($id){
 		$enrollmentREST = $this->container->get('enrollmentREST');
 		$enrollments = $enrollmentREST->getAllEnrollmentsByUserId($id);
@@ -134,7 +141,18 @@ class CourseREST extends CanvasBaseREST{
 				$course_info[$info[0]] = $info[1];
 			}
 		}catch(ContextErrorException $e){
-			return null;
+			$course_info = array();
+		}
+		$course_info = $this->adjustCourseInfo($course_info,$this->course_info_attrs);
+		return $course_info;
+	}
+
+	//校正课程信息:根据需要的属性校正课程信息
+	public function adjustCourseInfo($course_info,$attrs){
+		foreach( $attrs as $attr){
+			//若课程中不存在某属性，则该属性对应值为空
+			if( !array_key_exists($attr,$course_info) )
+				$course_info[$attr] = '';
 		}
 		return $course_info;
 	}
@@ -145,11 +163,15 @@ class CourseREST extends CanvasBaseREST{
 		//获得所有课程 
 		$courses = $this->getAllCourses();
 		//遍历课程取得分类
+		if(empty($courses))
+			return null;
 		foreach ($courses as $course){
 			$course_info = $this->getCourseInfo($course->id);
+			// if(empty($course_info))
+			// 	continue;
 			$system =  $course_info['所属课程体系'];
 			if($system)
-				$systems[] = $sys;
+				$systems[] = $system;
 		}
 		$systems[] = "其他";
 		return $systems;
@@ -163,13 +185,19 @@ class CourseREST extends CanvasBaseREST{
 		//遍历课程获得分类
 		foreach($courses as $course){
 			$course_info = $this->getCourseInfo($course->id);
+			// if(empty($course_info))
+			// 	continue;
 			$system =  $course_info['所属课程体系'];
 			$category = $course_info['所属体系分类'];
-			if($category){
+			if(!empty($category)){
 				if( ($system == $sys_name) || ($sys_name == '其他' && !$system) ) 
 					$categories[] = $category;
 			}
 		}
+		if(!empty($categories))
+			$categories[]='其他';
+		else
+			$categories[]='全部';
 		return $categories;
 	}
 
@@ -181,16 +209,28 @@ class CourseREST extends CanvasBaseREST{
 			$crs_info = $this->getCourseInfo($crs->id);
 			$system =  $crs_info['所属课程体系'];
 			$category = $crs_info['所属体系分类'];
+			if(empty($system)){
+				$system = '其他';
+				$category = '全部';
+			}
+			else if(empty($category)){
+				$category = '其他';
+			}
 			//如果课程体系，体系分类都已录入
-			if( $system && $category){
-				if( $sys_name==$system && $category==$cate_name )
+			if( $sys_name==$system && $category==$cate_name ){
 					$courses[] = $crs;
-			}else if( !$system && $sys_name=='其他'){
-				//如果体系为'其他',分类为'其他'
-				if( (!$category && $cate_name=='全部') || $category==$cate_name )
-					$courses[] = $crs;  
 			}
 		}
 		return $courses;
+	}
+	//根据体系名，分类名，每页课程数，课程页数获得对应课程页
+	public function getPerPageCoursesBySysCate($sys_name,$cate_name,$per_page,$page_no){
+		$courses=$this->getCoursesBySysCate($sys_name,$cate_name);
+		$start=$per_page*($page_no-1);
+		$end=$start+$per_page;
+		$length=count($courses);
+		if($end>$length)$end=$length;
+		$per_page_courses=array_slice($courses,$start,$end);
+		return $per_page_courses;
 	}
 }
