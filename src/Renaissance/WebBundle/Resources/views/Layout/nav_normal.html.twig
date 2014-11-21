@@ -7,7 +7,7 @@
 		<div class="collapse navbar-collapse" >
 			<ul class="nav navbar-nav left">
 				<li><a href="{{ path('course_index') }}">课程广场</a></li>
-				<li><a href="Javascript:void(0);">帮助中心</a></li>
+				<li><a href="/infocenter.html">客服中心</a></li>
 			</ul>
 			<div class="collapse navbar-collapse" >
 				<ul class="nav navbar-nav navbar-right">
@@ -23,8 +23,8 @@
 						<ul id="settingsMenu" class="nav navbar-nav navbar-right settings">
 							<li><a href="{{ lmsUrl }}" class="">学习</a></li>
 							<li><a href="{{ path('user_index',{'user_id':user.getId}) }}" class="">我的主页</a></li>
-							<li><a href="Javascript:void(0);" class="">消息</a></li>
-							<li><a href="Javascript:void(0);" class="">设置</a></li>
+							<li><a href="{{ lmsUrl }}conversations?" class="">消息</a></li>
+							<li><a href="{{ lmsUrl }}settings" class="">设置</a></li>
 							<li><a href="/logout" class="">退出</a></li>
 						</ul>
 					</li>

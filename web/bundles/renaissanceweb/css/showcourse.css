@@ -164,10 +164,16 @@
 }
 
 .courseProfile .profileDetail .profileRPanel .profileTeacher .info p{
-	font-size: 2em;
-	margin-top: 10%;
-	word-break:break-all;
-	word-wrap:break-word ;
+    font-size: 2em;
+    margin-top: 10%;
+    word-break:break-all;
+    word-wrap:break-word ;
+}
+.courseProfile .profileDetail .profileRPanel .profileTeacher .info p a{
+    color: #656464;
+}
+.courseProfile .profileDetail .profileRPanel .profileTeacher .info p a:hover{
+    color: #948D8D;
 }
 
 .courseProfile .profileDetail .profileRPanel .profileComments{

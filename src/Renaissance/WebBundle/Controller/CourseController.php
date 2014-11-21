@@ -219,6 +219,14 @@ class CourseController extends BaseController
             $enrollmentREST->enrollAStudentToCourse($course_id,$user_id);
             $tokenREST = $this->get("tokenREST");
             $token = $tokenREST->getToken($course_id,$user_id,$salt);
+            $res = $tokenREST->saveToken($token);
+            if($res){
+                $json_status = 1;
+            }
+            else{
+                $json_status = 0;
+                $json_message = '加入课程失败';
+            }
         }
         return $this->createJsonResponse($json_data,$json_status,$json_message);  
 
