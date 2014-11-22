@@ -159,10 +159,10 @@ class CourseController extends BaseController
                 {
                     $remm_img_urls[]=$course_cover->url; 
                 }
-                $course_info=$courseREST->getCourseInfo($value->id);
-                if( empty($course_info['课程介绍']) )
-                    $course_info['课程介绍'] = '暂无介绍';
-                $remm_info[]=$course_info;
+                $remm_course_info=$courseREST->getCourseInfo($value->id);
+                if( empty($remm_course_info['课程介绍']) )
+                    $remm_course_info['课程介绍'] = '暂无介绍';
+                $remm_info[]=$remm_course_info;
             }
 
             $data=array('course'=>$course,'students'=>$students,'teachers'=>$teachers, 'course_info'=>$course_info,
