@@ -20,12 +20,16 @@
 			<div class="col-xs-12 profileMain" style="">
 				<div class="row">
 					<div class="col-xs-8 profileImg">
+						{% if course_info['介绍视频'] is empty %}
+						<p>暂无介绍视频</p>
+						{% else %}
 						<video id="example_video_1" class="video-js vjs-default-skin vjs-big-play-centered"
 						  controls preload="auto" width="100%" height="350"
 						  poster="{{cover.url}}" data-setup='{"example_option":true}'>
 						 <source src="{{course_info['介绍视频']}}" type='video/mp4' />
 						 <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
 						</video>
+						{% endif %}
 					</div>
 					<div class="col-xs-4">
 						<div class="row">
