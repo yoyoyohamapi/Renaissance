@@ -11,7 +11,7 @@ class CourseREST extends CanvasBaseREST{
 	private $course_info_attrs = array('课程介绍','所属课程体系','所属体系分类');
 
 	public function getAllCourses(){
-		$this->api="courses";
+		$this->api="courses?per_page=100";
 		$courses = $this->execute();
 		return $courses;
 	}
@@ -227,10 +227,7 @@ class CourseREST extends CanvasBaseREST{
 	public function getPerPageCoursesBySysCate($sys_name,$cate_name,$per_page,$page_no){
 		$courses=$this->getCoursesBySysCate($sys_name,$cate_name);
 		$start=$per_page*($page_no-1);
-		$end=$start+$per_page;
-		$length=count($courses);
-		if($end>$length)$end=$length;
-		$per_page_courses=array_slice($courses,$start,$end);
+		$per_page_courses=array_slice($courses,$start,$per_page);
 		return $per_page_courses;
 	}
 }

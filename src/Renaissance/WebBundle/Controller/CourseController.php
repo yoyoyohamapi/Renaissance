@@ -34,8 +34,6 @@ class CourseController extends BaseController
         $next_page_no=$page_no+2;
         if($course_sys==null&&$course_cate==null)
         {
-            //$course_sys="";
-            //$course_cate="";
             $per_page=6;
             $cur_page=$courseREST->getPerPageCourses($per_page,$page_no);
             $per_page=3;
@@ -50,7 +48,10 @@ class CourseController extends BaseController
         }
         if($cur_page == null){   
             $data=array(
-                'page'=>array(),'courses'=>array(),'imgurls'=>array(),'items'=>$items,
+                'page'=>array('system'=>$course_sys,'category'=>$course_cate),
+                'courses'=>array(),
+                'imgurls'=>array(),
+                'items'=>$items,
                 );
             return $this->render('RenaissanceWebBundle:Course:index.html.twig',$data);
         }
@@ -178,7 +179,6 @@ class CourseController extends BaseController
         $course_sys=$request->query->get('system');
         $course_cate=$request->query->get('category');
         $courseREST=$this->get('courseREST');
-        //var_dump($course_sys);
         if($page_no=="")
             $page_no="1";
         if($page_no=="1")$hasprevPage=false;
@@ -188,8 +188,6 @@ class CourseController extends BaseController
         $per_page=3;
         if($course_sys==null&&$course_cate==null)
         {
-            //$course_sys="";
-            //$course_cate="";
             $cur_page=$courseREST->getPerPageCourses($per_page,$page_no);
             $next_page=$courseREST->getPerPageCourses($per_page,$next_page_no);
         }
@@ -215,8 +213,8 @@ class CourseController extends BaseController
             'currentPage'=>$page_no,
             'nextPage'=>$next_page_no,
             'prevPage'=>$prev_page_no,
-            //'system'=>$course_sys,
-            //'category'=>$course_cate
+            'system'=>$course_sys,
+            'category'=>$course_cate
             );
         $data=array(
             'page'=>$page,'courses'=>$cur_page,'imgurls'=>$img_urls
