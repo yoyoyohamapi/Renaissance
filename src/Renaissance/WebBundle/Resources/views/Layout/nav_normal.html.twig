@@ -21,10 +21,10 @@
 					<img  class="img-circle" src="{{ asset(user.getAvatarUrl) }}"></a></li>
 					<li>
 						<ul id="settingsMenu" class="nav navbar-nav navbar-right settings">
-							<li><a href="{{ lmsUrl }}" class="">学习</a></li>
+							<li><a href="{{ lmsUrl }}" target="_blank" class="">学习</a></li>
 							<li><a href="{{ path('user_index',{'user_id':user.getId}) }}" class="">我的主页</a></li>
-							<li><a href="{{ lmsUrl }}conversations?" class="">消息</a></li>
-							<li><a href="{{ lmsUrl }}settings" class="">设置</a></li>
+							<li><a href="{{ lmsUrl }}conversations?"  target="_blank" class="">消息</a></li>
+							<li><a href="{{ lmsUrl }}profile/settings"  target="_blank" class="">设置</a></li>
 							<li><a href="/logout" class="">退出</a></li>
 						</ul>
 					</li>

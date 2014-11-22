@@ -11,9 +11,9 @@
 		<!-- 左侧操作区 -->
 		<div class="leftControls clearfix">
 			<ul>
-				<li class="bandid"><a class="fa fa-paper-plane-o" ></a><a href="{{lmsUrl}}conversations?">消息</a></li>
-				<li class="bandid"><a class="fa fa-graduation-cap"></a><a href="{{lmsUrl}}grades">成绩</a></li>
-				<li class="bandid"><a class="fa fa-calendar"></a><a href="{{lmsUrl}}calendar">日历</a></li>
+				<li class="bandid"><a class="fa fa-paper-plane-o" ></a><a href="{{lmsUrl}}conversations?"  target="_blank" >消息</a></li>
+				<li class="bandid"><a class="fa fa-graduation-cap"></a><a href="{{lmsUrl}}grades" target="_blank" >成绩</a></li>
+				<li class="bandid"><a class="fa fa-calendar"></a><a href="{{lmsUrl}}calendar" target="_blank" >日历</a></li>
 			</ul>
 		</div>
 
@@ -36,7 +36,7 @@
 						<p class="title">精品课程 : {{ current_course.name }}</p>
 						<!-- <p class="remain visible-lg-block">距离完成学习任务还有<span>30%</span>的课程</p> -->
 					</div>
-					<div class="continueButton"><a class="button  button-large button-flat-flame" href="{{ [lmsUrl, 'courses/',current_course.id]|join }}">继 续</a></div>
+					<div class="continueButton"><a class="button  button-large button-flat-flame" href="{{ [lmsUrl, 'courses/',current_course.id]|join }}" target="_blank" >继 续</a></div>
 				</div>
 				{% else %}
 				<div class="col-xs-12 continueLearning">
@@ -106,18 +106,18 @@
 							<div class="panelTitle">更多</div>
 							<div class="row">
 								<div class="col-xs-6">
-									<a class="controlBtn" style="float: right;" href="{{lmsUrl}}courses">课程</a>
+									<a class="controlBtn" style="float: right;" href="{{lmsUrl}}courses" target="_blank" >课程</a>
 								</div>
 								<div class="col-xs-6">
-									<a class="controlBtn" href="{{lmsUrl}}dashboard/files">文件</a>
+									<a class="controlBtn" href="{{lmsUrl}}dashboard/files" target="_blank" >文件</a>
 								</div>
 							</div>
 							<div class="row">
 								<div class="col-xs-6">
-									<a class="controlBtn" style="float: right;" href="{{lmsUrl}}dashboard/eportfolios">档案</a>
+									<a class="controlBtn" style="float: right;" href="{{lmsUrl}}dashboard/eportfolios" target="_blank" >档案</a>
 								</div>
 								<div class="col-xs-6">
-									<a class="controlBtn" href="{{lmsUrl}}profile/settings">设置</a>
+									<a class="controlBtn" href="{{lmsUrl}}profile/settings" target="_blank" >设置</a>
 								</div>
 							</div>
 						</div>
