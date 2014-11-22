@@ -8,7 +8,7 @@ use Symfony\Component\Debug\Exception\ContextErrorException;
 class CourseREST extends CanvasBaseREST{
 
 	//课程信息必须属性
-	private $course_info_attrs = array('课程介绍','所属课程体系','所属体系分类');
+	private $course_info_attrs = array('课程介绍','所属课程体系','所属体系分类','介绍视频');
 
 	public function getAllCourses(){
 		$this->api="courses?per_page=100";
@@ -135,15 +135,22 @@ class CourseREST extends CanvasBaseREST{
 		try{
 			$page_html = $page->body;
 			$crawler->addHTMLContent($page_html,'UTF-8');
-			$lis = $crawler->filter('li');
-			foreach( $lis as $li ){
-				$info = split(':',$li->nodeValue);
-				$course_info[$info[0]] = $info[1];
-			}
+			$crawler->filter('li')->each(function (Crawler $li, $i) use (&$course_info) {
+				$info = split(':',$li->html());
+				$link_num = $li->filter('a')->first()->count();
+				$key = $info[0];
+				if( $link_num > 0 )
+					$value =  $li->filter('a')->attr('href');
+				else
+					$value = $info[1];
+				
+				$course_info[$key]=$value;
+			});
 		}catch(ContextErrorException $e){
 			$course_info = array();
 		}
 		$course_info = $this->adjustCourseInfo($course_info,$this->course_info_attrs);
+		// var_dump($course_info);
 		return $course_info;
 	}
 
