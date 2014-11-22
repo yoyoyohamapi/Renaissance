@@ -264,10 +264,11 @@
 .courseRec .courseRecCard{
 	position:relative;
 	overflow: hidden;
-            text-align: center;
-            box-shadow: 5px 5px 5px rgb(230, 222, 222);
-            padding: 0px;
-            margin: 5px;
+    text-align: center;
+    box-shadow: 5px 5px 5px rgb(230, 222, 222);
+    padding: 0px;
+    margin-top: 10px;
+    margin-left: 1.5%;
 }
 
 .courseRec .courseRecCard img{
