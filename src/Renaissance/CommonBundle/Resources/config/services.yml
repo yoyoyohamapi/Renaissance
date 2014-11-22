@@ -1,6 +1,11 @@
 parameters:
     curlHelper.class:    Renaissance\CommonBundle\Tools\CurlHelper
     curlHelper.class.authed:   FALSE
+    course_attrs:
+      - '课程介绍'
+      - '所属课程体系'
+      - '所属体系分类'
+      - '介绍视频'
 services:
     # CurlHelper
     curlHelper:

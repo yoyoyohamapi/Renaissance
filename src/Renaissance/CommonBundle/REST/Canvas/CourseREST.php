@@ -8,7 +8,7 @@ use Symfony\Component\Debug\Exception\ContextErrorException;
 class CourseREST extends CanvasBaseREST{
 
 	//课程信息必须属性
-	private $course_info_attrs = array('课程介绍','所属课程体系','所属体系分类','介绍视频');
+	private $course_info_attrs;
 
 	public function getAllCourses(){
 		$this->api="courses?per_page=100";
@@ -149,14 +149,15 @@ class CourseREST extends CanvasBaseREST{
 		}catch(ContextErrorException $e){
 			$course_info = array();
 		}
+		//设置课程必须属性并校准
+		$this->course_info_attrs = $this->container->getParameter('course_attrs');
 		$course_info = $this->adjustCourseInfo($course_info,$this->course_info_attrs);
-		// var_dump($course_info);
 		return $course_info;
 	}
 
 	//校正课程信息:根据需要的属性校正课程信息
 	public function adjustCourseInfo($course_info,$attrs){
-		foreach( $attrs as $attr){
+		foreach( $attrs as $key=>$attr){
 			//若课程中不存在某属性，则该属性对应值为空
 			if( !array_key_exists($attr,$course_info) )
 				$course_info[$attr] = '';
