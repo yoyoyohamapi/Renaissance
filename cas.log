@@ -1620,3 +1620,226 @@ SERVER IP ADDRESS: 0:0:0:0:0:0:0:1
 2014-11-08 14:00:29,604 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
 2014-11-08 14:02:29,608 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
 2014-11-08 14:02:29,608 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2014-11-22 09:27:05,000 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2014-11-22 09:27:06,000 INFO [org.jasig.cas.util.AutowiringSchedulerFactoryBean] - Starting Quartz Scheduler now
+2014-11-22 09:27:24,836 INFO [org.jasig.cas.ticket.registry.support.DefaultTicketRegistryCleaner] - Beginning ticket cleanup.
+2014-11-22 09:27:24,838 INFO [org.jasig.cas.ticket.registry.support.DefaultTicketRegistryCleaner] - 0 tickets found to be removed.
+2014-11-22 09:27:24,839 INFO [org.jasig.cas.ticket.registry.support.DefaultTicketRegistryCleaner] - Finished ticket cleanup.
+2014-11-22 09:29:05,085 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2014-11-22 09:29:05,086 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2014-11-22 09:31:05,072 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2014-11-22 09:31:05,072 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2014-11-22 09:33:05,073 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2014-11-22 09:33:05,073 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2014-11-22 09:35:05,073 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2014-11-22 09:35:05,073 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2014-11-22 09:37:05,071 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2014-11-22 09:37:05,071 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2014-11-22 09:37:15,616 INFO [org.jasig.cas.web.flow.InitialFlowSetupAction] - Setting path for cookies to: /cas/
+2014-11-22 09:37:15,616 INFO [org.jasig.cas.web.flow.InitialFlowSetupAction] - Setting path for cookies to: /cas/
+2014-11-22 09:39:05,072 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2014-11-22 09:39:05,072 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2014-11-22 09:41:05,072 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2014-11-22 09:41:05,072 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2014-11-22 09:43:05,075 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2014-11-22 09:43:05,075 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2014-11-22 09:43:09,613 INFO [org.jasig.cas.authentication.AuthenticationManagerImpl] - org.jasig.cas.util.QueryDatabaseAuthenticationHandlerWithSalt successfully authenticated [username: hubilie@qq.com]
+2014-11-22 09:43:09,616 INFO [org.jasig.cas.authentication.AuthenticationManagerImpl] - Resolved principal hubilie@qq.com
+2014-11-22 09:43:09,617 INFO [org.jasig.cas.authentication.AuthenticationManagerImpl] - org.jasig.cas.util.QueryDatabaseAuthenticationHandlerWithSalt@5285301b authenticated hubilie@qq.com with credential [username: hubilie@qq.com].
+2014-11-22 09:43:09,629 INFO [com.github.inspektr.audit.support.Slf4jLoggingAuditTrailManager] - Audit trail record BEGIN
+=============================================================
+WHO: [username: hubilie@qq.com]
+WHAT: supplied credentials: [username: hubilie@qq.com]
+ACTION: AUTHENTICATION_SUCCESS
+APPLICATION: CAS
+WHEN: Sat Nov 22 09:43:09 CST 2014
+CLIENT IP ADDRESS: 0:0:0:0:0:0:0:1
+SERVER IP ADDRESS: 0:0:0:0:0:0:0:1
+=============================================================
+
+
+2014-11-22 09:43:09,641 INFO [com.github.inspektr.audit.support.Slf4jLoggingAuditTrailManager] - Audit trail record BEGIN
+=============================================================
+WHO: [username: hubilie@qq.com]
+WHAT: TGT-1-dQLaNCJsXfjvTMQmBI51fKJjJd4VPXFG3pRS4H7bBISbaZdkhj-cas01.example.org
+ACTION: TICKET_GRANTING_TICKET_CREATED
+APPLICATION: CAS
+WHEN: Sat Nov 22 09:43:09 CST 2014
+CLIENT IP ADDRESS: 0:0:0:0:0:0:0:1
+SERVER IP ADDRESS: 0:0:0:0:0:0:0:1
+=============================================================
+
+
+2014-11-22 09:43:09,652 INFO [org.jasig.cas.CentralAuthenticationServiceImpl] - Granted service ticket [ST-1-tfkVr0eWgafd6pg2Tfed-cas01.example.org] for service [http://localhost:8000] for user [hubilie@qq.com]
+2014-11-22 09:43:09,652 INFO [com.github.inspektr.audit.support.Slf4jLoggingAuditTrailManager] - Audit trail record BEGIN
+=============================================================
+WHO: hubilie@qq.com
+WHAT: ST-1-tfkVr0eWgafd6pg2Tfed-cas01.example.org for http://localhost:8000
+ACTION: SERVICE_TICKET_CREATED
+APPLICATION: CAS
+WHEN: Sat Nov 22 09:43:09 CST 2014
+CLIENT IP ADDRESS: 0:0:0:0:0:0:0:1
+SERVER IP ADDRESS: 0:0:0:0:0:0:0:1
+=============================================================
+
+
+2014-11-22 09:43:10,042 ERROR [org.jasig.cas.CentralAuthenticationServiceImpl] - ServiceTicket [ST-1-tfkVr0eWgafd6pg2Tfed-cas01.example.org] with service [http://localhost:8000 does not match supplied service [http://localhost:8000/]
+2014-11-22 09:43:10,045 INFO [com.github.inspektr.audit.support.Slf4jLoggingAuditTrailManager] - Audit trail record BEGIN
+=============================================================
+WHO: audit:unknown
+WHAT: ST-1-tfkVr0eWgafd6pg2Tfed-cas01.example.org
+ACTION: SERVICE_TICKET_VALIDATE_FAILED
+APPLICATION: CAS
+WHEN: Sat Nov 22 09:43:10 CST 2014
+CLIENT IP ADDRESS: 0:0:0:0:0:0:0:1
+SERVER IP ADDRESS: 0:0:0:0:0:0:0:1
+=============================================================
+
+
+2014-11-22 09:43:10,429 INFO [org.jasig.cas.CentralAuthenticationServiceImpl] - Granted service ticket [ST-2-cnHtof1EJgrc1ZX6EYRp-cas01.example.org] for service [http://localhost:8000/] for user [hubilie@qq.com]
+2014-11-22 09:43:10,430 INFO [com.github.inspektr.audit.support.Slf4jLoggingAuditTrailManager] - Audit trail record BEGIN
+=============================================================
+WHO: hubilie@qq.com
+WHAT: ST-2-cnHtof1EJgrc1ZX6EYRp-cas01.example.org for http://localhost:8000/
+ACTION: SERVICE_TICKET_CREATED
+APPLICATION: CAS
+WHEN: Sat Nov 22 09:43:10 CST 2014
+CLIENT IP ADDRESS: 0:0:0:0:0:0:0:1
+SERVER IP ADDRESS: 0:0:0:0:0:0:0:1
+=============================================================
+
+
+2014-11-22 09:43:10,592 INFO [com.github.inspektr.audit.support.Slf4jLoggingAuditTrailManager] - Audit trail record BEGIN
+=============================================================
+WHO: audit:unknown
+WHAT: ST-2-cnHtof1EJgrc1ZX6EYRp-cas01.example.org
+ACTION: SERVICE_TICKET_VALIDATED
+APPLICATION: CAS
+WHEN: Sat Nov 22 09:43:10 CST 2014
+CLIENT IP ADDRESS: 0:0:0:0:0:0:0:1
+SERVER IP ADDRESS: 0:0:0:0:0:0:0:1
+=============================================================
+
+
+2014-11-22 09:44:31,863 INFO [org.jasig.cas.CentralAuthenticationServiceImpl] - Granted service ticket [ST-3-Bps7wAX7eh7752l1pCdK-cas01.example.org] for service [http://127.0.0.1:3000/login/cas] for user [hubilie@qq.com]
+2014-11-22 09:44:31,864 INFO [com.github.inspektr.audit.support.Slf4jLoggingAuditTrailManager] - Audit trail record BEGIN
+=============================================================
+WHO: hubilie@qq.com
+WHAT: ST-3-Bps7wAX7eh7752l1pCdK-cas01.example.org for http://127.0.0.1:3000/login/cas
+ACTION: SERVICE_TICKET_CREATED
+APPLICATION: CAS
+WHEN: Sat Nov 22 09:44:31 CST 2014
+CLIENT IP ADDRESS: 0:0:0:0:0:0:0:1
+SERVER IP ADDRESS: 0:0:0:0:0:0:0:1
+=============================================================
+
+
+2014-11-22 09:44:32,059 INFO [com.github.inspektr.audit.support.Slf4jLoggingAuditTrailManager] - Audit trail record BEGIN
+=============================================================
+WHO: audit:unknown
+WHAT: ST-3-Bps7wAX7eh7752l1pCdK-cas01.example.org
+ACTION: SERVICE_TICKET_VALIDATED
+APPLICATION: CAS
+WHEN: Sat Nov 22 09:44:32 CST 2014
+CLIENT IP ADDRESS: 0:0:0:0:0:0:0:1
+SERVER IP ADDRESS: 0:0:0:0:0:0:0:1
+=============================================================
+
+
+2014-11-22 09:45:05,072 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2014-11-22 09:45:05,072 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2014-11-22 09:47:05,072 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2014-11-22 09:47:05,073 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2014-11-22 09:48:14,627 INFO [com.github.inspektr.audit.support.Slf4jLoggingAuditTrailManager] - Audit trail record BEGIN
+=============================================================
+WHO: audit:unknown
+WHAT: TGT-1-dQLaNCJsXfjvTMQmBI51fKJjJd4VPXFG3pRS4H7bBISbaZdkhj-cas01.example.org
+ACTION: TICKET_GRANTING_TICKET_DESTROYED
+APPLICATION: CAS
+WHEN: Sat Nov 22 09:48:14 CST 2014
+CLIENT IP ADDRESS: 0:0:0:0:0:0:0:1
+SERVER IP ADDRESS: 0:0:0:0:0:0:0:1
+=============================================================
+
+
+2014-11-22 09:48:15,258 WARN [org.jasig.cas.util.HttpClient] - Error Sending message to url endpoint [http://127.0.0.1:3000/login/cas].  Error is [Server returned HTTP response code: 405 for URL: http://127.0.0.1:3000/login/cas]
+2014-11-22 09:48:47,579 INFO [org.jasig.cas.authentication.AuthenticationManagerImpl] - org.jasig.cas.util.QueryDatabaseAuthenticationHandlerWithSalt successfully authenticated [username: messi@qq.com]
+2014-11-22 09:48:47,579 INFO [org.jasig.cas.authentication.AuthenticationManagerImpl] - Resolved principal messi@qq.com
+2014-11-22 09:48:47,579 INFO [org.jasig.cas.authentication.AuthenticationManagerImpl] - org.jasig.cas.util.QueryDatabaseAuthenticationHandlerWithSalt@5285301b authenticated messi@qq.com with credential [username: messi@qq.com].
+2014-11-22 09:48:47,579 INFO [com.github.inspektr.audit.support.Slf4jLoggingAuditTrailManager] - Audit trail record BEGIN
+=============================================================
+WHO: [username: messi@qq.com]
+WHAT: supplied credentials: [username: messi@qq.com]
+ACTION: AUTHENTICATION_SUCCESS
+APPLICATION: CAS
+WHEN: Sat Nov 22 09:48:47 CST 2014
+CLIENT IP ADDRESS: 0:0:0:0:0:0:0:1
+SERVER IP ADDRESS: 0:0:0:0:0:0:0:1
+=============================================================
+
+
+2014-11-22 09:48:47,580 INFO [com.github.inspektr.audit.support.Slf4jLoggingAuditTrailManager] - Audit trail record BEGIN
+=============================================================
+WHO: [username: messi@qq.com]
+WHAT: TGT-2-EdDDoDaUH6uXAIiSk5oj2xC3zSKlpriH2RP4ez2Gan5rTeqTLW-cas01.example.org
+ACTION: TICKET_GRANTING_TICKET_CREATED
+APPLICATION: CAS
+WHEN: Sat Nov 22 09:48:47 CST 2014
+CLIENT IP ADDRESS: 0:0:0:0:0:0:0:1
+SERVER IP ADDRESS: 0:0:0:0:0:0:0:1
+=============================================================
+
+
+2014-11-22 09:48:47,581 INFO [org.jasig.cas.CentralAuthenticationServiceImpl] - Granted service ticket [ST-4-vQwedmYqnWGLQPve5Eb7-cas01.example.org] for service [http://localhost:8000] for user [messi@qq.com]
+2014-11-22 09:48:47,581 INFO [com.github.inspektr.audit.support.Slf4jLoggingAuditTrailManager] - Audit trail record BEGIN
+=============================================================
+WHO: messi@qq.com
+WHAT: ST-4-vQwedmYqnWGLQPve5Eb7-cas01.example.org for http://localhost:8000
+ACTION: SERVICE_TICKET_CREATED
+APPLICATION: CAS
+WHEN: Sat Nov 22 09:48:47 CST 2014
+CLIENT IP ADDRESS: 0:0:0:0:0:0:0:1
+SERVER IP ADDRESS: 0:0:0:0:0:0:0:1
+=============================================================
+
+
+2014-11-22 09:48:47,714 ERROR [org.jasig.cas.CentralAuthenticationServiceImpl] - ServiceTicket [ST-4-vQwedmYqnWGLQPve5Eb7-cas01.example.org] with service [http://localhost:8000 does not match supplied service [http://localhost:8000/]
+2014-11-22 09:48:47,715 INFO [com.github.inspektr.audit.support.Slf4jLoggingAuditTrailManager] - Audit trail record BEGIN
+=============================================================
+WHO: audit:unknown
+WHAT: ST-4-vQwedmYqnWGLQPve5Eb7-cas01.example.org
+ACTION: SERVICE_TICKET_VALIDATE_FAILED
+APPLICATION: CAS
+WHEN: Sat Nov 22 09:48:47 CST 2014
+CLIENT IP ADDRESS: 0:0:0:0:0:0:0:1
+SERVER IP ADDRESS: 0:0:0:0:0:0:0:1
+=============================================================
+
+
+2014-11-22 09:48:47,914 INFO [org.jasig.cas.CentralAuthenticationServiceImpl] - Granted service ticket [ST-5-1oxKRc2jjc43o49QxlFw-cas01.example.org] for service [http://localhost:8000/] for user [messi@qq.com]
+2014-11-22 09:48:47,914 INFO [com.github.inspektr.audit.support.Slf4jLoggingAuditTrailManager] - Audit trail record BEGIN
+=============================================================
+WHO: messi@qq.com
+WHAT: ST-5-1oxKRc2jjc43o49QxlFw-cas01.example.org for http://localhost:8000/
+ACTION: SERVICE_TICKET_CREATED
+APPLICATION: CAS
+WHEN: Sat Nov 22 09:48:47 CST 2014
+CLIENT IP ADDRESS: 0:0:0:0:0:0:0:1
+SERVER IP ADDRESS: 0:0:0:0:0:0:0:1
+=============================================================
+
+
+2014-11-22 09:48:48,050 INFO [com.github.inspektr.audit.support.Slf4jLoggingAuditTrailManager] - Audit trail record BEGIN
+=============================================================
+WHO: audit:unknown
+WHAT: ST-5-1oxKRc2jjc43o49QxlFw-cas01.example.org
+ACTION: SERVICE_TICKET_VALIDATED
+APPLICATION: CAS
+WHEN: Sat Nov 22 09:48:48 CST 2014
+CLIENT IP ADDRESS: 0:0:0:0:0:0:0:1
+SERVER IP ADDRESS: 0:0:0:0:0:0:0:1
+=============================================================
+
+
+2014-11-22 09:49:05,073 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2014-11-22 09:49:05,073 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.

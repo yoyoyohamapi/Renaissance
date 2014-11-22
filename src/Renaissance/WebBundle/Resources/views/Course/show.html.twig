@@ -109,7 +109,7 @@
 											<time class="tmtime">课时{{loop.index}}</time>
 											<div class="tmicon"></div>
 											<div class="tmlabel">
-												<p><a href="{{lmsUrl}}courses/{{course_id}}/modules">{{chapter_item.title}}</a></p>
+												<p>{{chapter_item.title}}</p>
 											</div>
 											</a>
 										</li>
@@ -182,7 +182,11 @@
 			{% for remm_course in remm_courses %}
 			<div class="col-xs-3 courseRecCard">
 				<div class="view viewForCard">
-					<img src="{{remm_img_urls[loop.index0]}}" class="img-thumbnail">
+					{% if remm_img_urls[loop.index0] is empty %}
+						<img src="{{asset('bundles/renaissanceweb/img/default/NoPic_S.png')}}" class="">
+					{% else %}
+						<img src="{{remm_img_urls[loop.index0]}}" class="">
+					{% endif %}
 					<div class="mask">
 					<h2>{{remm_course.name}}</h2>
 					<p>{{remm_info[loop.index0].课程介绍}}</p>

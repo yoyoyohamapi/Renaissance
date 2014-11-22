@@ -307,7 +307,7 @@
 	text-align: center;
 	cursor: default;
 	background: #fff  center center;
-             height:150px; 
+ 	height:300px; 
 }
 .view:hover div.info{
 	display: none;
