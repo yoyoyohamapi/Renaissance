@@ -1,0 +1,38 @@
+# This file is auto-generated during the composer install
+parameters:
+    database_driver: pdo_mysql
+    database_host: 127.0.0.1
+    database_port: 3306
+    database_name: renaissance
+    database_user: root
+    database_password: root
+    mailer_transport: smtp
+    mailer_host: 127.0.0.1
+    mailer_user: null
+    mailer_password: null
+    locale: en
+    secret: ThisTokenIsNotSoSecretChangeIt
+    debug_toolbar: true
+    debug_redirects: false
+    use_assetic_controller: true
+    be_simple.sso_auth.client.option.curlopt_ssl_verifypeer.value: FALSE
+    cas_login_url: https://localhost:8443/cas/login
+    cas_logout_url: https://localhost:8443/cas/logout
+    cas_validation_url: https://localhost:8443/cas/serviceValidate
+
+    site_url: "http://127.0.0.1:3000/"
+
+    #canvas数据库信息
+    canvas_db_host: 127.0.0.1
+    canvas_db_port: 5432
+    canvas_db_name: canvas_development
+    canvas_db_user: lcx_seima
+    canvas_db_password: 1353256
+    #canvas的api地址、口令、响应头
+    canvas_api_url: http://127.0.0.1:3000/api/v1/
+    canvas_api_token: YkCiKIOC8CZ4ZMTHZ3cTRv884pwr88pCmgeeztMxjziDuaUvSSHEI0ZrJb4uJvYS
+    canvas_api_auth_head: Bearer
+    #video的api地址、口令、响应头
+    video_api_url: http://127.0.0.1:9000/api/
+    video_api_token: 0822c72a5ad8e977b1ed2043d2b0994d
+    video_api_auth_head: RenaissanceVideo
