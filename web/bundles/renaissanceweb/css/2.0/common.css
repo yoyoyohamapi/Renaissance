@@ -277,6 +277,12 @@ a:hover{
 	font-size:1.5rem;
 	margin:2% 0 2% 0;
 }
+#aboutRect .content a{
+	color: #c9c2b2;
+}
+#aboutRect .content a:hover{
+	color: #ECE5D6;
+}
 
 
 @media  screen and (max-width: 1366px) {

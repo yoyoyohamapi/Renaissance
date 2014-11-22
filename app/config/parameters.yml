@@ -26,16 +26,16 @@ parameters:
     canvas_db_host: 127.0.0.1
     canvas_db_port: 5432
     canvas_db_name: canvas_development
-    canvas_db_user: feiyu06
-    canvas_db_password: 123456
+    canvas_db_user: lcx_seima
+    canvas_db_password: 1353256
     #canvas的api地址、口令、响应头
     canvas_api_url: http://127.0.0.1:3000/api/v1/
-    canvas_api_token: 8hey7np2S3r44HC1hP8pCevy4ZL8IHK2Ux51ZPh5pfHBLlHRFYRY7X8zMobGNjjS
+    canvas_api_token: YkCiKIOC8CZ4ZMTHZ3cTRv884pwr88pCmgeeztMxjziDuaUvSSHEI0ZrJb4uJvYS
     canvas_api_auth_head: Bearer
     canvas_api_error_head: errors
     #video的api地址、口令、响应头
     video_api_url: http://127.0.0.1:9000/api/
-    video_api_token: b7c8fcc5e3fe2b01372891bea6b3d751
+    video_api_token: 0822c72a5ad8e977b1ed2043d2b0994d
     video_api_auth_head: RenaissanceVideo
     video_api_error_head: error_message
 
