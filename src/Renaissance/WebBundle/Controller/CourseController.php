@@ -247,8 +247,7 @@ class CourseController extends BaseController
             }
         }
         return $this->createJsonResponse($json_data,$json_status,$json_message);  
-
-        
     }
+
 
 }

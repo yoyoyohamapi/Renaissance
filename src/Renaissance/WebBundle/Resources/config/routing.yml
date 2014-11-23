@@ -24,6 +24,11 @@ register_reg_user:
   defaults:  { _controller:RenaissanceWebBundle:Register:regUser }
   methods:  [POST]
 
+register_activate:
+  path: /register/activate
+  defaults: {_controller:RenaissanceWebBundle:Register:activate}
+  methods: [GET]
+
 user_index:
     path:     /user/{user_id}
     defaults: { _controller: RenaissanceWebBundle:User:index }
@@ -53,14 +58,28 @@ course_lesson_show:
         course_id:  \d+
         chaper_id:  \d+
         lesson_id:   \d+
-test_admin:
-    path:   /admin
-    defaults:  { _controller: RenaissanceWebBundle:Default:admin }
 
 get_more_courses:
     path: /course/get_more_courses
     defaults: { _controller:RenaissanceWebBundle:Course:showMore}
     methods: [GET]
+
+enroll_course:
+    path: /enroll_course
+    defaults: {_controller:RenaissanceWebBundle:Course:enroll}
+    methods: [POST]
+
+learningpath_show:
+    path: /learningpath/{learningpath_id}
+    defaults: {_controller:RenaissanceWebBundle:Default:learingpathShow}
+    requirements:
+        learningpath_id: \d+
+
+test_admin:
+    path:   /admin
+    defaults:  { _controller: RenaissanceWebBundle:Default:admin }
+
+
 
 test:
     path: /test
@@ -70,8 +89,4 @@ mt:
     path: /mt
     defaults: {_controller:RenaissanceWebBundle:Default:mt}
 
-enroll_course:
-    path: /enroll_course
-    defaults: {_controller:RenaissanceWebBundle:Course:enroll}
-    methods: [POST]
 

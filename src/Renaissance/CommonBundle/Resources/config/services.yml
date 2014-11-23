@@ -6,11 +6,16 @@ parameters:
       - '所属课程体系'
       - '所属体系分类'
       - '介绍视频'
+    mailerHelper.class:   Renaissance\CommonBundle\Tools\MailerHelper
 services:
     # CurlHelper
     curlHelper:
         class:    "%curlHelper.class%"
         arguments:    ["curlHelper.class.authed%"]
+    # MailerHelper
+    MailerHelper:
+        class:    "%mailerHelper.class%"
+        arguments: [@mailer]
     #Twig Extension 
     renaissance.twig.renaissance_extension:
         class: Renaissance\CommonBundle\Twig\RenaissanceExtension

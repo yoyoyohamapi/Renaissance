@@ -30,22 +30,25 @@ class DefaultController extends BaseController
     }
 
     public function testAction(){
-              $dbconn = $this->getCanvasConn();
-              $sql ="SELECT password_salt from pseudonyms where user_id=1";
-              if($dbconn){//别忘记是否连接成功
-                            $result = pg_query($dbconn,$sql);
-                            if(!empty($result)){
-                                $alt = pg_fetch_array($result,0);
-                                return new Response($alt[0]);
-                            }else{
-                                return new Response("No Data");
-                            }
-              }else{
-                      return new Response("error");
-             }
+        // 邮箱帮助服务使用示例ail
+        $url=$_SERVER['HTTP_HOST'];
+        $url = 'http://'.$url.'/register_activate';
+        $mailerHelper = $this->get('mailerHelper');
+        $subject = '验证您的邮箱';
+        $sender = 'fuxingedu@gmail.com';
+        $recipient = '472285740@163.com';
+        $content = $this->renderView('RenaissanceWebBundle:Mail:regValidation.html.twig',array('validation_url'=>$url));
+        $mailerHelper->send($subject,$sender,$recipient,$content);
+        return $this->render('RenaissanceWebBundle:Default:test.html.twig');
     }
 
     public function mtAction(){
         return $this->render('RenaissanceWebBundle:Default:mt.html.twig',array());
     }
+
+    //学习路线展示
+    public function learingpathShowAction($learningpath_id){
+        return $this->render('RenaissanceWebBundle:Static:learningpath-'.$learningpath_id.'.html.twig');
+    }
+
 }

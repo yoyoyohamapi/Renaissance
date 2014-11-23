@@ -5,11 +5,12 @@ parameters:
     database_port: 3306
     database_name: renaissance
     database_user: root
-    database_password: root 
-    mailer_transport: smtp
-    mailer_host: 127.0.0.1
-    mailer_user: null
-    mailer_password: null
+    database_password: root
+    # 右键服务配置
+    mailer_transport: gmail
+    mailer_host: ~
+    mailer_user: fuxingedu@gmail.com
+    mailer_password: fuxing2014
     locale: en
     secret: ThisTokenIsNotSoSecretChangeIt
     debug_toolbar: true
@@ -19,9 +20,7 @@ parameters:
     cas_login_url: https://localhost:8443/cas/login
     cas_logout_url: https://localhost:8443/cas/logout
     cas_validation_url: https://localhost:8443/cas/serviceValidate
-
     site_url: "http://127.0.0.1:3000/"
-
     #canvas数据库信息
     canvas_db_host: 127.0.0.1
     canvas_db_port: 5432

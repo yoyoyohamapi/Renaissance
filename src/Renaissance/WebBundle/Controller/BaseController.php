@@ -4,9 +4,18 @@ namespace Renaissance\WebBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\EventDispatcher\EventDispatcher;
 
 class BaseController extends Controller
 {
+	//事件调度器
+	protected $dispatcher;
+
+	public function __construct(){
+		$this->dispatcher = new EventDispatcher();
+	}
+
 	/**现在JSON信息回调需要封装三个参数：
 	* data:回调数据
 	* status:回调状态，标示数据状态正确与否，1为成功，0为败
@@ -23,7 +32,7 @@ class BaseController extends Controller
 	}
 
 	protected function getCanvasConn(){
-	    	$pg_host = $this->container->getParameter('canvas_db_host');
+	    $pg_host = $this->container->getParameter('canvas_db_host');
 		$pg_port = $this->container->getParameter('canvas_db_port');
 		$pg_name = $this->container->getParameter('canvas_db_name');
 		$pg_user = $this->container->getParameter('canvas_db_user');

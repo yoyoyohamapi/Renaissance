@@ -1,0 +1,11 @@
+{% extends "RenaissanceWebBundle:Mail:layout.html.twig" %}
+{% block content %}
+	<div>
+		<section>
+			请单击如下链接进行验证:
+		</section>
+		<section>
+			<a href='{{validation_url}}'>{{validation_url}}</a>
+		<section>
+	<div>
+{% endblock %}
