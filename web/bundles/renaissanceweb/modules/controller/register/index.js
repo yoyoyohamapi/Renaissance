@@ -1,7 +1,6 @@
 define(function(require,exports,module){
 	exports.run = function(){
 		$("#doRegister").click(function(e){
-			alert();
 			var email_filter  = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
 			var pwd_reg = /^[\w]{6,12}$/;
 			var email = $.trim($("#email").val());
@@ -62,7 +61,6 @@ define(function(require,exports,module){
 			} 
 		});
 		$("#redirect").click(function(){
-			alert();
 			$("form").submit();
 		});
 
