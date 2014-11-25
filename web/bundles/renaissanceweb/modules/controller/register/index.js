@@ -1,6 +1,7 @@
 define(function(require,exports,module){
 	exports.run = function(){
 		$("#doRegister").click(function(e){
+			alert();
 			var email_filter  = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
 			var pwd_reg = /^[\w]{6,12}$/;
 			var email = $.trim($("#email").val());
@@ -34,7 +35,23 @@ define(function(require,exports,module){
 								dataType:"json",
 							});
 							$("form").attr("action","https://localhost:8443/cas/login?isReg=true&service=http://"+window.location.host);
-							$("form").submit();
+							//breakpoint
+							$("#semail").text($("#email").val());
+							$('#preInfo').animate({opacity:0},600,function(){
+								$('#preInfo').hide();
+								$("#postInfo").show();
+								$("#postInfo").animate({opacity:1},600);
+							});
+							$('#loginTip').animate({opacity:0},600,function(){
+								$('#loginTip').hide();
+							});
+							$('#doRegister').animate({opacity:0},600,function(){
+								$('#doRegister').hide();
+								$("#redirect").show();
+								$("#redirect").animate({opacity:1},600);
+							});
+							//
+							//$("form").submit();
 						}
 						else{
 							throwError("该邮箱已被注册");
@@ -42,7 +59,11 @@ define(function(require,exports,module){
 					}
 				}
 				);	
-			}
+			} 
+		});
+		$("#redirect").click(function(){
+			alert();
+			$("form").submit();
 		});
 
 		function throwError(message){

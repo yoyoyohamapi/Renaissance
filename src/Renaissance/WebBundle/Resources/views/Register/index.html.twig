@@ -9,10 +9,27 @@
 	p.inputRow{
 		margin:20px 0 20px 0;
 	}
-	#error_msg{
+	span.msg{
 		font-size:15px; 
 	       overflow: hidden;
 	       color:rgba(135, 128, 116, 1);
+	}
+	ul{
+		list-style: none;
+		padding: 10px;
+	}
+	li{
+		margin-top: 2px;
+	}
+	li.msg{
+		font-size:15px; 
+	       overflow: hidden;
+	       color:rgba(135, 128, 116, 1);
+	}
+	li.email{
+		font-size:16px; 
+	       overflow: hidden;
+	       color:#428bca;
 	}
 	.btn-action{
 		background-color:#df3138;margin-top: 0px;width: 100%;height:50px;font-size:20px;
@@ -65,14 +82,25 @@
 					<div class="panel-body" style="position:relative;padding: 30px 50px 25px 50px;">
 						<div id="registerPanel" style="">
 							<form id="register" method="post" action="" >
-							<p class="inputRow" style="text-align:center;color:#3a3a3a;font-size: 24px;/* font-weight:700; */margin:0px 0 30px 0;">注册，离知识更进一步</p>
-							<p class="inputRow"><span id="error_msg">{% if error is defined%}{{error}}{% endif %}</span></p>
-							<p class="inputRow"><input class="form-control" style="border-radius:0px;background-color:#edeff0" placeholder="您的称呼" name="username" id="username"></p>
-							<p class="inputRow"><input class="form-control" style="border-radius:0px;background-color:#edeff0" placeholder="邮箱" name="email" id="email"></p>
-							<p class="inputRow"><input class="form-control" type="password"style="border-radius:0px;background-color:#edeff0" placeholder="密码" name="password"id="password"></p>
-							<p class="inputRow"><input class="form-control" style="border-radius:0px;background-color:#edeff0" placeholder="确认密码" type="password" id="confirm_password"></p>
-							<p class="inputRow"><button id="doRegister" type="button" class="btn-action button button-flat-primary" style="height:50px;">注&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;册</button></p>
-							<p style="text-align:right;color:rgba(138, 138, 138, 1)">已有账号<a id="toLogin" href="https://localhost:8443/cas" style="color:#DF3138" class="tip">登录</a></p>
+								<div id="preInfo">
+									<p class="inputRow" style="text-align:center;color:#3a3a3a;font-size: 24px;/* font-weight:700; */margin:0px 0 30px 0;">注册，离知识更进一步</p>
+									<p class="inputRow"><span id="error_msg" class="msg">{% if error is defined%}{{error}}{% endif %}</span></p>
+									<p class="inputRow"><input class="form-control" style="border-radius:0px;background-color:#edeff0" placeholder="您的称呼" name="username" id="username"></p>
+									<p class="inputRow"><input class="form-control" style="border-radius:0px;background-color:#edeff0" placeholder="邮箱" name="email" id="email"></p>
+									<p class="inputRow"><input class="form-control" type="password"style="border-radius:0px;background-color:#edeff0" placeholder="密码" name="password"id="password"></p>
+									<p class="inputRow"><input class="form-control" style="border-radius:0px;background-color:#edeff0" placeholder="确认密码" type="password" id="confirm_password"></p>
+								</div>
+								<div id="postInfo" style="display:none;opacity:0;">
+									<p class="inputRow" style="text-align:center;color:#3a3a3a;font-size: 24px;/* font-weight:700; */margin:0px 0 30px 0;">恭喜你，注册成功</p>
+									<ul>
+										<li class="msg">我们已将验证邮件发送至邮箱</li>
+										<li id="semail" class="email"></li>
+										<li class="msg">请点击邮件内的链接即可完成注册，并可使用复兴学堂的所有功能。</li>
+									</ul>
+									
+								</div>
+							<p class="inputRow"><button id="doRegister" type="button" class="btn-action button button-flat-primary" style="height:50px;">注&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;册</button><button id="redirect" type="button" class="btn-action button button-flat-primary" style="display:none;opacity:0;height:50px;">继&nbsp;续&nbsp;登&nbsp;录</button></p>
+							<p id="loginTip" style="text-align:right;color:rgba(138, 138, 138, 1)">已有账号<a id="toLogin" href="https://localhost:8443/cas" style="color:#DF3138" class="tip">登录</a></p>
 						</form>
 						</div>
 					</div>
