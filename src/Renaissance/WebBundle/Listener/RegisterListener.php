@@ -18,7 +18,7 @@ class RegisterListener extends BaseListener{
         $url = 'http://'.$url.'/register/activate?email='.$email.'&activate_code='.$activate_code;
         $subject = '最后一步！完成您的您的邮箱验证';
         $sender = 'fuxingedu@gmail.com';
-        $recipient = '472285740@163.com';
+        $recipient = 'lcx.seima@gmail.com';
         $content = $this->container->get('templating')->render('RenaissanceWebBundle:Mail:regValidation.html.twig',array('validation_url'=>$url));
         $this->mailerHelper->send($subject,$sender,$recipient,$content);
 	}

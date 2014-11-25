@@ -1,0 +1,64 @@
+
+
+
+/* title */
+#lpTitlePanel{
+    height:300px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+#lpTitlePanel p{
+    font-size: 35px;
+    color:#616161;
+    margin: 70px 0 70px 0px;
+}
+
+/* content */
+#lpContentPanel{
+    background-color: #EDEEF0;
+}
+
+.lpContentBlock{
+    padding: 30px;
+}
+.lpContentArrow{
+    height: 47px;
+    background-repeat: no-repeat;
+}
+.lpContentArrow p{
+    text-align: left;
+    font-size: 24px;
+    color: #ffffff;
+    margin: 0px;
+    padding-left: 20px;
+    padding-top: 8px;
+}
+
+.lpContentBox{
+    position: relative;
+    display: inline-block;
+    width: 230px;
+    margin: 30px 10px 10px 10px;
+}
+.lpContentBox p{
+    color: #3E3E3E;
+    margin: 0px;
+}
+.lpContentBox p.title{
+    
+    font-size: 20px;
+    text-align: left;
+    padding-top: 20px;
+    padding-left: 15px;
+}
+.lpContentBox p.content{
+    font-size: 15px;
+    padding-right: 15px;
+    margin-top: 5px;
+    text-align: right;
+}
+.lpContentBoxShield{
+    position:absolute;bottom:0px;height: 80px;width: 100%;background-color: rgba(255, 255, 255, 0.61);
+}

@@ -125,5 +125,3 @@
     </div>
 </div>
 {% endblock %}
-{% set base_bar="true" %}
-{% set footer="true" %}
