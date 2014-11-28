@@ -70,7 +70,7 @@ enroll_course:
     methods: [POST]
 
 learningpath_show:
-    path: /learningpath/{learningpath_id}
+    path: /lp/{learningpath_id}
     defaults: {_controller:RenaissanceWebBundle:Default:learningpathShow}
     requirements:
         learningpath_id: \d+
