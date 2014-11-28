@@ -47,7 +47,7 @@ class DefaultController extends BaseController
     }
 
     //学习路线展示
-    public function learingpathShowAction($learningpath_id){
+    public function learningpathShowAction($learningpath_id){
         return $this->render('RenaissanceWebBundle:Static:learningpath-'.$learningpath_id.'.html.twig',array("lp_id"=>$learningpath_id));
     }
 

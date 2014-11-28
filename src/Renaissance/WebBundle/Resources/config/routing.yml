@@ -71,7 +71,7 @@ enroll_course:
 
 learningpath_show:
     path: /learningpath/{learningpath_id}
-    defaults: {_controller:RenaissanceWebBundle:Default:learingpathShow}
+    defaults: {_controller:RenaissanceWebBundle:Default:learningpathShow}
     requirements:
         learningpath_id: \d+
 
